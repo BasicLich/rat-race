@@ -32,6 +32,7 @@ func _physics_process(delta):
 	
 func kill():
 	alive = false
+	velocity = Vector2()
 	$Sprite.flip_v = true
 	emit_signal("died")
 	
