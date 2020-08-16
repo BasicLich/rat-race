@@ -1,0 +1,265 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/1bitpack_kenney_1.1/Tilesheet/colored_transparent_packed.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 5.11371, 6.36845 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 7.17699, 7.15709 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 6.07709, 5.69159 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 6.99632, 6.40274 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 7.42311, 7.25633 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 5.76193, 7.27596 )
+
+[node name="dance_stage" type="Node2D"]
+
+[node name="arrow_down" type="Sprite" parent="."]
+position = Vector2( 425.444, 275.768 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 480, 320, 16, 16 )
+
+[node name="Area2D" type="Area2D" parent="arrow_down"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="arrow_down/Area2D"]
+position = Vector2( 7.90829, 7.77863 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="start_button" type="Sprite" parent="."]
+position = Vector2( 425.764, 231.916 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 16, 160, 16, 16 )
+
+[node name="Area2D" type="Area2D" parent="start_button"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="start_button/Area2D"]
+position = Vector2( 7.90829, 7.77863 )
+shape = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="start_buttonP" type="Sprite" parent="."]
+position = Vector2( 425.764, 231.916 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 32, 160, 16, 16 )
+
+[node name="Area2D" type="Area2D" parent="start_buttonP"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="start_buttonP/Area2D"]
+position = Vector2( 7.90829, 7.77863 )
+shape = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="arrow_up" type="Sprite" parent="."]
+position = Vector2( 425.444, 187.768 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 448, 320, 16, 16 )
+
+[node name="Area2D" type="Area2D" parent="arrow_up"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="arrow_up/Area2D"]
+position = Vector2( 7.90829, 7.77863 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="arrow_right" type="Sprite" parent="."]
+position = Vector2( 472.719, 230.933 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 464, 320, 16, 16 )
+
+[node name="Area2D" type="Area2D" parent="arrow_right"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="arrow_right/Area2D"]
+position = Vector2( 7.90829, 7.77863 )
+shape = SubResource( 2 )
+
+[node name="arrow_rightP" type="Sprite" parent="."]
+position = Vector2( 472.399, 230.933 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 464, 336, 16, 16 )
+
+[node name="Area2D" type="Area2D" parent="arrow_rightP"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="arrow_rightP/Area2D"]
+position = Vector2( 7.90829, 7.77863 )
+shape = SubResource( 5 )
+
+[node name="arrow_left" type="Sprite" parent="."]
+position = Vector2( 380.212, 230.933 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 496, 320, 16, 16 )
+
+[node name="Area2D" type="Area2D" parent="arrow_left"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="arrow_left/Area2D"]
+position = Vector2( 7.90829, 7.77863 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="arrow_leftP" type="Sprite" parent="."]
+position = Vector2( 379.892, 231.253 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 496, 336, 16, 16 )
+
+[node name="Area2D" type="Area2D" parent="arrow_leftP"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="arrow_leftP/Area2D"]
+position = Vector2( 7.90829, 7.77863 )
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="arrow_downP" type="Sprite" parent="."]
+position = Vector2( 425.444, 275.768 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 480, 336, 16, 16 )
+
+[node name="Area2D" type="Area2D" parent="arrow_downP"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="arrow_downP/Area2D"]
+position = Vector2( 7.90829, 7.77863 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="arrow_upP" type="Sprite" parent="."]
+position = Vector2( 425.124, 186.691 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 448, 336, 16, 16 )
+
+[node name="Area2D" type="Area2D" parent="arrow_upP"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="arrow_upP/Area2D"]
+position = Vector2( 7.90829, 7.77863 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="game_pad2" type="Sprite" parent="."]
+position = Vector2( 381.463, 186.588 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 256, 256, 16, 16 )
+
+[node name="game_pad3" type="Sprite" parent="."]
+position = Vector2( 468.395, 186.588 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 288, 256, 16, 16 )
+
+[node name="game_pad4" type="Sprite" parent="."]
+position = Vector2( 468.395, 272.117 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 288, 288, 16, 16 )
+
+[node name="game_pad5" type="Sprite" parent="."]
+position = Vector2( 383.333, 272.117 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 256, 288, 16, 16 )
+
+[node name="display_arrow_up" type="Sprite" parent="."]
+position = Vector2( 383.333, 94.5162 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 448, 320, 16, 16 )
+
+[node name="display_arrow_right" type="Sprite" parent="."]
+position = Vector2( 414.647, 94.5162 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 464, 320, 16, 16 )
+
+[node name="display_arrow_down" type="Sprite" parent="."]
+position = Vector2( 448.765, 94.5162 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 480, 320, 16, 16 )
+
+[node name="display_arrow_left" type="Sprite" parent="."]
+position = Vector2( 480.079, 94.5162 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 496, 320, 16, 16 )
+
+[node name="display_border1" type="Sprite" parent="."]
+position = Vector2( 500.643, 85.6362 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 288, 256, 16, 16 )
+
+[node name="display_border2" type="Sprite" parent="."]
+position = Vector2( 380.729, 85.6362 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 256, 256, 16, 16 )
