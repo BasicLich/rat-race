@@ -25,6 +25,6 @@ position = Vector2( 7.69166, 7.81753 )
 shape = SubResource( 1 )
 
 [node name="shooting_timer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 2.0
 autostart = true
 [connection signal="timeout" from="shooting_timer" to="." method="_on_shooting_timer_timeout"]

@@ -1,20 +1,27 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://tileset.res" type="TileSet" id=1]
+[ext_resource path="res://walls-doors.res" type="TileSet" id=1]
 [ext_resource path="res://rat.tscn" type="PackedScene" id=2]
 [ext_resource path="res://cheese.tscn" type="PackedScene" id=3]
 [ext_resource path="res://arrow_shooters.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Door1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://button.tscn" type="PackedScene" id=6]
+[ext_resource path="res://level0.gd" type="Script" id=7]
 
 [node name="Node2D" type="Node2D"]
 scale = Vector2( 3, 3 )
+script = ExtResource( 7 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 0, 3, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 8, 0, 65536, 4, 0, 65544, 7, 0, 131072, 4, 0, 131080, 7, 0, 196608, 4, 0, 196616, 7, 0, 262144, 4, 0, 262152, 7, 0, 327680, 5, 0, 327681, 2, 0, 327682, 2, 0, 327683, 2, 0, 327684, 2, 0, 327685, 2, 0, 327686, 2, 0, 327687, 2, 0, 327688, 6, 0 )
+tile_data = PoolIntArray( 0, 2, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 7, 0, 65536, 3, 0, 65547, 6, 0, 131072, 3, 0, 131083, 6, 0, 131084, -1610612732, 0, 131085, -1610612733, 0, 131086, -1610612733, 0, 131087, -1610612733, 0, 131088, -1610612734, 0, 196608, 3, 0, 196619, 6, 0, 196620, -1610612735, 0, 196624, -1610612736, 0, 262144, 3, 0, 262160, -1610612736, 0, 327680, 3, 0, 327691, 6, 0, 327692, -1610612735, 0, 327696, -1610612736, 0, 393216, 3, 0, 393227, 6, 0, 393228, -1610612731, 0, 393229, -1610612730, 0, 393230, -1610612730, 0, 393231, -1610612730, 0, 393232, -1610612729, 0, 458752, 3, 0, 458763, 6, 0, 524288, 4, 0, 524289, 1, 0, 524290, 1, 0, 524291, 1, 0, 524292, 1, 0, 524293, 1, 0, 524294, 1, 0, 524295, 1, 0, 524296, 1, 0, 524297, 1, 0, 524298, 1, 0, 524299, 5, 0 )
 
-<<<<<<< HEAD
+[node name="button_0" parent="." instance=ExtResource( 6 )]
+position = Vector2( 64, 106.667 )
+scale = Vector2( 0.75, 0.75 )
+
 [node name="Cheese_0" parent="." instance=ExtResource( 3 )]
 position = Vector2( 117.291, 20.3417 )
 
@@ -23,15 +30,14 @@ position = Vector2( 98.1001, 44.6086 )
 
 [node name="Rat" parent="." instance=ExtResource( 2 )]
 position = Vector2( 28.2005, 31.9102 )
+scale = Vector2( 0.75, 0.75 )
 speed = 300
 
 [node name="Shooter_0" parent="." instance=ExtResource( 4 )]
 position = Vector2( 123.624, 75.725 )
 scale = Vector2( 0.5, 0.5 )
-=======
-[node name="Rat" parent="." instance=ExtResource( 2 )]
-position = Vector2( 13.4695, 48.2659 )
 
-[node name="Cheese" parent="." instance=ExtResource( 3 )]
-position = Vector2( 117.291, 20.3417 )
->>>>>>> 319a2d9266e12068cec0cb61eca5fad874f5ba8f
+[node name="Door1" parent="." instance=ExtResource( 5 )]
+position = Vector2( 200, 64 )
+rotation = 1.5708
+scale = Vector2( 1, 1 )

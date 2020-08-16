@@ -6,7 +6,9 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 2.21033, 7.70551 )
 
-[node name="Arrow" type="Area2D"]
+[node name="Arrow" type="Area2D" groups=[
+"deadly",
+]]
 scale = Vector2( 2, 2 )
 script = ExtResource( 2 )
 speed = 100
