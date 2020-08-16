@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/1bitpack_kenney_1.1/Tilesheet/colored_transparent_packed.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7.20476, 7.92269 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Fronk" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 496, 160, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Fronk"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fronk/StaticBody2D"]
+position = Vector2( 8.043, 8.043 )
+shape = SubResource( 1 )

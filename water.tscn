@@ -78,7 +78,7 @@ region_rect = Rect2( 144, 80, 16, 16 )
 [node name="StaticBody2D" type="StaticBody2D" parent="WaterEdgeBottom"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WaterEdgeBottom/StaticBody2D"]
-position = Vector2( 8.64106, -7.92097 )
+position = Vector2( 7.47091, -8.01098 )
 shape = SubResource( 2 )
 
 [node name="WaterCornerBottomR" type="Sprite" parent="."]
@@ -98,6 +98,7 @@ position = Vector2( 7.56092, -7.92097 )
 shape = SubResource( 2 )
 
 [node name="WaterCornerBottomL" type="Sprite" parent="."]
+visible = false
 rotation = 1.5708
 texture = ExtResource( 1 )
 centered = false

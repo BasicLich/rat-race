@@ -13,12 +13,8 @@ cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( 0, 3, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 8, 0, 65536, 4, 0, 65544, 7, 0, 131072, 4, 0, 131080, 7, 0, 196608, 4, 0, 196616, 7, 0, 262144, 4, 0, 262152, 7, 0, 327680, 5, 0, 327681, 2, 0, 327682, 2, 0, 327683, 2, 0, 327684, 2, 0, 327685, 2, 0, 327686, 2, 0, 327687, 2, 0, 327688, 6, 0 )
 
-[node name="Cheese_0" parent="." instance=ExtResource( 3 )]
-position = Vector2( 117.291, 20.3417 )
-
-[node name="Cheese_1" parent="." instance=ExtResource( 3 )]
-position = Vector2( 83.6314, 57.0953 )
-
 [node name="Rat" parent="." instance=ExtResource( 2 )]
-position = Vector2( 28.2005, 31.9102 )
-speed = 300
+position = Vector2( 13.4695, 48.2659 )
+
+[node name="Cheese" parent="." instance=ExtResource( 3 )]
+position = Vector2( 117.291, 20.3417 )
