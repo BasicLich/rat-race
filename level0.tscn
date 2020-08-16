@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://tileset.res" type="TileSet" id=1]
 [ext_resource path="res://rat.tscn" type="PackedScene" id=2]
 [ext_resource path="res://cheese.tscn" type="PackedScene" id=3]
+[ext_resource path="res://arrow_shooters.tscn" type="PackedScene" id=4]
 
 [node name="Node2D" type="Node2D"]
 scale = Vector2( 3, 3 )
@@ -17,8 +18,12 @@ tile_data = PoolIntArray( 0, 3, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 
 position = Vector2( 117.291, 20.3417 )
 
 [node name="Cheese_1" parent="." instance=ExtResource( 3 )]
-position = Vector2( 83.6314, 57.0953 )
+position = Vector2( 98.1001, 44.6086 )
 
 [node name="Rat" parent="." instance=ExtResource( 2 )]
 position = Vector2( 28.2005, 31.9102 )
 speed = 300
+
+[node name="Shooter_0" parent="." instance=ExtResource( 4 )]
+position = Vector2( 123.624, 75.725 )
+scale = Vector2( 0.5, 0.5 )

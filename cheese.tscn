@@ -10,6 +10,7 @@ height = 7.0902
 [node name="Cheese" type="Area2D" groups=[
 "cheese",
 ]]
+scale = Vector2( 0.75, 0.75 )
 script = ExtResource( 2 )
 
 [node name="sprite" type="Sprite" parent="."]

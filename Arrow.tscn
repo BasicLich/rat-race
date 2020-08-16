@@ -1,14 +1,18 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/1bitpack_kenney_1.1/Tilesheet/colored_transparent_packed.png" type="Texture" id=1]
+[ext_resource path="res://Arrow.gd" type="Script" id=2]
 
-[node name="Node2D" type="Node2D"]
-__meta__ = {
-"_edit_lock_": true
-}
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 2.21033, 7.70551 )
 
-[node name="Arrow" type="Sprite" parent="."]
-position = Vector2( 8.10942, -1.73773 )
+[node name="Arrow" type="Area2D"]
+scale = Vector2( 2, 2 )
+script = ExtResource( 2 )
+speed = 100
+
+[node name="sprite" type="Sprite" parent="."]
+position = Vector2( 7.31572, -7.59127 )
 rotation = -2.35619
 texture = ExtResource( 1 )
 centered = false
@@ -16,6 +20,8 @@ offset = Vector2( -15, -15 )
 region_enabled = true
 region_rect = Rect2( 640, 80, 16, 16 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Arrow"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Arrow/StaticBody2D"]
+[node name="hit_box" type="CollisionShape2D" parent="."]
+position = Vector2( 7.96377, 2.30128 )
+rotation = -1.57079
+shape = SubResource( 1 )
+[connection signal="body_entered" from="." to="." method="_on_Arrow_body_entered"]
