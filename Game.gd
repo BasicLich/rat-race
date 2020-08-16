@@ -8,7 +8,7 @@ var activate_level
 
 func _ready():
 	var instance = level_0.instance()
-	instance.connect("complete", self, "_on_level_complete")
+	instance.connect("level_complete", self, "_on_level_complete")
 	activate_level = instance
 	add_child(instance)
 	

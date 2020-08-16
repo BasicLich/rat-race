@@ -1,6 +1,6 @@
 extends Node2D
 
-signal complete()
+#signal complete()
 
 var hands = preload("res://Hands.tscn")
 
@@ -36,5 +36,4 @@ func _on_rat_died():
 	add_child(hand)
 	
 func _on_carry_complete():
-	print("hello")
-	emit_signal("complete")
+	emit_signal("level_complete")
