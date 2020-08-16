@@ -1,12 +1,6 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://assets/1bitpack_kenney_1.1/Tilesheet/colored_transparent_packed.png" type="Texture" id=1]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 3.80753, 6.48768 )
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 6.22762, 6.58449 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -17,23 +11,12 @@ centered = false
 region_enabled = true
 region_rect = Rect2( 400, 208, 16, 16 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="border_vertical"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="border_vertical/StaticBody2D"]
-position = Vector2( 8.0347, 8.1315 )
-shape = SubResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="border_T" type="Sprite" parent="."]
 visible = false
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 496, 208, 16, 16 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="border_T"]
 
 [node name="border_T_left" type="Sprite" parent="."]
 visible = false
@@ -43,8 +26,6 @@ centered = false
 offset = Vector2( 0, -16 )
 region_enabled = true
 region_rect = Rect2( 496, 208, 16, 16 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="border_T_left"]
 
 [node name="border_T_right" type="Sprite" parent="."]
 visible = false
@@ -56,8 +37,6 @@ flip_v = true
 region_enabled = true
 region_rect = Rect2( 496, 208, 16, 16 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="border_T_right"]
-
 [node name="border_T_Upsidedown" type="Sprite" parent="."]
 visible = false
 texture = ExtResource( 1 )
@@ -65,8 +44,6 @@ centered = false
 flip_v = true
 region_enabled = true
 region_rect = Rect2( 496, 208, 16, 16 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="border_T_Upsidedown"]
 
 [node name="border_horizontal" type="Sprite" parent="."]
 position = Vector2( 16, 0 )
@@ -76,28 +53,12 @@ centered = false
 region_enabled = true
 region_rect = Rect2( 400, 208, 16, 16 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="border_horizontal"]
-position = Vector2( 0.968035, 6.38904 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="border_horizontal/StaticBody2D"]
-position = Vector2( 8.0347, 8.1315 )
-shape = SubResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="border_corner_topL" type="Sprite" parent="."]
 visible = false
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 480, 208, 16, 16 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="border_corner_topL"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="border_corner_topL/StaticBody2D"]
-position = Vector2( 10.5516, 10.2612 )
-shape = SubResource( 2 )
 
 [node name="border_corner_topR" type="Sprite" parent="."]
 visible = false
@@ -106,12 +67,6 @@ centered = false
 flip_h = true
 region_enabled = true
 region_rect = Rect2( 480, 208, 16, 16 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="border_corner_topR"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="border_corner_topR/StaticBody2D"]
-position = Vector2( 10.5516, 10.2612 )
-shape = SubResource( 2 )
 
 [node name="border_corner_bottomR" type="Sprite" parent="."]
 visible = false
@@ -122,12 +77,6 @@ flip_v = true
 region_enabled = true
 region_rect = Rect2( 480, 208, 16, 16 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="border_corner_bottomR"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="border_corner_bottomR/StaticBody2D"]
-position = Vector2( 10.5516, 10.2612 )
-shape = SubResource( 2 )
-
 [node name="border_corner_bottomL" type="Sprite" parent="."]
 visible = false
 texture = ExtResource( 1 )
@@ -135,9 +84,3 @@ centered = false
 flip_v = true
 region_enabled = true
 region_rect = Rect2( 480, 208, 16, 16 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="border_corner_bottomL"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="border_corner_bottomL/StaticBody2D"]
-position = Vector2( 10.5516, 10.2612 )
-shape = SubResource( 2 )

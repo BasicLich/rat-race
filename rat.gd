@@ -2,27 +2,36 @@ extends KinematicBody2D
 
 export var speed = 200
 var velocity = Vector2()
-var direction = 0
 
-#func _input(event):
-#	if event.is_action_pressed("ui_left"):
-#		direction = -1
-#	elif event.is_action_pressed("ui_right"):
-#		direction = 1
+var alive = true
 
-func get_input():
-	# Detect up/down/left/right keystate and only move when pressed.
-	velocity = Vector2()
-	if Input.is_action_pressed('ui_right'):
-		velocity.x += 1
-	if Input.is_action_pressed('ui_left'):
-		velocity.x -= 1
-	if Input.is_action_pressed('ui_down'):
-		velocity.y += 1
-	if Input.is_action_pressed('ui_up'):
-		velocity.y -= 1
-	velocity = velocity.normalized() * speed
+signal died()
+
+func _input(event):
+	if alive:
+		if event.is_action_pressed("ui_left"):
+			velocity.x = -1
+		elif event.is_action_pressed("ui_right"):
+			velocity.x = 1
+		elif event.is_action_released("ui_left") and !Input.is_action_pressed("ui_right"):
+			velocity.x = 0
+		elif event.is_action_released("ui_right") and !Input.is_action_pressed("ui_left"):
+			velocity.x = 0
+			
+		if event.is_action_pressed("ui_up"):
+			velocity.y = -1
+		elif event.is_action_pressed("ui_down"):
+			velocity.y = 1
+		elif event.is_action_released("ui_up") and !Input.is_action_pressed("ui_down"):
+			velocity.y = 0
+		elif event.is_action_released("ui_down") and !Input.is_action_pressed("ui_up"):
+			velocity.y = 0
 
 func _physics_process(delta):
-	get_input()
-	move_and_collide(velocity * delta)
+	move_and_collide(velocity.normalized() * speed * delta)
+	
+func kill():
+	alive = false
+	$Sprite.flip_v = true
+	emit_signal("died")
+	
