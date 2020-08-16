@@ -219,6 +219,7 @@ region_enabled = true
 region_rect = Rect2( 256, 288, 16, 16 )
 
 [node name="display_arrow_up" type="Sprite" parent="."]
+visible = false
 position = Vector2( 383.333, 94.5162 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
@@ -226,7 +227,17 @@ centered = false
 region_enabled = true
 region_rect = Rect2( 448, 320, 16, 16 )
 
+[node name="display_arrow_up_green" type="Sprite" parent="."]
+visible = false
+position = Vector2( 383.333, 94.5162 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 448, 336, 16, 16 )
+
 [node name="display_arrow_right" type="Sprite" parent="."]
+visible = false
 position = Vector2( 414.647, 94.5162 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
@@ -234,7 +245,17 @@ centered = false
 region_enabled = true
 region_rect = Rect2( 464, 320, 16, 16 )
 
+[node name="display_arrow_right_green" type="Sprite" parent="."]
+visible = false
+position = Vector2( 414.647, 94.5162 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 464, 336, 16, 16 )
+
 [node name="display_arrow_down" type="Sprite" parent="."]
+visible = false
 position = Vector2( 448.765, 94.5162 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
@@ -242,13 +263,77 @@ centered = false
 region_enabled = true
 region_rect = Rect2( 480, 320, 16, 16 )
 
+[node name="display_arrow_down_green" type="Sprite" parent="."]
+visible = false
+position = Vector2( 448.765, 94.5162 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 480, 336, 16, 16 )
+
 [node name="display_arrow_left" type="Sprite" parent="."]
+visible = false
 position = Vector2( 480.079, 94.5162 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 496, 320, 16, 16 )
+
+[node name="display_arrow_left_green" type="Sprite" parent="."]
+visible = false
+position = Vector2( 480.079, 94.5162 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 496, 336, 16, 16 )
+
+[node name="display_error" type="Sprite" parent="."]
+visible = false
+position = Vector2( 398.148, 94.516 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 576, 336, 16, 16 )
+
+[node name="display_error2" type="Sprite" parent="display_error"]
+position = Vector2( 17.746, 0 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 576, 336, 16, 16 )
+
+[node name="display_error3" type="Sprite" parent="display_error"]
+position = Vector2( 35.3534, 0 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 576, 336, 16, 16 )
+
+[node name="display_success" type="Sprite" parent="."]
+position = Vector2( 398.148, 94.516 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 688, 32, 16, 16 )
+
+[node name="display_error2" type="Sprite" parent="display_success"]
+position = Vector2( 17.746, 0 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 688, 32, 16, 16 )
+
+[node name="display_error3" type="Sprite" parent="display_success"]
+position = Vector2( 35.3534, 0 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 688, 32, 16, 16 )
 
 [node name="display_border1" type="Sprite" parent="."]
 position = Vector2( 500.643, 85.6362 )
@@ -257,9 +342,23 @@ centered = false
 region_enabled = true
 region_rect = Rect2( 288, 256, 16, 16 )
 
-[node name="display_border2" type="Sprite" parent="."]
-position = Vector2( 380.729, 85.6362 )
+[node name="display_border2" type="Sprite" parent="display_border1"]
+position = Vector2( -119.914, 0 )
 texture = ExtResource( 2 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 256, 256, 16, 16 )
+
+[node name="display_border3" type="Sprite" parent="display_border1"]
+position = Vector2( -119.914, 37.9876 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 256, 288, 16, 16 )
+
+[node name="display_border4" type="Sprite" parent="display_border1"]
+position = Vector2( -0.960632, 37.9876 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 288, 288, 16, 16 )
