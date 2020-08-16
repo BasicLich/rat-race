@@ -1,0 +1,144 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/1bitpack_kenney_1.1/Tilesheet/colored_transparent_packed.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7.83241, 7.94462 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 7.65239, 8.30466 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Water" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 128, 80, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Water"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Water/StaticBody2D"]
+position = Vector2( 8.10099, 8.19101 )
+shape = SubResource( 1 )
+
+[node name="WaterEdgeLeft" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 144, 80, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="WaterEdgeLeft"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterEdgeLeft/StaticBody2D"]
+position = Vector2( 8.64106, 7.92097 )
+shape = SubResource( 2 )
+
+[node name="WaterEdgeRight" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 1 )
+centered = false
+flip_h = true
+region_enabled = true
+region_rect = Rect2( 144, 80, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="WaterEdgeRight"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterEdgeRight/StaticBody2D"]
+position = Vector2( 7.65094, 8.191 )
+shape = SubResource( 2 )
+
+[node name="WaterEdgeTop" type="Sprite" parent="."]
+visible = false
+rotation = 1.5708
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -16 )
+region_enabled = true
+region_rect = Rect2( 144, 80, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="WaterEdgeTop"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterEdgeTop/StaticBody2D"]
+position = Vector2( 8.64106, -7.92097 )
+shape = SubResource( 2 )
+
+[node name="WaterEdgeBottom" type="Sprite" parent="."]
+visible = false
+rotation = 1.5708
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -16 )
+flip_h = true
+region_enabled = true
+region_rect = Rect2( 144, 80, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="WaterEdgeBottom"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterEdgeBottom/StaticBody2D"]
+position = Vector2( 8.64106, -7.92097 )
+shape = SubResource( 2 )
+
+[node name="WaterCornerBottomR" type="Sprite" parent="."]
+visible = false
+rotation = 1.5708
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -16 )
+flip_h = true
+region_enabled = true
+region_rect = Rect2( 160, 80, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="WaterCornerBottomR"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterCornerBottomR/StaticBody2D"]
+position = Vector2( 7.56092, -7.92097 )
+shape = SubResource( 2 )
+
+[node name="WaterCornerBottomL" type="Sprite" parent="."]
+rotation = 1.5708
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -16 )
+flip_h = true
+flip_v = true
+region_enabled = true
+region_rect = Rect2( 160, 80, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="WaterCornerBottomL"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterCornerBottomL/StaticBody2D"]
+position = Vector2( 7.29089, -8.01098 )
+shape = SubResource( 2 )
+
+[node name="WaterCornerTopL" type="Sprite" parent="."]
+visible = false
+rotation = 1.5708
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -16 )
+flip_v = true
+region_enabled = true
+region_rect = Rect2( 160, 80, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="WaterCornerTopL"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterCornerTopL/StaticBody2D"]
+position = Vector2( 8.37102, -8.37103 )
+shape = SubResource( 2 )
+
+[node name="WaterCornerTopR" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 1 )
+centered = false
+flip_h = true
+region_enabled = true
+region_rect = Rect2( 160, 80, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="WaterCornerTopR"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterCornerTopR/StaticBody2D"]
+position = Vector2( 7.3809, 8.28102 )
+shape = SubResource( 2 )

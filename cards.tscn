@@ -1,0 +1,98 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/1bitpack_kenney_1.1/Tilesheet/colored_transparent_packed.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 6.44751, 7.27403 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Card1" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 320, 256, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Card1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Card1/StaticBody2D"]
+position = Vector2( 7.93815, 7.71558 )
+shape = SubResource( 1 )
+
+[node name="Card2" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 416, 272, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Card2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Card2/StaticBody2D"]
+position = Vector2( 7.93815, 7.71558 )
+shape = SubResource( 1 )
+
+[node name="Card3" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 368, 288, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Card3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Card3/StaticBody2D"]
+position = Vector2( 7.93815, 7.71558 )
+shape = SubResource( 1 )
+
+[node name="Card4" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 480, 304, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Card4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Card4/StaticBody2D"]
+position = Vector2( 7.93815, 7.71558 )
+shape = SubResource( 1 )
+
+[node name="Card5" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 496, 256, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Card5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Card5/StaticBody2D"]
+position = Vector2( 7.93815, 7.71558 )
+shape = SubResource( 1 )
+
+[node name="Card6" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 352, 304, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Card6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Card6/StaticBody2D"]
+position = Vector2( 7.93815, 7.71558 )
+shape = SubResource( 1 )
+
+[node name="CardBack" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 304, 272, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CardBack"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CardBack/StaticBody2D"]
+position = Vector2( 7.93815, 7.71558 )
+shape = SubResource( 1 )

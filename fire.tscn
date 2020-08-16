@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/1bitpack_kenney_1.1/Tilesheet/colored_transparent_packed.png" type="Texture" id=1]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 5.34593
+height = 3.9977
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Fire" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 240, 160, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Fire"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fire/StaticBody2D"]
+position = Vector2( 7.77806, 8.31915 )
+shape = SubResource( 1 )
