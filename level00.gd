@@ -1,4 +1,4 @@
-extends "levels/level.gd"
+extends Node2D
 
 #signal complete()
 
@@ -11,14 +11,18 @@ func _ready():
 
 	var button = get_node("FloorButton_0")
 	
-	button.connect("body_entered", self, "_on_button_pressed")
+	#button.connect("body_entered", self, "_on_button_pressed")
 	
 	$Rat.connect("died", self, "_on_rat_died")
-	
+	#$FloorButton_0.connect("body_entered", self, "_work")
+	$Cheese.connect("body_entered", self, "_work")
 
-func _on_button_pressed(body):
+func _work(body):
+	print("hello")
 	if body.is_in_group("player"):
-		var door = get_node("DoorExit").open()
+		$DoorExit.open()
+		$Cheese.queue_free()
+		
 		
 func _on_rat_died():
 	var camera = $Rat.get_node("Camera2D")

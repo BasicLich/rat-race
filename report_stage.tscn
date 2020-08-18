@@ -117,14 +117,14 @@ __meta__ = {
 }
 
 [node name="menu_button" type="Button" parent="CanvasLayer"]
-margin_left = 440.0
-margin_top = 528.0
-margin_right = 593.0
-margin_bottom = 595.0
+margin_left = 439.182
+margin_top = 524.209
+margin_right = 592.182
+margin_bottom = 591.209
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.811765, 0.776471, 0.721569, 1 )
 custom_colors/font_color_hover = Color( 0.235294, 0.67451, 0.843137, 1 )
-text = "NEXT"
+text = "MENU"
 flat = true
 __meta__ = {
 "_edit_use_anchors_": false
