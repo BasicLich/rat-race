@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/1bitpack_kenney_1.1/Tilesheet/colored_transparent_packed.png" type="Texture" id=1]
 [ext_resource path="res://objects/DancePad.gd" type="Script" id=2]
@@ -11,12 +11,6 @@ extents = Vector2( 5.11371, 6.36845 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 6.07709, 5.69159 )
-
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 6.99632, 6.40274 )
-
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 7.42311, 7.25633 )
 
 [node name="DancePad" type="Node2D"]
 script = ExtResource( 2 )
@@ -96,66 +90,51 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="arrow_right" type="Sprite" parent="."]
+[node name="ArrowRight" type="Area2D" parent="."]
 position = Vector2( 92.827, 145.297 )
 scale = Vector2( 3, 3 )
+
+[node name="Off" type="Sprite" parent="ArrowRight"]
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 464, 320, 16, 16 )
 
-[node name="Area2D" type="Area2D" parent="arrow_right"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="arrow_right/Area2D"]
-position = Vector2( 7.90829, 7.77863 )
-shape = SubResource( 3 )
-
-[node name="arrow_rightP" type="Sprite" parent="."]
+[node name="On" type="Sprite" parent="ArrowRight"]
 visible = false
-position = Vector2( 92.507, 145.297 )
-scale = Vector2( 3, 3 )
+position = Vector2( -0.10667, 0 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 464, 336, 16, 16 )
 
-[node name="Area2D" type="Area2D" parent="arrow_rightP"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="arrow_rightP/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArrowRight"]
 position = Vector2( 7.90829, 7.77863 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
+disabled = true
 
-[node name="arrow_left" type="Sprite" parent="."]
+[node name="ArrowLeft" type="Area2D" parent="."]
 position = Vector2( 0.320007, 145.297 )
 scale = Vector2( 3, 3 )
+
+[node name="Off" type="Sprite" parent="ArrowLeft"]
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 496, 320, 16, 16 )
 
-[node name="Area2D" type="Area2D" parent="arrow_left"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="arrow_left/Area2D"]
-position = Vector2( 7.90829, 7.77863 )
-shape = SubResource( 3 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="arrow_leftP" type="Sprite" parent="."]
+[node name="On" type="Sprite" parent="ArrowLeft"]
 visible = false
-position = Vector2( 0, 145.617 )
-scale = Vector2( 3, 3 )
+position = Vector2( -0.106669, 0.10667 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 496, 336, 16, 16 )
 
-[node name="Area2D" type="Area2D" parent="arrow_leftP"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="arrow_leftP/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArrowLeft"]
 position = Vector2( 7.90829, 7.77863 )
-shape = SubResource( 5 )
+shape = SubResource( 3 )
+disabled = true
 __meta__ = {
 "_edit_lock_": true
 }
@@ -351,3 +330,7 @@ region_rect = Rect2( 496, 320, 16, 16 )
 [connection signal="body_exited" from="ArrowUp" to="." method="_on_ArrowUp_body_exited"]
 [connection signal="body_entered" from="ArrowDown" to="." method="_on_ArrowDown_body_entered"]
 [connection signal="body_exited" from="ArrowDown" to="." method="_on_ArrowDown_body_exited"]
+[connection signal="body_entered" from="ArrowRight" to="." method="_on_ArrowRight_body_entered"]
+[connection signal="body_exited" from="ArrowRight" to="." method="_on_ArrowRight_body_exited"]
+[connection signal="body_entered" from="ArrowLeft" to="." method="_on_ArrowLeft_body_entered"]
+[connection signal="body_exited" from="ArrowLeft" to="." method="_on_ArrowLeft_body_exited"]
