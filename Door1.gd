@@ -2,6 +2,12 @@ extends Node2D
 
 export var opened = false
 
+func _ready():
+	if opened:
+		open()
+	else:
+		close()
+
 func open():
 	$door_closed.hide()
 	$door_closed.get_node("StaticBody2D").get_node("CollisionShape2D").set_deferred("disabled", true)

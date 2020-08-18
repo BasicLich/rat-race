@@ -1,26 +1,31 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://walls-doors.res" type="TileSet" id=1]
 [ext_resource path="res://rat.tscn" type="PackedScene" id=2]
 [ext_resource path="res://cheese.tscn" type="PackedScene" id=3]
 [ext_resource path="res://arrow_shooters.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Door1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://objects/DancePad.tscn" type="PackedScene" id=6]
 [ext_resource path="res://level0.gd" type="Script" id=7]
 [ext_resource path="res://objects/FloorButton.tscn" type="PackedScene" id=8]
 
 [node name="Node2D" type="Node2D"]
-scale = Vector2( 3, 3 )
+scale = Vector2( 2, 2 )
 script = ExtResource( 7 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 0, 2, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 7, 0, 65536, 3, 0, 65547, 6, 0, 131072, 3, 0, 131083, 6, 0, 131084, -1610612732, 0, 131085, -1610612733, 0, 131086, -1610612733, 0, 131087, -1610612733, 0, 131088, -1610612734, 0, 196608, 3, 0, 196619, 6, 0, 196620, -1610612735, 0, 196624, -1610612736, 0, 262144, 3, 0, 262160, -1610612736, 0, 327680, 3, 0, 327691, 6, 0, 327692, -1610612735, 0, 327696, -1610612736, 0, 393216, 3, 0, 393227, 6, 0, 393228, -1610612731, 0, 393229, -1610612730, 0, 393230, -1610612730, 0, 393231, -1610612730, 0, 393232, -1610612729, 0, 458752, 3, 0, 458763, 6, 0, 524288, 4, 0, 524289, 1, 0, 524290, 1, 0, 524291, 1, 0, 524292, 1, 0, 524293, 1, 0, 524294, 1, 0, 524295, 1, 0, 524296, 1, 0, 524297, 1, 0, 524298, 1, 0, 524299, 5, 0 )
+tile_data = PoolIntArray( 65529, 2, 0, 65530, 0, 0, 65531, 0, 0, 65532, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 7, 0, 0, 2, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 7, 0, 131065, 3, 0, 131071, 6, 0, 65536, 3, 0, 65547, 6, 0, 196601, 3, 0, 196607, 6, 0, 131072, 3, 0, 131083, 6, 0, 131084, -1610612732, 0, 131085, -1610612733, 0, 131086, -1610612733, 0, 131087, -1610612733, 0, 131088, -1610612734, 0, 262137, 3, 0, 262143, 6, 0, 196608, 3, 0, 196619, 6, 0, 196620, -1610612735, 0, 196624, -1610612736, 0, 327673, 3, 0, 262160, -1610612736, 0, 393209, 3, 0, 393215, 6, 0, 327680, 3, 0, 327691, 6, 0, 327692, -1610612735, 0, 327696, -1610612736, 0, 458745, 3, 0, 458751, 6, 0, 393216, 3, 0, 393227, 6, 0, 393228, -1610612731, 0, 393229, -1610612730, 0, 393230, -1610612730, 0, 393231, -1610612730, 0, 393232, -1610612729, 0, 524281, 3, 0, 524287, 6, 0, 458752, 3, 0, 458763, 6, 0, 589817, 4, 0, 589818, 1, 0, 589819, 1, 0, 589820, 1, 0, 589821, 1, 0, 589822, 1, 0, 589823, 5, 0, 524288, 4, 0, 524289, 1, 0, 524290, 1, 0, 524291, 1, 0, 524292, 1, 0, 524293, 1, 0, 524294, 1, 0, 524295, 1, 0, 524296, 1, 0, 524297, 1, 0, 524298, 1, 0, 524299, 5, 0 )
 
 [node name="FloorButton_0" parent="." instance=ExtResource( 8 )]
 position = Vector2( 77.3333, 24 )
 scale = Vector2( 0.75, 0.75 )
+
+[node name="DancePad2" parent="." instance=ExtResource( 6 )]
+position = Vector2( -92, 20 )
+scale = Vector2( 0.4, 0.4 )
 
 [node name="Cheese_0" parent="." instance=ExtResource( 3 )]
 position = Vector2( 117.291, 20.3417 )
@@ -40,4 +45,12 @@ scale = Vector2( 0.5, 0.5 )
 [node name="Door1" parent="." instance=ExtResource( 5 )]
 position = Vector2( 200, 64 )
 rotation = 1.5708
-scale = Vector2( 1, 1 )
+
+[node name="DancePad" parent="." instance=ExtResource( 6 )]
+position = Vector2( 360, 68 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="Door2" parent="." instance=ExtResource( 5 )]
+position = Vector2( -8, 80 )
+rotation = 4.71239
+opened = true
