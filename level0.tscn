@@ -34,7 +34,7 @@ scale = Vector2( 0.75, 0.75 )
 speed = 300
 
 [node name="Shooter_0" parent="." instance=ExtResource( 4 )]
-position = Vector2( 123.624, 75.725 )
+position = Vector2( 122.667, 74.6667 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="Door1" parent="." instance=ExtResource( 5 )]

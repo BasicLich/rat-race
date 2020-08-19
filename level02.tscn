@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://rat.tscn" type="PackedScene" id=1]
+[ext_resource path="res://tileset.res" type="TileSet" id=2]
+[ext_resource path="res://arrow_shooters.tscn" type="PackedScene" id=3]
+[ext_resource path="res://MouseTrap.tscn" type="PackedScene" id=4]
+
+[node name="Node2D" type="Node2D"]
+scale = Vector2( 3, 3 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -851954, 7, 0, -786432, 4, 0, -786418, 7, 0, -720896, 4, 0, -720882, 7, 0, -655360, 4, 0, -655346, 7, 0, -589824, 4, 0, -589810, 7, 0, -524288, 4, 0, -524274, 7, 0, -458752, 4, 0, -458738, 7, 0, -393216, 4, 0, -393202, 7, 0, -327680, 4, 0, -327666, 7, 0, -262144, 4, 0, -262130, 7, 0, -196608, 3, 0, -196607, 1, 0, -196606, 1, 0, -196605, 1, 0, -196604, 1, 0, -196603, 1, 0, -196602, 1, 0, -196598, 1, 0, -196597, 1, 0, -196596, 1, 0, -196595, 1, 0, -196594, 8, 0, -131072, 4, 0, -131058, 7, 0, -65536, 4, 0, -65522, 7, 0, 0, 4, 0, 14, 7, 0, 65536, 4, 0, 65550, 7, 0, 131072, 4, 0, 131086, 7, 0, 196608, 4, 0, 196622, 7, 0, 262144, 4, 0, 262158, 7, 0, 327680, 4, 0, 327694, 7, 0, 393216, 5, 0, 393217, 2, 0, 393218, 2, 0, 393219, 2, 0, 393220, 2, 0, 393221, 2, 0, 393222, 2, 0, 393223, 2, 0, 393224, 2, 0, 393225, 2, 0, 393226, 2, 0, 393227, 2, 0, 393228, 2, 0, 393229, 2, 0, 393230, 6, 0 )
+
+[node name="ArrowShooter" parent="." instance=ExtResource( 3 )]
+position = Vector2( 21.2, 12.2322 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D" parent="." instance=ExtResource( 4 )]
+position = Vector2( 184.634, -23.2296 )
+
+[node name="Rat" parent="." instance=ExtResource( 1 )]
+position = Vector2( 74.6666, 40 )
+scale = Vector2( 1, 1 )
