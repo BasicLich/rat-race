@@ -4,7 +4,7 @@
 [ext_resource path="res://rat.gd" type="Script" id=2]
 [ext_resource path="res://assets/1bitpack_kenney_1.1/Tilesheet/rat_animation_colored_transparent_packed_.png" type="Texture" id=3]
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 16, 16 )
 
@@ -20,16 +20,16 @@ region = Rect2( 32, 0, 16, 16 )
 atlas = ExtResource( 3 )
 region = Rect2( 48, 0, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=8]
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
-"frames": [ SubResource( 7 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 8, 4.29586 )
+extents = Vector2( 5.85294, 4.29586 )
 
 [node name="Rat" type="KinematicBody2D" groups=[
 "player",
@@ -47,16 +47,13 @@ region_rect = Rect2( 496, 128, 16, 16 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 7.8922, 8.03701 )
-frames = SubResource( 8 )
-frame = 2
+frames = SubResource( 5 )
+frame = 3
 playing = true
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 position = Vector2( 8, 8 )
 shape = SubResource( 6 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
