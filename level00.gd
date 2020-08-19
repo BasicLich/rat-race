@@ -1,21 +1,18 @@
-extends Node2D
-
-#signal complete()
+extends "levels/Level.gd"
 
 var hands = preload("res://Hands.tscn")
-
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 
 	var button = get_node("FloorButton_0")
-	
-	#button.connect("body_entered", self, "_on_button_pressed")
-	
+
 	$Rat.connect("died", self, "_on_rat_died")
-	#$FloorButton_0.connect("body_entered", self, "_work")
 	$Cheese.connect("body_entered", self, "_work")
+	
+
+func done():
+	emit_signal("level_compelete")
 
 func _work(body):
 	print("hello")
@@ -40,4 +37,7 @@ func _on_rat_died():
 	add_child(hand)
 	
 func _on_carry_complete():
+	emit_signal("level_complete")
+
+func _on_Exit_exited():
 	emit_signal("level_complete")

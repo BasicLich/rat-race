@@ -1,11 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://walls-doors.res" type="TileSet" id=1]
 [ext_resource path="res://rat.tscn" type="PackedScene" id=2]
 [ext_resource path="res://cheese.tscn" type="PackedScene" id=3]
-[ext_resource path="res://objects/Shooter.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Door1.tscn" type="PackedScene" id=5]
-[ext_resource path="res://objects/DancePad.tscn" type="PackedScene" id=6]
 [ext_resource path="res://level0.gd" type="Script" id=7]
 [ext_resource path="res://objects/FloorButton.tscn" type="PackedScene" id=8]
 
@@ -23,10 +21,6 @@ tile_data = PoolIntArray( 65529, 2, 0, 65530, 0, 0, 65531, 0, 0, 65532, 0, 0, 65
 position = Vector2( 77.3333, 24 )
 scale = Vector2( 0.75, 0.75 )
 
-[node name="DancePad2" parent="." instance=ExtResource( 6 )]
-position = Vector2( -92, 20 )
-scale = Vector2( 0.4, 0.4 )
-
 [node name="Cheese_0" parent="." instance=ExtResource( 3 )]
 position = Vector2( 117.291, 20.3417 )
 
@@ -38,24 +32,9 @@ position = Vector2( 28.2005, 31.9102 )
 scale = Vector2( 0.75, 0.75 )
 speed = 300
 
-[node name="Shooter_0" parent="." instance=ExtResource( 4 )]
-position = Vector2( 16, 108 )
-rotation = 3.14159
-scale = Vector2( 0.5, 0.5 )
-
-[node name="Shooter_1" parent="." instance=ExtResource( 4 )]
-position = Vector2( 76, 120 )
-rotation = 1.5708
-scale = Vector2( 0.5, 0.5 )
-frequency = 3.0
-
-[node name="Door1" parent="." instance=ExtResource( 5 )]
+[node name="DoorExit" parent="." instance=ExtResource( 5 )]
 position = Vector2( 200, 64 )
 rotation = 1.5708
-
-[node name="DancePad" parent="." instance=ExtResource( 6 )]
-position = Vector2( 360, 68 )
-scale = Vector2( 0.4, 0.4 )
 
 [node name="Door2" parent="." instance=ExtResource( 5 )]
 position = Vector2( -8, 80 )

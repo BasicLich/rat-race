@@ -8,7 +8,6 @@ var index = 0
 var levels = []
 var activate_level
 
-
 func _ready():
 	levels.append(level_0.instance())
 	levels.append(level_0.instance())

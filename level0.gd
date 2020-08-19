@@ -1,4 +1,4 @@
-extends "levels/level.gd"
+extends "levels/Level.gd"
 
 #signal complete()
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://walls-doors.res" type="TileSet" id=1]
 [ext_resource path="res://cheese.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://rat.tscn" type="PackedScene" id=4]
 [ext_resource path="res://pipes.res" type="TileSet" id=5]
 [ext_resource path="res://level00.gd" type="Script" id=6]
+[ext_resource path="res://levels/Exit.tscn" type="PackedScene" id=7]
 
 [node name="Node2D" type="Node2D"]
 scale = Vector2( 3, 3 )
@@ -35,3 +36,7 @@ position = Vector2( 98.6667, -66.6667 )
 [node name="Cheese" parent="." instance=ExtResource( 2 )]
 position = Vector2( 101.333, -16 )
 script = null
+
+[node name="Exit" parent="." instance=ExtResource( 7 )]
+position = Vector2( 98.6667, -72 )
+[connection signal="exited" from="Exit" to="." method="_on_Exit_exited"]
