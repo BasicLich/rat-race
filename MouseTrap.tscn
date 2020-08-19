@@ -5,6 +5,7 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="trap" type="Sprite" parent="."]
+visible = false
 scale = Vector2( 1, 1.5 )
 texture = ExtResource( 1 )
 centered = false
@@ -12,6 +13,7 @@ region_enabled = true
 region_rect = Rect2( 336, 208, 16, 16 )
 
 [node name="trap2" type="Sprite" parent="."]
+visible = false
 position = Vector2( 8, 0 )
 scale = Vector2( 1, 1.5 )
 texture = ExtResource( 1 )
@@ -21,7 +23,6 @@ region_enabled = true
 region_rect = Rect2( 336, 208, 16, 16 )
 
 [node name="trap5" type="Sprite" parent="."]
-visible = false
 position = Vector2( -1.76461, -0.899368 )
 scale = Vector2( 1.7, 1.5 )
 texture = ExtResource( 1 )

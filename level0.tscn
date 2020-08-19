@@ -3,7 +3,7 @@
 [ext_resource path="res://walls-doors.res" type="TileSet" id=1]
 [ext_resource path="res://rat.tscn" type="PackedScene" id=2]
 [ext_resource path="res://cheese.tscn" type="PackedScene" id=3]
-[ext_resource path="res://arrow_shooters.tscn" type="PackedScene" id=4]
+[ext_resource path="res://objects/Shooter.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Door1.tscn" type="PackedScene" id=5]
 [ext_resource path="res://objects/DancePad.tscn" type="PackedScene" id=6]
 [ext_resource path="res://level0.gd" type="Script" id=7]
@@ -39,8 +39,15 @@ scale = Vector2( 0.75, 0.75 )
 speed = 300
 
 [node name="Shooter_0" parent="." instance=ExtResource( 4 )]
-position = Vector2( 123.624, 75.725 )
+position = Vector2( 16, 108 )
+rotation = 3.14159
 scale = Vector2( 0.5, 0.5 )
+
+[node name="Shooter_1" parent="." instance=ExtResource( 4 )]
+position = Vector2( 76, 120 )
+rotation = 1.5708
+scale = Vector2( 0.5, 0.5 )
+frequency = 3.0
 
 [node name="Door1" parent="." instance=ExtResource( 5 )]
 position = Vector2( 200, 64 )
