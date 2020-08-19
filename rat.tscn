@@ -29,7 +29,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 8, 4.29586 )
+extents = Vector2( 5.85294, 4.29586 )
 
 [node name="Rat" type="KinematicBody2D" groups=[
 "player",
@@ -48,15 +48,12 @@ region_rect = Rect2( 496, 128, 16, 16 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 7.8922, 8.03701 )
 frames = SubResource( 5 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 position = Vector2( 8, 8 )
 shape = SubResource( 6 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
