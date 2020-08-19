@@ -5,11 +5,13 @@ var report = preload("res://report_stage.tscn").instance()
 var menu = preload("res://stage_menu.tscn").instance()
 var index = 0
 
+
 var levels = []
 var activate_level
 
 
 func _ready():
+	
 	levels.append(level_0.instance())
 	levels.append(level_0.instance())
 	
@@ -22,10 +24,11 @@ func _ready():
 	
 func _start_game():
 	remove_child(menu)
-	add_child(levels[0])
+	$UI/Control.show()
+	$ViewportContainer/Viewport.add_child(levels[0])
 	
 func _on_level_complete():
-	remove_child(levels[index])
+	$ViewportContainer/Viewport.remove_child(levels[index])
 	report.rat_id = "abc123"
 	report.success = true
 	report.reason = "fucked up"
@@ -34,7 +37,7 @@ func _on_level_complete():
 
 func _on_report_complete():
 	remove_child(report)
-	add_child(levels[index])
+	$ViewportContainer/Viewport.add_child(levels[index])
 	
 
 

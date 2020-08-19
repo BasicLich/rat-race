@@ -1,0 +1,336 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/1bitpack_kenney_1.1/Tilesheet/colored_transparent_packed.png" type="Texture" id=1]
+[ext_resource path="res://objects/DancePad.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 7.17699, 7.15709 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 5.11371, 6.36845 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 6.07709, 5.69159 )
+
+[node name="DancePad" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="MiddleButton" type="Area2D" parent="."]
+position = Vector2( 45.872, 146.28 )
+scale = Vector2( 3, 3 )
+
+[node name="Down" type="Sprite" parent="MiddleButton"]
+visible = false
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 32, 160, 16, 16 )
+
+[node name="Up" type="Sprite" parent="MiddleButton"]
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 16, 160, 16, 16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MiddleButton"]
+position = Vector2( 7.90829, 7.77863 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ArrowUp" type="Area2D" parent="."]
+position = Vector2( 45.552, 102.132 )
+scale = Vector2( 3, 3 )
+
+[node name="Off" type="Sprite" parent="ArrowUp"]
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 448, 320, 16, 16 )
+
+[node name="On" type="Sprite" parent="ArrowUp"]
+visible = false
+position = Vector2( -0.106669, -0.359005 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 448, 336, 16, 16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArrowUp"]
+position = Vector2( 7.90829, 7.77863 )
+shape = SubResource( 1 )
+disabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ArrowDown" type="Area2D" parent="."]
+position = Vector2( 45.552, 190.132 )
+scale = Vector2( 3, 3 )
+
+[node name="Off" type="Sprite" parent="ArrowDown"]
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 480, 320, 16, 16 )
+
+[node name="On" type="Sprite" parent="ArrowDown"]
+visible = false
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 480, 336, 16, 16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArrowDown"]
+position = Vector2( 7.90829, 7.77863 )
+shape = SubResource( 1 )
+disabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ArrowRight" type="Area2D" parent="."]
+position = Vector2( 92.827, 145.297 )
+scale = Vector2( 3, 3 )
+
+[node name="Off" type="Sprite" parent="ArrowRight"]
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 464, 320, 16, 16 )
+
+[node name="On" type="Sprite" parent="ArrowRight"]
+visible = false
+position = Vector2( -0.10667, 0 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 464, 336, 16, 16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArrowRight"]
+position = Vector2( 7.90829, 7.77863 )
+shape = SubResource( 3 )
+disabled = true
+
+[node name="ArrowLeft" type="Area2D" parent="."]
+position = Vector2( 0.320007, 145.297 )
+scale = Vector2( 3, 3 )
+
+[node name="Off" type="Sprite" parent="ArrowLeft"]
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 496, 320, 16, 16 )
+
+[node name="On" type="Sprite" parent="ArrowLeft"]
+visible = false
+position = Vector2( -0.106669, 0.10667 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 496, 336, 16, 16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArrowLeft"]
+position = Vector2( 7.90829, 7.77863 )
+shape = SubResource( 3 )
+disabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="game_pad2" type="Sprite" parent="."]
+position = Vector2( 1.57101, 100.952 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 256, 256, 16, 16 )
+
+[node name="game_pad3" type="Sprite" parent="."]
+position = Vector2( 88.503, 100.952 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 288, 256, 16, 16 )
+
+[node name="game_pad4" type="Sprite" parent="."]
+position = Vector2( 88.503, 186.481 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 288, 288, 16, 16 )
+
+[node name="game_pad5" type="Sprite" parent="."]
+position = Vector2( 3.44101, 186.481 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 256, 288, 16, 16 )
+
+[node name="display_arrow_right_green" type="Sprite" parent="."]
+visible = false
+position = Vector2( 34.755, 8.88 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 464, 336, 16, 16 )
+
+[node name="display_arrow_down_green" type="Sprite" parent="."]
+visible = false
+position = Vector2( 68.873, 8.88 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 480, 336, 16, 16 )
+
+[node name="display_arrow_left_green" type="Sprite" parent="."]
+visible = false
+position = Vector2( 100.187, 8.88 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 496, 336, 16, 16 )
+
+[node name="display_error" type="Sprite" parent="."]
+visible = false
+position = Vector2( 18.256, 8.8798 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 576, 336, 16, 16 )
+
+[node name="display_error2" type="Sprite" parent="display_error"]
+position = Vector2( 17.746, 0 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 576, 336, 16, 16 )
+
+[node name="display_error3" type="Sprite" parent="display_error"]
+position = Vector2( 35.3534, 0 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 576, 336, 16, 16 )
+
+[node name="display_success" type="Sprite" parent="."]
+visible = false
+position = Vector2( 18.256, 8.8798 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 688, 32, 16, 16 )
+
+[node name="display_error2" type="Sprite" parent="display_success"]
+position = Vector2( 17.746, 0 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 688, 32, 16, 16 )
+
+[node name="display_error3" type="Sprite" parent="display_success"]
+position = Vector2( 35.3534, 0 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 688, 32, 16, 16 )
+
+[node name="display_border1" type="Sprite" parent="."]
+position = Vector2( 120.751, 0 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 288, 256, 16, 16 )
+
+[node name="display_border2" type="Sprite" parent="display_border1"]
+position = Vector2( -119.914, 0 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 256, 256, 16, 16 )
+
+[node name="display_border3" type="Sprite" parent="display_border1"]
+position = Vector2( -119.914, 37.9876 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 256, 288, 16, 16 )
+
+[node name="display_border4" type="Sprite" parent="display_border1"]
+position = Vector2( -0.960632, 37.9876 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 288, 288, 16, 16 )
+
+[node name="TimerPlay" type="Timer" parent="."]
+
+[node name="DisplayArrow" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Up" type="Sprite" parent="DisplayArrow"]
+visible = false
+position = Vector2( 3.44101, 8.88 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 448, 320, 16, 16 )
+
+[node name="display_arrow_up_green" type="Sprite" parent="DisplayArrow"]
+visible = false
+position = Vector2( 3.44101, 8.88 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 448, 336, 16, 16 )
+
+[node name="Right" type="Sprite" parent="DisplayArrow"]
+visible = false
+position = Vector2( 34.755, 8.88 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 464, 320, 16, 16 )
+
+[node name="Down" type="Sprite" parent="DisplayArrow"]
+visible = false
+position = Vector2( 68.873, 8.88 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 480, 320, 16, 16 )
+
+[node name="Left" type="Sprite" parent="DisplayArrow"]
+visible = false
+position = Vector2( 100.187, 8.88 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 496, 320, 16, 16 )
+[connection signal="body_entered" from="MiddleButton" to="." method="_on_MiddleButton_body_entered"]
+[connection signal="body_entered" from="ArrowUp" to="." method="_on_ArrowUp_body_entered"]
+[connection signal="body_exited" from="ArrowUp" to="." method="_on_ArrowUp_body_exited"]
+[connection signal="body_entered" from="ArrowDown" to="." method="_on_ArrowDown_body_entered"]
+[connection signal="body_exited" from="ArrowDown" to="." method="_on_ArrowDown_body_exited"]
+[connection signal="body_entered" from="ArrowRight" to="." method="_on_ArrowRight_body_entered"]
+[connection signal="body_exited" from="ArrowRight" to="." method="_on_ArrowRight_body_exited"]
+[connection signal="body_entered" from="ArrowLeft" to="." method="_on_ArrowLeft_body_entered"]
+[connection signal="body_exited" from="ArrowLeft" to="." method="_on_ArrowLeft_body_exited"]

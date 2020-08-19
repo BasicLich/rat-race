@@ -1,4 +1,4 @@
-extends Node2D
+extends "levels/level.gd"
 
 #signal complete()
 

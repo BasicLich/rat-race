@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://assets/1bitpack_kenney_1.1/Tilesheet/colored_transparent_packed.png" type="Texture" id=1]
-[ext_resource path="res://Arrow.gd" type="Script" id=2]
+[ext_resource path="res://objects/Arrow.gd" type="Script" id=1]
+[ext_resource path="res://assets/1bitpack_kenney_1.1/Tilesheet/colored_transparent_packed.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 2.21033, 7.70551 )
@@ -10,13 +10,13 @@ extents = Vector2( 2.21033, 7.70551 )
 "deadly",
 ]]
 scale = Vector2( 2, 2 )
-script = ExtResource( 2 )
+script = ExtResource( 1 )
 speed = 100
 
 [node name="sprite" type="Sprite" parent="."]
 position = Vector2( 7.31572, -7.59127 )
 rotation = -2.35619
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 centered = false
 offset = Vector2( -15, -15 )
 region_enabled = true
