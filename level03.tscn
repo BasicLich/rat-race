@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://rat.tscn" type="PackedScene" id=1]
+[ext_resource path="res://tileset.res" type="TileSet" id=2]
+[ext_resource path="res://assets/1bitpack_kenney_1.1/Tilesheet/colored_transparent_packed.png" type="Texture" id=3]
+[ext_resource path="res://objects/Shooter.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Door1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://objects/FloorButton.tscn" type="PackedScene" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 5.63498, 4.02651 )
+
+[node name="Node2D" type="Node2D"]
+scale = Vector2( 2, 2 )
+
+[node name="Door1" parent="." instance=ExtResource( 5 )]
+position = Vector2( 276.754, -32.3935 )
+rotation = 1.5708
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -589826, 3, 0, -589825, 1, 0, -655360, 1, 0, -655359, 1, 0, -655358, 1, 0, -655357, 1, 0, -655356, 1, 0, -655355, 1, 0, -655354, 1, 0, -655353, 1, 0, -655352, 1, 0, -655351, 1, 0, -655350, 1, 0, -655349, 1, 0, -655348, 1, 0, -655347, 1, 0, -655346, 1, 0, -655345, 1, 0, -655344, 8, 0, -524290, 4, 0, -589808, 7, 0, -458754, 4, 0, -524272, 7, 0, -393218, 4, 0, -458736, 7, 0, -327682, 4, 0, -393200, 7, 0, -262146, 4, 0, -327664, 7, 0, -196610, 4, 0, -262128, 7, 0, -131074, 4, 0, -196592, 7, 0, -65538, 4, 0, -2, 4, 0, -65520, 7, 0, 65534, 4, 0, 16, 7, 0, 131070, 4, 0, 65552, 7, 0, 196606, 4, 0, 131088, 7, 0, 262142, 4, 0, 196624, 7, 0, 327678, 4, 0, 262160, 7, 0, 393214, 4, 0, 327696, 7, 0, 458750, 4, 0, 393232, 7, 0, 524286, 4, 0, 458768, 7, 0, 589822, 4, 0, 524304, 7, 0, 655358, 5, 0, 655359, 2, 0, 589824, 2, 0, 589825, 2, 0, 589826, 2, 0, 589827, 2, 0, 589828, 2, 0, 589829, 2, 0, 589830, 2, 0, 589831, 2, 0, 589832, 2, 0, 589833, 2, 0, 589834, 2, 0, 589835, 2, 0, 589836, 2, 0, 589837, 2, 0, 589838, 2, 0, 589839, 2, 0, 589840, 6, 0 )
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2( 27.1299, -94.5438 )
+mode = 2
+mass = 44.8143
+gravity_scale = 0.0
+
+[node name="Sprite" type="Sprite" parent="RigidBody2D"]
+position = Vector2( 0, -0.368347 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 3 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 160, 336, 16, 16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2( 8.07271, 8.49389 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FloorButton" parent="." instance=ExtResource( 6 )]
+position = Vector2( 161.915, -30.9612 )
+
+[node name="Rat" parent="." instance=ExtResource( 1 )]
+position = Vector2( 114.52, 44.247 )
+scale = Vector2( 0.8, 0.8 )
+speed = 300
+
+[node name="ArrowShooter" parent="." instance=ExtResource( 4 )]
+position = Vector2( 253.447, 82.6256 )
+scale = Vector2( 0.7, 0.7 )
+
+[node name="ArrowShooter2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 80.3228, -140.225 )
+rotation = 4.71239
+scale = Vector2( 0.7, 0.7 )
+frequency = 3.0

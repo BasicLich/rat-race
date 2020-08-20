@@ -9,12 +9,12 @@
 [ext_resource path="res://levels/Exit.tscn" type="PackedScene" id=7]
 
 [node name="Node2D" type="Node2D"]
-scale = Vector2( 3, 3 )
+scale = Vector2( 2, 2 )
 script = ExtResource( 6 )
 
 [node name="Rat" parent="." instance=ExtResource( 4 )]
 position = Vector2( 28.2005, 31.9102 )
-scale = Vector2( 0.75, 0.75 )
+scale = Vector2( 0.8, 0.8 )
 speed = 300
 
 [node name="TileMap2" type="TileMap" parent="."]

@@ -10,7 +10,7 @@
 [ext_resource path="res://level02.gd" type="Script" id=8]
 
 [node name="Node2D" type="Node2D"]
-scale = Vector2( 3, 3 )
+scale = Vector2( 2, 2 )
 script = ExtResource( 8 )
 
 [node name="TileMap2" type="TileMap" parent="."]
@@ -37,8 +37,9 @@ position = Vector2( 150.887, -37.0214 )
 scale = Vector2( 0.8, 0.8 )
 
 [node name="Rat" parent="." instance=ExtResource( 1 )]
-position = Vector2( 109.378, 89.5799 )
+position = Vector2( 112.514, 89.5799 )
 scale = Vector2( 0.8, 0.8 )
+speed = 300
 
 [node name="ArrowShooter" parent="." instance=ExtResource( 3 )]
 position = Vector2( 220.398, 17.9976 )
@@ -97,7 +98,6 @@ frequency = 2.0
 position = Vector2( 19.2563, -194.961 )
 rotation = 3.14159
 scale = Vector2( 0.7, 0.7 )
-frequency = 1.0
 
 [node name="ArrowShooter10" parent="." instance=ExtResource( 3 )]
 position = Vector2( 18.8961, -217.293 )
