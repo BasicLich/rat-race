@@ -110,3 +110,4 @@ handle_input_locally = false
 render_target_update_mode = 3
 
 [node name="Timer" type="Timer" parent="."]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
