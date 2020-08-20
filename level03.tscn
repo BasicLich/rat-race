@@ -61,7 +61,7 @@ position = Vector2( 273.276, -53.1563 )
 scale = Vector2( 0.8, 0.8 )
 
 [node name="MouseTrap21" parent="." instance=ExtResource( 7 )]
-position = Vector2( 295.507, -45.2691 )
+position = Vector2( 295.507, -45.5009 )
 scale = Vector2( 0.8, 0.8 )
 
 [node name="MouseTrap36" parent="." instance=ExtResource( 7 )]
