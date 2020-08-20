@@ -3,19 +3,22 @@ extends Node2D
 enum State {IDLE, PLAYING, READING, COMPLETE}
 enum Arrow {RIGHT, LEFT, UP, DOWN}
 
-var sequence = [
-	Arrow.UP, 
-	Arrow.DOWN, 
-	Arrow.DOWN, 
-	Arrow.UP, 
-	Arrow.LEFT, 
-	Arrow.LEFT, 
-	Arrow.RIGHT
-	]
+signal completed(successful)
+
+export var sequence_size: int
+
+var sequence = []
 	
 var check = []
 
+var rng = RandomNumberGenerator.new()
+
 var state = State.IDLE
+
+func _ready():
+	for i in range(sequence_size):
+		sequence.append(rng.randi_range(0, 3))
+	print(sequence)
 
 func begin():
 	$MiddleButton/CollisionShape2D.set_deferred("disabled", true)
@@ -30,10 +33,8 @@ func begin():
 
 	play_sequence()
 
-
 func play_sequence():
 
-	
 	var clear_timer = Timer.new()
 	clear_timer.wait_time = .5
 	clear_timer.connect("timeout", self, "clear")
@@ -77,19 +78,21 @@ func display(sequence, timer, clear_timer):
 	check.append(direction)
 
 func failed():
+	state = State.COMPLETE
 	$display_error.show()
+	$MiddleButton.hide()
+	$Spikes.show()
+	emit_signal("completed", false)
 	
 func succeed():
 	state = State.COMPLETE
 	$display_success.show()
-
-
+	emit_signal("completed", true)
 
 func _on_MiddleButton_body_entered(body):
 	if body.is_in_group("player"):
 		begin()
-
-
+		
 func _on_ArrowUp_body_entered(body):
 	$ArrowUp/On.show()
 	if state == State.READING:
@@ -97,12 +100,9 @@ func _on_ArrowUp_body_entered(body):
 			failed()
 		elif check.empty():
 			succeed()
-		
-	
+
 func _on_ArrowUp_body_exited(body):
 	$ArrowUp/On.hide()
-
-
 
 func _on_ArrowDown_body_entered(body):
 	$ArrowDown/On.show()
@@ -112,11 +112,8 @@ func _on_ArrowDown_body_entered(body):
 		elif check.empty():
 			succeed()
 	
-
-
 func _on_ArrowDown_body_exited(body):
 	$ArrowDown/On.hide()
-
 
 func _on_ArrowRight_body_entered(body):
 	$ArrowRight/On.show()
@@ -126,10 +123,8 @@ func _on_ArrowRight_body_entered(body):
 		elif check.empty():
 			succeed()
 
-
 func _on_ArrowRight_body_exited(body):
 	$ArrowRight/On.hide()
-
 
 func _on_ArrowLeft_body_entered(body):
 	$ArrowLeft/On.show()
@@ -138,7 +133,6 @@ func _on_ArrowLeft_body_entered(body):
 			failed()
 		elif check.empty():
 			succeed()
-
 
 func _on_ArrowLeft_body_exited(body):
 	$ArrowLeft/On.hide()
