@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://rat.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tileset.res" type="TileSet" id=2]
 [ext_resource path="res://assets/1bitpack_kenney_1.1/Tilesheet/colored_transparent_packed.png" type="Texture" id=3]
 [ext_resource path="res://objects/Shooter.tscn" type="PackedScene" id=4]
+[ext_resource path="res://level03.gd" type="Script" id=5]
 [ext_resource path="res://objects/MouseTrap.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -11,6 +12,7 @@ extents = Vector2( 3.49097, 3.0046 )
 
 [node name="Node2D" type="Node2D"]
 scale = Vector2( 2, 2 )
+script = ExtResource( 5 )
 
 [node name="MouseTrap2" parent="." instance=ExtResource( 7 )]
 position = Vector2( 39.8958, 36.7542 )
@@ -212,13 +214,11 @@ frequency = 3.0
 position = Vector2( 364.752, -44.6748 )
 rotation = 4.71239
 scale = Vector2( 0.7, 0.7 )
-frequency = 1.0
 
 [node name="ArrowShooter12" parent="." instance=ExtResource( 4 )]
 position = Vector2( 534.734, -44.4546 )
 rotation = 4.71239
 scale = Vector2( 0.7, 0.7 )
-frequency = 1.0
 
 [node name="ArrowShooter13" parent="." instance=ExtResource( 4 )]
 position = Vector2( 571.285, -44.4546 )

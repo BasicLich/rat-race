@@ -9,6 +9,6 @@ func _process(delta):
 	
 func _on_Arrow_body_entered(body):
 	if body.is_in_group("player"):
-		body.kill()
+		body.kill("was skewered.")
 	if !body.is_in_group("shooter"):
 		queue_free()
