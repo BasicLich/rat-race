@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/1bitpack_kenney_1.1/Tilesheet/colored_transparent_packed.png" type="Texture" id=1]
+[ext_resource path="res://characters/Cat.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 4.75169, 6.33867 )
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 60.3584
+
+[node name="Cat" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 480, 112, 16, 16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 8.33371, 8 )
+shape = SubResource( 1 )
+
+[node name="Smell" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Smell"]
+position = Vector2( 8.19875, 7.77829 )
+shape = SubResource( 2 )
+[connection signal="body_entered" from="Smell" to="." method="_on_Smell_body_entered"]

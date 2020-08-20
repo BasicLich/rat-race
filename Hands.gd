@@ -1,6 +1,6 @@
 extends Node2D
 
-signal carry_complete()
+signal carry_complete(reason)
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -11,6 +11,7 @@ var target = Vector2()
 var exit_position
 var rat
 var has_rat = false
+var reason
 
 func init(node):
 	rat = node
@@ -28,5 +29,5 @@ func _process(delta):
 		speed -= 50
 		has_rat = true
 	elif reached and has_rat:
-		emit_signal("carry_complete")
+		emit_signal("carry_complete", reason)
 	

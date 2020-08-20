@@ -1,6 +1,6 @@
 extends Node
 
-signal level_complete()
+signal level_complete(successful, reason)
 signal tick(time_left)
 
 export var time_limit: int
@@ -20,6 +20,6 @@ func _on_tick():
 	time_left -= 1
 	if (time_left < 0):
 		timer.stop()
-		get_node("Rat").kill()
+		get_node("Rat").kill("not quick enough")
 	else:
 		emit_signal("tick", time_left)

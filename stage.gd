@@ -11,7 +11,6 @@ var time_left = 0
 var levels = []
 var activate_level
 
-
 func _ready():
 	
 	levels.append(level_0.instance())
@@ -30,12 +29,12 @@ func _start_game():
 	$ViewportContainer/Viewport.add_child(levels[index])
 	levels[index].connect("tick", self, "_on_level_tick")
 	
-func _on_level_complete():
+func _on_level_complete(successful, reason):
 	levels[index].disconnect("tick", self, "_on_level_tick")
 	$ViewportContainer/Viewport.remove_child(levels[index])
 	report.rat_id = "abc123"
-	report.success = true
-	report.reason = "fucked up"
+	report.success = successful
+	report.reason = reason
 	add_child(report)
 	index += 1
 
@@ -44,7 +43,6 @@ func _on_report_complete():
 	$ViewportContainer/Viewport.add_child(levels[index])
 	levels[index].connect("tick", self, "_on_level_tick")
 
-	
 func _on_level_tick(time_left):
 
 	var seconds = time_left % 60

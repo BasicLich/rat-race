@@ -61,6 +61,7 @@ func display(sequence, timer, clear_timer):
 		timer.queue_free()
 		clear_timer.stop()
 		clear_timer.queue_free()
+		$Go.show()
 		state = State.READING
 		return
 	
@@ -79,12 +80,14 @@ func display(sequence, timer, clear_timer):
 
 func failed():
 	state = State.COMPLETE
+	$Go.hide()
 	$display_error.show()
 	$MiddleButton.hide()
 	$Spikes.show()
 	emit_signal("completed", false)
 	
 func succeed():
+	$Go.hide()
 	state = State.COMPLETE
 	$display_success.show()
 	emit_signal("completed", true)

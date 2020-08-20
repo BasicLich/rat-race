@@ -11,8 +11,10 @@ func _input(event):
 	if alive:
 		if event.is_action_pressed("ui_left"):
 			velocity.x = -1
+			$AnimatedSprite.flip_h = true
 		elif event.is_action_pressed("ui_right"):
 			velocity.x = 1
+			$AnimatedSprite.flip_h = false
 		elif event.is_action_released("ui_left") and !Input.is_action_pressed("ui_right"):
 			velocity.x = 0
 		elif event.is_action_released("ui_right") and !Input.is_action_pressed("ui_left"):
@@ -30,9 +32,10 @@ func _input(event):
 func _physics_process(delta):
 	move_and_collide(velocity.normalized() * speed * delta)
 	
-func kill():
+func kill(reason):
 	alive = false
 	velocity = Vector2()
-	$Sprite.flip_v = true
-	emit_signal("died")
+	$AnimatedSprite.stop()
+	$AnimatedSprite.flip_v = true
+	emit_signal("died", reason)
 	

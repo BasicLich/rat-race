@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/1bitpack_kenney_1.1/Tilesheet/colored_transparent_packed.png" type="Texture" id=1]
 [ext_resource path="res://objects/DancePad.gd" type="Script" id=2]
+[ext_resource path="res://assets/terminal-grotesque/terminal-grotesque.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7.17699, 7.15709 )
@@ -11,6 +12,10 @@ extents = Vector2( 5.11371, 6.36845 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 6.07709, 5.69159 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 32
+font_data = ExtResource( 3 )
 
 [node name="DancePad" type="Node2D"]
 script = ExtResource( 2 )
@@ -334,6 +339,20 @@ texture = ExtResource( 1 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 352, 0, 16, 16 )
+
+[node name="Go" type="Label" parent="."]
+visible = false
+margin_left = 4.74915
+margin_top = 6.62542
+margin_right = 130.749
+margin_bottom = 47.6254
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.439216, 0.913725, 0.0823529, 1 )
+text = "GO!"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="body_entered" from="MiddleButton" to="." method="_on_MiddleButton_body_entered"]
 [connection signal="body_entered" from="ArrowUp" to="." method="_on_ArrowUp_body_entered"]
 [connection signal="body_exited" from="ArrowUp" to="." method="_on_ArrowUp_body_exited"]
