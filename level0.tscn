@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://walls-doors.res" type="TileSet" id=1]
 [ext_resource path="res://rat.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://objects/FloorButton.tscn" type="PackedScene" id=8]
 [ext_resource path="res://characters/Cat.tscn" type="PackedScene" id=9]
 [ext_resource path="res://objects/Fish.tscn" type="PackedScene" id=10]
+[ext_resource path="res://objects/Toilet.tscn" type="PackedScene" id=11]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( -96.0304, 11.1146, -9.41806, 10.4839, -12.6586, 65.0924, -97.7122, 67.2444, 83.0387, 15.2067, 179.559, 16.9745, 172.488, 126.576, 22.5811, 130.819, 18.6542, 76.7532, -11.7667, 76.6872, -11.7667, 131.391, -98.0348, 129.488, -97.9224, 77.3351, 16.5703, 65.7646, 16.5707, 17.3281, 44.1479, 15.9138, 41.3194, -50.9077, 84.8065, -38.1798, 214.207, -39.9476, 208.008, -36.1093, 183.801, -55.1504, 222.692, -49.14, 8.08539, -62.575, -43.1798, -65.757, -48.8367, -95.1019, 18.692, -82.7275, 17.6313, -68.2319, 222.692, -95.4555, 186.983, -80.2527 )
@@ -33,7 +34,8 @@ position = Vector2( -2.12131, 0 )
 navpoly = SubResource( 1 )
 
 [node name="Cat" parent="Navigation2D" instance=ExtResource( 9 )]
-position = Vector2( 144, 104 )
+position = Vector2( 144, 103 )
+smell_radius = 50.0
 
 [node name="DancePad" parent="." instance=ExtResource( 4 )]
 position = Vector2( -92, 16 )
@@ -69,4 +71,8 @@ position = Vector2( 232, 64 )
 
 [node name="Fish" parent="." instance=ExtResource( 10 )]
 position = Vector2( -30.8342, -85.3423 )
+
+[node name="Toilet" parent="." instance=ExtResource( 11 )]
+position = Vector2( 13.5104, 113.847 )
+destination = Vector2( 200, -75 )
 [connection signal="exited" from="Exit" to="." method="_on_Exit_exited"]

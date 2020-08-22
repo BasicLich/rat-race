@@ -1,21 +1,21 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/1bitpack_kenney_1.1/Tilesheet/colored_transparent_packed.png" type="Texture" id=1]
-[ext_resource path="res://characters/Cat.gd" type="Script" id=2]
+[ext_resource path="res://objects/Toilet.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 5.9843, 7.67886 )
+extents = Vector2( 8, 8 )
 
-[node name="Cat" type="KinematicBody2D"]
+[node name="Toilet" type="Area2D"]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -7.60467, -7.25367 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
-region_rect = Rect2( 480, 112, 16, 16 )
+region_rect = Rect2( 192, 160, 16, 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.196102, 0.677637 )
+position = Vector2( 8, 8 )
 shape = SubResource( 1 )
+[connection signal="body_entered" from="." to="." method="_on_Toilet_body_entered"]

@@ -3,28 +3,24 @@ extends KinematicBody2D
 enum State {IDLE, CHASING, FULL}
 
 export var speed = 150
+export var smell_radius: float
 
 var target
 var nav: Navigation2D
-var paths = []
 var state = State.IDLE
 
 func _ready():
 	nav = get_parent()
-
-func _draw():
-	if target:
-		draw_line(Vector2(), target.position - position, Color(1.0, 0.0, 0.0), 3)
-
-		if !paths.empty():
-			var mult = 1
-			draw_line(Vector2(), paths[0] - position, Color(0.0, 1.0 / mult, 0.0), 3)
-			for i in range(1, paths.size()):
-				mult += 1
-				draw_line(paths[i - 1] - position, paths[i] - position, Color(0.0, 1.0 / mult, 0.0), 3)
+	var circle = CircleShape2D.new()
+	circle.radius = smell_radius
+	var collider = CollisionShape2D.new()
+	collider.shape = circle
+	var area = Area2D.new()
+	area.add_child(collider)
+	add_child(area)
+	area.connect("body_entered", self, "_on_Smell_body_entered")
 
 func _physics_process(delta):
-	update()
 	if target and state == State.IDLE:
 		var space_state = get_world_2d().direct_space_state
 		var result = space_state.intersect_ray(position, target.position,
@@ -34,7 +30,7 @@ func _physics_process(delta):
 	
 	elif state == State.CHASING:
 		assert(target)
-		paths = nav.get_simple_path(position, target.position)
+		var paths = nav.get_simple_path(position, target.position)
 		assert(paths.size() > 1)
 		move_and_slide((paths[1] - position).normalized() * speed)
 		for i in get_slide_count():
