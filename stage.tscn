@@ -77,7 +77,7 @@ margin_top = 422.692
 margin_right = 187.085
 margin_bottom = 473.692
 custom_fonts/font = SubResource( 1 )
-text = "Hello"
+text = " 2:00"
 __meta__ = {
 "_edit_use_anchors_": false
 }

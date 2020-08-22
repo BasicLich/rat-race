@@ -30,7 +30,6 @@ tile_data = PoolIntArray( -458748, 3, 0, -458747, 1, 0, -458746, 1, 0, -458745, 
 [node name="Rat" parent="." instance=ExtResource( 1 )]
 position = Vector2( 114.52, 44.247 )
 scale = Vector2( 0.8, 0.8 )
-speed = 300
 
 [node name="ArrowShooter" parent="." instance=ExtResource( 4 )]
 position = Vector2( 252, 14.9984 )

@@ -1,4 +1,4 @@
-extends "levels/Level.gd"
+extends "Level.gd"
 
 func _ready():
 	var button = get_node("FloorButton_0")

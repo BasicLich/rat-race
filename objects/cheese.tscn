@@ -11,6 +11,8 @@ height = 7.0902
 "cheese",
 ]]
 scale = Vector2( 0.75, 0.75 )
+collision_layer = 8
+collision_mask = 2
 script = ExtResource( 2 )
 
 [node name="sprite" type="Sprite" parent="."]

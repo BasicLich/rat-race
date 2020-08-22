@@ -1,124 +1,128 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://rat.tscn" type="PackedScene" id=1]
-[ext_resource path="res://tileset.res" type="TileSet" id=2]
-[ext_resource path="res://objects/Shooter.tscn" type="PackedScene" id=3]
-[ext_resource path="res://objects/MouseTrap.tscn" type="PackedScene" id=4]
-[ext_resource path="res://pipes.res" type="TileSet" id=5]
-[ext_resource path="res://objects/cheese.tscn" type="PackedScene" id=6]
-[ext_resource path="res://objects/DoorExit.tscn" type="PackedScene" id=7]
-[ext_resource path="res://level02.gd" type="Script" id=8]
+[ext_resource path="res://levels/Exit.tscn" type="PackedScene" id=1]
+[ext_resource path="res://objects/cheese.tscn" type="PackedScene" id=2]
+[ext_resource path="res://rat.tscn" type="PackedScene" id=3]
+[ext_resource path="res://levels/Level2.gd" type="Script" id=4]
+[ext_resource path="res://tileset.res" type="TileSet" id=5]
+[ext_resource path="res://pipes.res" type="TileSet" id=6]
+[ext_resource path="res://objects/Shooter.tscn" type="PackedScene" id=7]
+[ext_resource path="res://objects/DoorExit.tscn" type="PackedScene" id=8]
+[ext_resource path="res://objects/MouseTrap.tscn" type="PackedScene" id=9]
 
-[node name="Node2D" type="Node2D"]
+[node name="Level2" type="Node2D"]
 scale = Vector2( 2, 2 )
-script = ExtResource( 8 )
+script = ExtResource( 4 )
+time_limit = 120
 
 [node name="TileMap2" type="TileMap" parent="."]
 position = Vector2( -0.333333, -0.333333 )
-tile_set = ExtResource( 5 )
+tile_set = ExtResource( 6 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( -1835001, -1610612736, 0, -1769465, -536870911, 0, -1703929, -536870911, 0, -1638393, -536870911, 0, -1572857, -536870911, 0, -1507321, -1610612733, 0, -1441785, -536870911, 0, -1376249, -536870912, 0, -851958, 0, 0, -851957, 1, 0, -851956, 1, 0, -851955, 536870915, 0, -851954, 1, 0, -851953, 1, 0, -851952, 1, 0, -851951, 1, 0, -851950, 536870912, 0, -655359, -1610612736, 0, -589823, -536870911, 0, -524287, -536870911, 0, -458751, -536870911, 0, -393215, -1610612734, 0, -327679, -536870911, 0, -262143, -536870911, 0, -196607, -536870911, 0, -131071, -536870911, 0, -65535, -536870911, 0, 1, -536870912, 0, 196618, -1610612736, 0, 262154, -1610612735, 0, 327690, -536870909, 0, 393226, -1610612735, 0, 458762, -1610612735, 0, 524298, -536870909, 0, 589834, -1610612735, 0, 655370, -536870912, 0 )
 
-[node name="Cheese" parent="." instance=ExtResource( 6 )]
+[node name="Cheese" parent="." instance=ExtResource( 2 )]
 position = Vector2( 197.281, -350.49 )
 
-[node name="DoorExit" parent="." instance=ExtResource( 7 )]
+[node name="DoorExit" parent="." instance=ExtResource( 8 )]
 position = Vector2( 143.611, -391.157 )
 
 [node name="TileMap" type="TileMap" parent="."]
-tile_set = ExtResource( 2 )
+tile_set = ExtResource( 5 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( -1572859, 3, 0, -1572858, 1, 0, -1572857, 1, 0, -1572856, 1, 0, -1572854, 1, 0, -1572853, 1, 0, -1572852, 1, 0, -1572851, 8, 0, -1507323, 4, 0, -1507315, 7, 0, -1441787, 4, 0, -1441779, 7, 0, -1376251, 4, 0, -1376243, 7, 0, -1310715, 4, 0, -1310707, 7, 0, -1245179, 4, 0, -1245171, 7, 0, -1179648, 3, 0, -1179647, 1, 0, -1179646, 1, 0, -1179645, 1, 0, -1179644, 1, 0, -1179643, 1, 0, -1179642, 1, 0, -1179641, 1, 0, -1179636, 1, 0, -1179635, 1, 0, -1179634, 8, 0, -1114112, 4, 0, -1114098, 7, 0, -1048576, 4, 0, -1048562, 7, 0, -983040, 4, 0, -983026, 7, 0, -917504, 4, 0, -917490, 7, 0, -851968, 4, 0, -851954, 7, 0, -786432, 4, 0, -786418, 7, 0, -720896, 3, 0, -720895, 1, 0, -720894, 1, 0, -720893, 1, 0, -720889, 1, 0, -720888, 1, 0, -720887, 1, 0, -720886, 1, 0, -720885, 1, 0, -720884, 1, 0, -720883, 1, 0, -720882, 8, 0, -655360, 4, 0, -655346, 7, 0, -589824, 4, 0, -589810, 7, 0, -524288, 4, 0, -524274, 7, 0, -458752, 4, 0, -458738, 7, 0, -393216, 4, 0, -393202, 7, 0, -327680, 4, 0, -327666, 7, 0, -262144, 4, 0, -262130, 7, 0, -196608, 3, 0, -196607, 1, 0, -196606, 1, 0, -196605, 1, 0, -196604, 1, 0, -196603, 1, 0, -196602, 1, 0, -196598, 1, 0, -196597, 1, 0, -196596, 1, 0, -196595, 1, 0, -196594, 8, 0, -131072, 4, 0, -131058, 7, 0, -65536, 4, 0, -65522, 7, 0, 0, 4, 0, 14, 7, 0, 65536, 4, 0, 65550, 7, 0, 131072, 4, 0, 131086, 7, 0, 196608, 4, 0, 196622, 7, 0, 262144, 4, 0, 262158, 7, 0, 327680, 4, 0, 327694, 7, 0, 393216, 5, 0, 393217, 2, 0, 393218, 2, 0, 393219, 2, 0, 393220, 2, 0, 393221, 2, 0, 393222, 2, 0, 393223, 2, 0, 393224, 2, 0, 393225, 2, 0, 393226, 2, 0, 393227, 2, 0, 393228, 2, 0, 393229, 2, 0, 393230, 6, 0 )
 
-[node name="MouseTrap" parent="." instance=ExtResource( 4 )]
+[node name="MouseTrap" parent="." instance=ExtResource( 9 )]
 position = Vector2( 150.887, -37.0214 )
 scale = Vector2( 0.8, 0.8 )
 
-[node name="Rat" parent="." instance=ExtResource( 1 )]
+[node name="Rat" parent="." instance=ExtResource( 3 )]
 position = Vector2( 112.514, 89.5799 )
 scale = Vector2( 0.8, 0.8 )
-speed = 300
 
-[node name="ArrowShooter" parent="." instance=ExtResource( 3 )]
+[node name="ArrowShooter" parent="." instance=ExtResource( 7 )]
 position = Vector2( 220.398, 17.9976 )
 scale = Vector2( 0.7, 0.7 )
 
-[node name="ArrowShooter5" parent="." instance=ExtResource( 3 )]
+[node name="ArrowShooter5" parent="." instance=ExtResource( 7 )]
 position = Vector2( 220.398, -77.9504 )
 scale = Vector2( 0.7, 0.7 )
 frequency = 2.0
 
-[node name="ArrowShooter8" parent="." instance=ExtResource( 3 )]
+[node name="ArrowShooter8" parent="." instance=ExtResource( 7 )]
 position = Vector2( 220.398, -139.922 )
 scale = Vector2( 0.7, 0.7 )
 
-[node name="ArrowShooter12" parent="." instance=ExtResource( 3 )]
+[node name="ArrowShooter12" parent="." instance=ExtResource( 7 )]
 position = Vector2( 181.857, -289.404 )
 scale = Vector2( 0.7, 0.7 )
 frequency = 3.0
 
-[node name="ArrowShooter4" parent="." instance=ExtResource( 3 )]
+[node name="ArrowShooter4" parent="." instance=ExtResource( 7 )]
 position = Vector2( 120.918, -38.1246 )
 rotation = 3.14159
 scale = Vector2( 0.7, 0.7 )
 frequency = 2.0
 
-[node name="ArrowShooter3" parent="." instance=ExtResource( 3 )]
+[node name="ArrowShooter3" parent="." instance=ExtResource( 7 )]
 position = Vector2( 50.4974, -28.8423 )
 rotation = 4.71239
 scale = Vector2( 0.7, 0.7 )
 
-[node name="ArrowShooter7" parent="." instance=ExtResource( 3 )]
+[node name="ArrowShooter7" parent="." instance=ExtResource( 7 )]
 position = Vector2( 132.228, -157.576 )
 rotation = 4.71239
 scale = Vector2( 0.7, 0.7 )
 frequency = 6.0
 
-[node name="ArrowShooter15" parent="." instance=ExtResource( 3 )]
+[node name="ArrowShooter15" parent="." instance=ExtResource( 7 )]
 position = Vector2( 162.568, -365.858 )
 rotation = 4.71239
 scale = Vector2( 0.7, 0.7 )
 frequency = 6.0
 
-[node name="ArrowShooter2" parent="." instance=ExtResource( 3 )]
+[node name="ArrowShooter2" parent="." instance=ExtResource( 7 )]
 position = Vector2( 18.5359, 65.0988 )
 rotation = 3.14159
 scale = Vector2( 0.7, 0.7 )
 frequency = 2.0
 
-[node name="ArrowShooter6" parent="." instance=ExtResource( 3 )]
+[node name="ArrowShooter6" parent="." instance=ExtResource( 7 )]
 position = Vector2( 18.5359, -107.073 )
 rotation = 3.14159
 scale = Vector2( 0.7, 0.7 )
 frequency = 2.0
 
-[node name="ArrowShooter9" parent="." instance=ExtResource( 3 )]
+[node name="ArrowShooter9" parent="." instance=ExtResource( 7 )]
 position = Vector2( 19.2563, -194.961 )
 rotation = 3.14159
 scale = Vector2( 0.7, 0.7 )
 
-[node name="ArrowShooter10" parent="." instance=ExtResource( 3 )]
+[node name="ArrowShooter10" parent="." instance=ExtResource( 7 )]
 position = Vector2( 18.8961, -217.293 )
 rotation = 3.14159
 scale = Vector2( 0.7, 0.7 )
 frequency = 1.5
 
-[node name="ArrowShooter14" parent="." instance=ExtResource( 3 )]
+[node name="ArrowShooter14" parent="." instance=ExtResource( 7 )]
 position = Vector2( 99.5803, -307.343 )
 rotation = 3.14159
 scale = Vector2( 0.7, 0.7 )
 frequency = 1.5
 
-[node name="ArrowShooter11" parent="." instance=ExtResource( 3 )]
+[node name="ArrowShooter11" parent="." instance=ExtResource( 7 )]
 position = Vector2( 18.8961, -240.706 )
 rotation = 3.14159
 scale = Vector2( 0.7, 0.7 )
 frequency = 0.9
 
-[node name="ArrowShooter13" parent="." instance=ExtResource( 3 )]
+[node name="ArrowShooter13" parent="." instance=ExtResource( 7 )]
 position = Vector2( 99.5804, -339.511 )
 rotation = 3.14159
 scale = Vector2( 0.7, 0.7 )
 frequency = 0.9
+
+[node name="Exit" parent="." instance=ExtResource( 1 )]
+position = Vector2( 144, -400 )
