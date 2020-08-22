@@ -6,16 +6,18 @@
 radius = 6.72972
 height = 1.36674
 
-[node name="Node2D" type="Node2D"]
-
-[node name="Cat" type="Sprite" parent="."]
+[node name="Cat" type="Sprite"]
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 480, 112, 16, 16 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Cat"]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cat/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 7.8198, 7.8198 )
 shape = SubResource( 1 )
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2( 8.5, 5.125 )
+enabled = true

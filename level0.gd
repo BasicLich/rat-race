@@ -13,6 +13,8 @@ func _ready():
 	$Rat.connect("died", self, "_on_rat_died")
 	$Rat.connect("tick", self, "_on_tick")
 
+	print($Rat.position)
+
 func _on_button_pressed(body):
 	if body.is_in_group("player"):
 		var door = get_node("DoorExit").open()

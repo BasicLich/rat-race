@@ -15,7 +15,13 @@ func _ready():
 	
 	$Rat.connect("died", self, "_on_rat_died")
 	#$FloorButton_0.connect("body_entered", self, "_work")
-	$Cheese.connect("body_entered", self, "_work")
+	#$Cheese.connect("body_entered", self, "_work")
+
+	#print($Waypoint.position)
+	print("---")
+
+	$Cat.rat = $Rat
+	$Cat.waypoint = $Waypoint
 
 func _work(body):
 	print("hello")

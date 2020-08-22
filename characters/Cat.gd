@@ -1,34 +1,54 @@
 extends KinematicBody2D
 
-enum State {CHASING, HAPPY}
+enum State {IDLE, CHASING, FULL}
 
 export var speed = 150
 
-var hungry = true
-var fish = false
-var target = self
+var target
+var nav: Navigation2D
+var paths = []
+var state = State.IDLE
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	nav = get_parent()
 
-func chase(node):
-	target = node
+func _draw():
+	if target:
+		draw_line(Vector2(), target.position - position, Color(1.0, 0.0, 0.0), 3)
+
+		if !paths.empty():
+			var mult = 1
+			draw_line(Vector2(), paths[0] - position, Color(0.0, 1.0 / mult, 0.0), 3)
+			for i in range(1, paths.size()):
+				mult += 1
+				draw_line(paths[i - 1] - position, paths[i] - position, Color(0.0, 1.0 / mult, 0.0), 3)
 
 func _physics_process(delta):
-	if hungry:
-		var direction = (target.position - position).normalized()
-		var collision = move_and_collide(direction * speed * delta)
-		if collision != null and collision.collider.is_in_group("player"):
-			collision.collider.kill("feline fatality")
-			hungry = false
-		
-
+	update()
+	if target and state == State.IDLE:
+		var space_state = get_world_2d().direct_space_state
+		var result = space_state.intersect_ray(position, target.position,
+					[self, target], collision_mask)
+		if result.empty():
+			state = State.CHASING
+	
+	elif state == State.CHASING:
+		assert(target)
+		paths = nav.get_simple_path(position, target.position)
+		assert(paths.size() > 1)
+		move_and_slide((paths[1] - position).normalized() * speed)
+		for i in get_slide_count():
+			var collider = get_slide_collision(i).get_collider()
+			if collider.is_in_group("player"):
+				state = State.FULL
+				collider.kill("feline fatality")
+			elif collider.is_in_group("fish"):
+				state = State.FULL
 
 func _on_Smell_body_entered(body):
-	if hungry:
-		if body.is_in_group("fish"):
+	if state == State.IDLE:
+		if body.is_in_group("player"):
 			target = body
-			fish = true
-		elif !fish and body.is_in_group("player"):
+	if state == State.CHASING:
+		if body.is_in_group("fish"):
 			target = body

@@ -12,7 +12,7 @@ func _ready():
 
 func _on_MouseTrap_body_entered(body):
 	if body.is_in_group("player"):
-		body.kill()
+		body.kill("caught in a trap")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
