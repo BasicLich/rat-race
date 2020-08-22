@@ -36,7 +36,7 @@ func _on_rat_died():
 	add_child(camera)
 	add_child(hand)
 	
-func _on_carry_complete():
+func _on_carry_complete(reason):
 	emit_signal("level_complete")
 
 func _on_Exit_exited():

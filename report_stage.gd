@@ -1,6 +1,6 @@
 extends Node2D
 
-signal nexted()
+signal nexted(report_instance)
 
 var rat_id = ""
 var success = false
@@ -17,4 +17,4 @@ func _ready():
 
 
 func _on_menu_button_pressed():
-	emit_signal("nexted")
+	emit_signal("nexted", self)

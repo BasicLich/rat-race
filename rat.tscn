@@ -50,7 +50,6 @@ region_rect = Rect2( 496, 128, 16, 16 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 4.58491, 2.83984 )
 frames = SubResource( 5 )
-frame = 3
 playing = true
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]

@@ -40,6 +40,8 @@ func _physics_process(delta):
 				collider.kill("feline fatality")
 			elif collider.is_in_group("fish"):
 				state = State.FULL
+				$Sprite.self_modulate = Color(0.5, 0.5, 0.5)
+				update()
 
 func _on_Smell_body_entered(body):
 	if state == State.IDLE:

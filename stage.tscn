@@ -17,7 +17,6 @@ script = ExtResource( 5 )
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="Control" type="Control" parent="UI"]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 __meta__ = {
@@ -26,7 +25,6 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="UI/Control"]
-visible = false
 margin_right = 1024.0
 margin_bottom = 600.0
 color = Color( 0.4, 0.415686, 0.458824, 1 )
@@ -42,17 +40,6 @@ tile_set = ExtResource( 2 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( 6, 0, 0, 9, 1, 0, 14, 2, 0, 18, 1, 0, 21, 0, 0, 65539, 1, 0, 131073, 2, 0, 131093, 2, 0, 196612, 0, 0, 262164, 2, 0, 327680, 1, 0, 327685, 1, 0, 393219, 2, 0, 393236, 1, 0, 458753, 0, 0, 458757, 0, 0, 524308, 0, 0, 655373, 0, 0, 655376, 2, 0, 655378, 1, 0, 720917, 1, 0, 786444, 1, 0, 786449, 0, 0, 786452, 2, 0 )
-
-[node name="ColorRect2" type="ColorRect" parent="UI/Control"]
-visible = false
-margin_left = 271.0
-margin_top = 77.0
-margin_right = 881.0
-margin_bottom = 402.0
-color = Color( 0.301961, 0.301961, 0.301961, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="TileMap" type="TileMap" parent="UI/Control"]
 scale = Vector2( 3, 3 )
@@ -95,19 +82,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ViewportContainer" type="ViewportContainer" parent="."]
+[node name="ViewportContainer" type="ViewportContainer" parent="UI/Control"]
 margin_left = 272.0
 margin_top = 80.0
 margin_right = 931.0
 margin_bottom = 452.0
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Viewport" type="Viewport" parent="ViewportContainer"]
+[node name="Viewport" type="Viewport" parent="UI/Control/ViewportContainer"]
 size = Vector2( 659, 372 )
 handle_input_locally = false
 render_target_update_mode = 3
-
-[node name="Timer" type="Timer" parent="."]
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

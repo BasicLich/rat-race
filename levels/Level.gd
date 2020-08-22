@@ -21,7 +21,9 @@ func _ready():
 	timer.start()
 
 func _on_Rat_death(reason):
+	timer.stop()
 	var camera = $Rat.get_node("Camera2D")
+	print(camera)
 	var hand = hands.instance()
 	hand.init($Rat)
 	hand.position = $Rat.position - Vector2(get_viewport().size.x / 4, get_viewport().size.y / 4)
