@@ -329,7 +329,7 @@ position = Vector2( 596, -12 )
 flip_h = true
 
 [node name="Destination" type="Node2D" parent="Toilet"]
-position = Vector2( 676, -344 )
+position = Vector2( 196, -292 )
 
 [node name="Rat" parent="." instance=ExtResource( 1 )]
 position = Vector2( 120, 44 )

@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/terminal-grotesque/terminal-grotesque.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://potions.res" type="TileSet" id=2]
 [ext_resource path="res://tileset.res" type="TileSet" id=3]
 [ext_resource path="res://screens/MainMenu.gd" type="Script" id=4]
+[ext_resource path="res://assets/music/success.ogg" type="AudioStream" id=5]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://assets/terminal-grotesque/terminal-grotesque.ttf"
@@ -97,5 +98,10 @@ flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+autoplay = true
+bus = "Background"
 [connection signal="pressed" from="Control/newgame" to="." method="_on_newgame_pressed"]
 [connection signal="pressed" from="Control/exit" to="." method="_on_exit_pressed"]

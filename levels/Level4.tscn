@@ -367,9 +367,9 @@ position = Vector2( 272, -396 )
 navpoly = SubResource( 6 )
 
 [node name="Cat" parent="Navigation2D" instance=ExtResource( 9 )]
-position = Vector2( 4, 128 )
+position = Vector2( 116, -36 )
 rotation = -0.000478696
-smell_radius = 50.0
+smell_radius = 100.0
 
 [node name="Rat" parent="." instance=ExtResource( 3 )]
 position = Vector2( 72, 100 )
