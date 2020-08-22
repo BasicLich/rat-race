@@ -10,5 +10,12 @@ func _process(delta):
 func _on_Arrow_body_entered(body):
 	if body.is_in_group("player"):
 		body.kill("was skewered.")
+		$Sprite.hide()
+		$AudioStreamPlayer.play()
 	if !body.is_in_group("shooter"):
-		queue_free()
+		$Sprite.hide()
+		$AudioStreamPlayer.play()
+
+
+func _on_AudioStreamPlayer_finished():
+	queue_free()

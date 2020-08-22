@@ -1,12 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/1bitpack_kenney_1.1/Tilesheet/colored_transparent_packed.png" type="Texture" id=1]
 [ext_resource path="res://objects/MouseTrap.gd" type="Script" id=2]
+[ext_resource path="res://assets/music/trap.wav" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4.97015, 5.24004 )
 
 [node name="MouseTrap" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -55,4 +58,7 @@ centered = false
 flip_h = true
 region_enabled = true
 region_rect = Rect2( 544, 256, 16, 16 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
 [connection signal="body_entered" from="." to="." method="_on_MouseTrap_body_entered"]

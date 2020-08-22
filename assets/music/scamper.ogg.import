@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/scamper.ogg-accac242f09e32deb3345291a27eb98b.oggstr"
+
+[deps]
+
+source_file="res://assets/music/scamper.ogg"
+dest_files=[ "res://.import/scamper.ogg-accac242f09e32deb3345291a27eb98b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://levels/Exit.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/cheese.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://objects/Shooter.tscn" type="PackedScene" id=7]
 [ext_resource path="res://objects/DoorExit.tscn" type="PackedScene" id=8]
 [ext_resource path="res://objects/MouseTrap.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/music/danger.ogg" type="AudioStream" id=10]
 
 [node name="Level2" type="Node2D"]
 scale = Vector2( 2, 2 )
@@ -40,7 +41,6 @@ scale = Vector2( 0.8, 0.8 )
 
 [node name="Rat" parent="." instance=ExtResource( 3 )]
 position = Vector2( 112.514, 89.5799 )
-scale = Vector2( 0.8, 0.8 )
 
 [node name="ArrowShooter" parent="." instance=ExtResource( 7 )]
 position = Vector2( 220.398, 17.9976 )
@@ -126,3 +126,8 @@ frequency = 0.9
 
 [node name="Exit" parent="." instance=ExtResource( 1 )]
 position = Vector2( 144, -400 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+autoplay = true
+bus = "Background"

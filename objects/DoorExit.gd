@@ -17,6 +17,7 @@ func open():
 	$CollisionShape2D.set_deferred("disabled", true)
 	opened = true
 	$DoorOpen.show()
+	$AudioStreamPlayer.play()
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

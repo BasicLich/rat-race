@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://objects/Arrow.gd" type="Script" id=1]
 [ext_resource path="res://assets/1bitpack_kenney_1.1/Tilesheet/colored_transparent_packed.png" type="Texture" id=2]
+[ext_resource path="res://assets/music/arrow.wav" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 2.21033, 7.70551 )
@@ -13,7 +14,7 @@ scale = Vector2( 2, 2 )
 script = ExtResource( 1 )
 speed = 100
 
-[node name="sprite" type="Sprite" parent="."]
+[node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 7.31572, -7.59127 )
 rotation = -2.35619
 texture = ExtResource( 2 )
@@ -26,4 +27,12 @@ region_rect = Rect2( 640, 80, 16, 16 )
 position = Vector2( 7.96377, 2.30128 )
 rotation = -1.57079
 shape = SubResource( 1 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+volume_db = -1.01
+max_distance = 300.0
+attenuation = 1.7411
+bus = "SFX"
 [connection signal="body_entered" from="." to="." method="_on_Arrow_body_entered"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]

@@ -22,6 +22,7 @@ func _ready():
 
 func _on_Rat_death(reason):
 	timer.stop()
+	get_node("AudioStreamPlayer").stop()
 	var camera = $Rat.get_node("Camera2D")
 	print(camera)
 	var hand = hands.instance()
@@ -40,7 +41,6 @@ func _on_Rat_death(reason):
 
 func _on_carry_complete(reason):
 	emit_signal("level_complete", false, reason)
-	queue_free()
 
 func _on_tick():
 	time_left -= 1

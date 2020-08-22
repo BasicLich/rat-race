@@ -96,3 +96,4 @@ __meta__ = {
 size = Vector2( 659, 372 )
 handle_input_locally = false
 render_target_update_mode = 3
+audio_listener_enable_2d = true

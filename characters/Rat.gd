@@ -4,6 +4,7 @@ export var speed = 150
 var velocity = Vector2()
 
 var alive = true
+var play_sound = true
 
 signal died()
 
@@ -32,10 +33,14 @@ func _input(event):
 func _physics_process(delta):
 	move_and_collide(velocity.normalized() * speed * delta)
 	
+	if velocity.length_squared() > 0 and !$AudioStreamPlayer.playing:
+		$AudioStreamPlayer.play()
+	
 func kill(reason):
 	alive = false
 	velocity = Vector2()
 	$AnimatedSprite.stop()
 	$AnimatedSprite.flip_v = true
+	$DeathSound.play()
 	emit_signal("died", reason)
 	
