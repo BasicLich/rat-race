@@ -7,6 +7,8 @@
 extents = Vector2( 5.9843, 7.67886 )
 
 [node name="Cat" type="KinematicBody2D"]
+collision_layer = 4
+collision_mask = 7
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]

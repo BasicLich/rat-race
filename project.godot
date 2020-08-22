@@ -19,9 +19,24 @@ config/name="RatRace"
 run/main_scene="res://stage.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://global.gd"
+
 [display]
 
 window/stretch/mode="2d"
+
+[layer_names]
+
+2d_render/layer_1="Environment"
+2d_physics/layer_1="Environment"
+2d_render/layer_2="Player"
+2d_physics/layer_2="Player"
+2d_render/layer_3="NPC"
+2d_physics/layer_3="NPC"
+2d_render/layer_4="Objects"
+2d_physics/layer_4="Interactive"
 
 [rendering]
 
