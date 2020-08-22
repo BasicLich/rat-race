@@ -5,7 +5,7 @@ signal tick(time_left)
 
 export var time_limit: int
 
-var hands = preload("res://Hands.tscn")
+var hands = preload("res://objects/Hands.tscn")
 var timer = Timer.new()
 var time_left: int
 
