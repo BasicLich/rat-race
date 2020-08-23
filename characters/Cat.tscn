@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/1bitpack_kenney_1.1/Tilesheet/colored_transparent_packed.png" type="Texture" id=1]
 [ext_resource path="res://characters/Cat.gd" type="Script" id=2]
+[ext_resource path="res://assets/1bitpack_kenney_1.1/Tilesheet/monochrome_transparent_packed.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5.9843, 7.67886 )
@@ -21,3 +22,29 @@ region_rect = Rect2( 480, 112, 16, 16 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.196102, 0.677637 )
 shape = SubResource( 1 )
+
+[node name="Status" type="Control" parent="."]
+modulate = Color( 1, 0.988235, 0.988235, 1 )
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Chasing" type="Sprite" parent="Status"]
+visible = false
+position = Vector2( -3, -13 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 576, 240, 16, 16 )
+
+[node name="Full" type="Sprite" parent="Status"]
+visible = false
+position = Vector2( -3, -13 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 560, 240, 16, 16 )

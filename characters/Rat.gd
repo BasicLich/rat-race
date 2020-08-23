@@ -31,7 +31,7 @@ func _input(event):
 			velocity.y = 0
 
 func _physics_process(delta):
-	move_and_collide(velocity.normalized() * speed * delta)
+	move_and_slide(velocity.normalized() * speed)
 	
 	if velocity.length_squared() > 0 and !$AudioStreamPlayer.playing:
 		$AudioStreamPlayer.play()

@@ -20,6 +20,13 @@ func _ready():
 	add_child(area)
 	area.connect("body_entered", self, "_on_Smell_body_entered")
 
+func _process(delta):
+	var tick = float(OS.get_ticks_msec()) / 300.0
+	var r = .5 * (1 + sin(tick))
+
+	#$Status.modulate = Color(1.0, r, r)
+	$Status.modulate.a = r
+
 func _physics_process(delta):
 	if target and state == State.IDLE:
 		var space_state = get_world_2d().direct_space_state
@@ -40,13 +47,17 @@ func _physics_process(delta):
 				collider.kill("feline fatality")
 			elif collider.is_in_group("fish"):
 				state = State.FULL
-				$Sprite.self_modulate = Color(0.5, 0.5, 0.5)
+				$Status/Chasing.hide()
+				$Status/Full.show()
 				update()
 
 func _on_Smell_body_entered(body):
 	if state == State.IDLE:
 		if body.is_in_group("player"):
 			target = body
+			$Status/Chasing.show()
+			
 	if state == State.CHASING:
 		if body.is_in_group("fish"):
 			target = body
+			$Status/Chasing.show()

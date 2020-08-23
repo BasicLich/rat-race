@@ -54,7 +54,6 @@ func _on_intro_done(scene):
 	get_parent().get_node("AudioStreamPlayer").stop()
 	
 func _on_level_complete(successful, reason):
-	print("called")
 	$UI/Control/ViewportContainer/Viewport.call_deferred("remove_child", levels[index])
 	
 	var report_instance = report.instance()
