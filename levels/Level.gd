@@ -2,6 +2,7 @@ extends Node
 
 signal level_complete(successful, reason)
 signal tick(time_left)
+signal fronk_speaks(message)
 
 export var time_limit: int
 

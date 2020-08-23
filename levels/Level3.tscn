@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://characters/Rat.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tileset.res" type="TileSet" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://levels/Exit.tscn" type="PackedScene" id=6]
 [ext_resource path="res://objects/cheese.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/music/danger.ogg" type="AudioStream" id=8]
+[ext_resource path="res://objects/DialogueTrigger.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/1bitpack_kenney_1.1/Tilesheet/colored_transparent_packed.png" type="Texture" id=11]
 [ext_resource path="res://objects/Toilet.tscn" type="PackedScene" id=12]
 [ext_resource path="res://objects/DoorExit.tscn" type="PackedScene" id=13]
@@ -338,5 +339,22 @@ position = Vector2( 120, 44 )
 stream = ExtResource( 8 )
 autoplay = true
 bus = "Background"
+
+[node name="DialogueTrigger" parent="." instance=ExtResource( 9 )]
+position = Vector2( 124, 4 )
+message = "Tread lightly..."
+
+[node name="DialogueTrigger2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 496, -52 )
+message = "Maybe you're thirsty?"
+
+[node name="DialogueTrigger3" parent="." instance=ExtResource( 9 )]
+position = Vector2( 800, -336 )
+collision_layer = 8
+collision_mask = 2
+message = "We've got to get the plumbing fixed..."
+[connection signal="fronk_speaks" from="DialogueTrigger" to="." method="_on_DialogueTrigger_fronk_speaks"]
+[connection signal="fronk_speaks" from="DialogueTrigger2" to="." method="_on_DialogueTrigger2_fronk_speaks"]
+[connection signal="fronk_speaks" from="DialogueTrigger3" to="." method="_on_DialogueTrigger3_fronk_speaks"]
 
 [editable path="Toilet"]

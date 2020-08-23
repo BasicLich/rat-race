@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://levels/Exit.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/cheese.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://objects/DoorExit.tscn" type="PackedScene" id=8]
 [ext_resource path="res://objects/MouseTrap.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/music/danger.ogg" type="AudioStream" id=10]
+[ext_resource path="res://objects/DialogueTrigger.tscn" type="PackedScene" id=11]
 
 [node name="Level2" type="Node2D"]
 scale = Vector2( 2, 2 )
@@ -131,3 +132,13 @@ position = Vector2( 144, -400 )
 stream = ExtResource( 10 )
 autoplay = true
 bus = "Background"
+
+[node name="DialogueTrigger" parent="." instance=ExtResource( 11 )]
+position = Vector2( 96, 52 )
+message = "You'll need to be agile"
+
+[node name="DialogueTrigger2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 72, -184 )
+message = "You are a quick one..."
+[connection signal="fronk_speaks" from="DialogueTrigger" to="." method="_on_DialogueTrigger_fronk_speaks"]
+[connection signal="fronk_speaks" from="DialogueTrigger2" to="." method="_on_DialogueTrigger2_fronk_speaks"]

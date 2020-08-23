@@ -34,7 +34,7 @@ func begin():
 	play_sequence()
 
 func play_sequence():
-
+	# TODO: leaking timers?
 	var clear_timer = Timer.new()
 	clear_timer.wait_time = .5
 	clear_timer.connect("timeout", self, "clear")

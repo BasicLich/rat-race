@@ -27,11 +27,22 @@ func _ready():
 	rat_id = randi() % 2000
 	for instance in levels:
 		instance.connect("level_complete", self, "_on_level_complete")
+		instance.connect("fronk_speaks", self, "_on_fronk_speaks")
 	
 	var intro_instance = intro.instance()
 	intro_instance.rat_id = rat_id
 	intro_instance.connect("nexted", self, "_on_intro_done")
 	call_deferred("add_child", intro_instance)
+	
+func _on_fronk_speaks(message):
+	# TODO: what if two signals come between timeouts?
+	$UI/Control/Speech.text = message
+	$FronkVoice.play()
+	$SpeechTimer.start()
+	
+func _clear_text():
+	$SpeechTimer.stop()
+	$UI/Control/Speech.text = ""
 	
 func _on_intro_done(scene):
 	call_deferred("remove_child", scene)
@@ -75,3 +86,7 @@ func convert_time(time):
 	var seconds = time % 60
 	var minutes = time % 3600 / 60
 	return "%01d:%02d" % [minutes, seconds]
+
+
+func _on_SpeechTimer_timeout():
+	_clear_text()

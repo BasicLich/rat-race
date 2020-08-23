@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://levels/Exit.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/cheese.tscn" type="PackedScene" id=2]
@@ -6,13 +6,14 @@
 [ext_resource path="res://tileset.res" type="TileSet" id=4]
 [ext_resource path="res://pipes.res" type="TileSet" id=5]
 [ext_resource path="res://objects/DoorExit.tscn" type="PackedScene" id=6]
-[ext_resource path="res://levels/Level3.gd" type="Script" id=7]
+[ext_resource path="res://levels/Level4.gd" type="Script" id=7]
 [ext_resource path="res://objects/Shooter.tscn" type="PackedScene" id=8]
 [ext_resource path="res://characters/Cat.tscn" type="PackedScene" id=9]
 [ext_resource path="res://water.res" type="TileSet" id=10]
 [ext_resource path="res://objects/MouseTrap.tscn" type="PackedScene" id=11]
 [ext_resource path="res://objects/Fish.tscn" type="PackedScene" id=12]
 [ext_resource path="res://assets/music/danger.ogg" type="AudioStream" id=13]
+[ext_resource path="res://objects/DialogueTrigger.tscn" type="PackedScene" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 54.0684, 22.7574 )
@@ -372,7 +373,7 @@ rotation = -0.000478696
 smell_radius = 100.0
 
 [node name="Rat" parent="." instance=ExtResource( 3 )]
-position = Vector2( 72, 100 )
+position = Vector2( -68, 172 )
 
 [node name="Fish" parent="." instance=ExtResource( 12 )]
 position = Vector2( -84, -308 )
@@ -382,3 +383,14 @@ rotation = -0.000478696
 stream = ExtResource( 13 )
 autoplay = true
 bus = "Background"
+
+[node name="DialogueTrigger" parent="." instance=ExtResource( 14 )]
+position = Vector2( -56, 76 )
+scale = Vector2( 4, 4 )
+message = "How did Twitterpated get in there?"
+
+[node name="DialogueTrigger2" parent="." instance=ExtResource( 14 )]
+position = Vector2( -84, -144 )
+message = "Better find her something to eat..."
+[connection signal="fronk_speaks" from="DialogueTrigger" to="." method="_on_DialogueTrigger_fronk_speaks"]
+[connection signal="fronk_speaks" from="DialogueTrigger2" to="." method="_on_DialogueTrigger2_fronk_speaks"]

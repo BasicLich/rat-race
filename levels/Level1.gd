@@ -5,7 +5,13 @@ func _ready():
 	$Cheese.connect("body_entered", self, "_on_Cheese_body_entered")
 	$Exit.connect("exited", self, "emit_signal", ["level_complete", true, "so smart!"])
 
+
 func _on_Cheese_body_entered(body):
 	$DoorExit.open()
+	emit_signal("fronk_speaks", "Should be obvious...")
 	$Cheese.queue_free()
 	
+
+# TODO: better way
+func _on_DialogueTrigger_fronk_speaks(message):
+	emit_signal("fronk_speaks", message)

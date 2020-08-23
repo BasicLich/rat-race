@@ -8,3 +8,12 @@ func _ready():
 func _on_Cheese_body_entered(body):
 	$DoorExit.open()
 	$Cheese.queue_free()
+
+
+
+func _on_DialogueTrigger_fronk_speaks(message):
+	emit_signal("fronk_speaks", message)
+
+
+func _on_DialogueTrigger2_fronk_speaks(message):
+	emit_signal("fronk_speaks", message)

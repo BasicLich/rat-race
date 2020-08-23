@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/terminal-grotesque/terminal-grotesque.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/music/success.ogg" type="AudioStream" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://screens/Report.gd" type="Script" id=4]
 [ext_resource path="res://potions.res" type="TileSet" id=5]
 [ext_resource path="res://text-border.res" type="TileSet" id=6]
+[ext_resource path="res://assets/music/toilet.wav" type="AudioStream" id=7]
+[ext_resource path="res://assets/music/arrow.wav" type="AudioStream" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -142,4 +144,12 @@ tile_data = PoolIntArray( 1, 0, 0, 6, 1, 0, 11, 0, 0, 20, 2, 0, 28, 1, 0, 30, 0,
 stream = ExtResource( 2 )
 autoplay = true
 bus = "Background"
+
+[node name="PressSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+
+[node name="HoverSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+[connection signal="mouse_entered" from="CanvasLayer/menu_button" to="." method="_on_menu_button_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/menu_button" to="." method="_on_menu_button_pressed"]
+[connection signal="finished" from="PressSound" to="." method="_on_PressSound_finished"]

@@ -19,4 +19,13 @@ func _ready():
 		$CanvasLayer/menu_button.text = "TRY AGAIN"
 
 func _on_menu_button_pressed():
+	#$PressSound.play()
+	emit_signal("nexted", self)
+
+
+func _on_menu_button_mouse_entered():
+	$HoverSound.play()
+
+
+func _on_PressSound_finished():
 	emit_signal("nexted", self)

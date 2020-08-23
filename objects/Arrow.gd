@@ -13,6 +13,7 @@ func _on_Arrow_body_entered(body):
 		$Sprite.hide()
 		$AudioStreamPlayer.play()
 	if !body.is_in_group("shooter"):
+		$hit_box.set_deferred("disabled", true)
 		$Sprite.hide()
 		$AudioStreamPlayer.play()
 
