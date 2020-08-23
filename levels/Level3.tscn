@@ -20,7 +20,7 @@ extents = Vector2( 8, 8 )
 [node name="Level3" type="Node2D"]
 scale = Vector2( 2, 2 )
 script = ExtResource( 5 )
-time_limit = 120
+time_limit = 45
 
 [node name="MouseTrap2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 39.8958, 36.7542 )
@@ -354,7 +354,7 @@ collision_layer = 8
 collision_mask = 2
 message = "We've got to get the plumbing fixed..."
 [connection signal="fronk_speaks" from="DialogueTrigger" to="." method="_on_DialogueTrigger_fronk_speaks"]
-[connection signal="fronk_speaks" from="DialogueTrigger2" to="." method="_on_DialogueTrigger2_fronk_speaks"]
-[connection signal="fronk_speaks" from="DialogueTrigger3" to="." method="_on_DialogueTrigger3_fronk_speaks"]
+[connection signal="fronk_speaks" from="DialogueTrigger2" to="." method="_on_DialogueTrigger_fronk_speaks"]
+[connection signal="fronk_speaks" from="DialogueTrigger3" to="." method="_on_DialogueTrigger_fronk_speaks"]
 
 [editable path="Toilet"]

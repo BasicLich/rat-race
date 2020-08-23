@@ -54,6 +54,7 @@ func _on_intro_done(scene):
 	get_parent().get_node("AudioStreamPlayer").stop()
 	
 func _on_level_complete(successful, reason):
+	print("called")
 	$UI/Control/ViewportContainer/Viewport.call_deferred("remove_child", levels[index])
 	
 	var report_instance = report.instance()
@@ -65,7 +66,7 @@ func _on_level_complete(successful, reason):
 	
 	$UI/Control.hide()
 	report_instance.connect("nexted", self, "_on_report_complete")
-	add_child(report_instance)
+	call_deferred("add_child", report_instance)
 
 func _on_report_complete(report_instance):
 	

@@ -34,13 +34,14 @@ func _on_Rat_death(reason):
 	hand.reason = reason
 	hand.connect("carry_complete", self, "_on_carry_complete")
 
-	$Rat.remove_child(camera)
+	$Rat.call_deferred("remove_child", camera)
 	$Rat.get_node("Hitbox").set_deferred("disabled", true)
 	camera.position = $Rat.position
-	add_child(camera)
-	add_child(hand)
+	call_deferred("add_child", camera)
+	call_deferred("add_child", hand)
 
 func _on_carry_complete(reason):
+	print("hello")
 	emit_signal("level_complete", false, reason)
 
 func _on_tick():

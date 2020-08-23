@@ -3,7 +3,7 @@ extends Node2D
 signal started()
 signal exited()
 
-const game = preload("res://stage.tscn")
+const game = preload("res://screens/Stage.tscn")
 
 func _on_newgame_pressed():
 	var game_instance = game.instance()

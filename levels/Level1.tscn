@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://levels/Exit.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/cheese.tscn" type="PackedScene" id=2]
@@ -10,17 +10,36 @@
 [ext_resource path="res://objects/MouseTrap.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/music/danger.ogg" type="AudioStream" id=9]
 [ext_resource path="res://objects/DialogueTrigger.tscn" type="PackedScene" id=10]
+[ext_resource path="res://decor/Wires.tscn" type="PackedScene" id=11]
+[ext_resource path="res://decor/Skull.tscn" type="PackedScene" id=12]
+[ext_resource path="res://decor/FloorScuff.tscn" type="PackedScene" id=13]
+[ext_resource path="res://decor/SpiderWeb.tscn" type="PackedScene" id=14]
 
 [node name="Level1" type="Node2D"]
 scale = Vector2( 2, 2 )
 script = ExtResource( 7 )
 time_limit = 20
 
-[node name="TileMap2" type="TileMap" parent="."]
-tile_set = ExtResource( 5 )
-cell_size = Vector2( 16, 16 )
-format = 1
-tile_data = PoolIntArray( -524287, -1610612736, 0, -458751, -1610612735, 0, -393215, -1610612735, 0, -327679, -1610612735, 0, -327669, -2147483648, 0, -262143, -1610612735, 0, -262133, -1073741823, 0, -196607, -1610612733, 0, -196597, -1073741823, 0, -131071, -1610612735, 0, -131061, -1073741823, 0, -65535, -1610612735, 0, -65525, -1073741824, 0, 65532, 0, 0, 65533, 536870913, 0, 65534, 536870913, 0, 65535, 536870913, 0, 0, 536870913, 0, 1, 536870913, 0, 2, 536870915, 0, 3, 536870912, 0, 196615, 0, 0, 196616, 1, 0, 196617, 1, 0, 196618, 2, 0, 196619, 1, 0, 196620, 1, 0, 196621, 1, 0, 196622, 1, 0, 196623, 536870912, 0 )
+[node name="Background" type="ColorRect" parent="."]
+margin_left = -329.0
+margin_top = -269.223
+margin_right = 531.0
+margin_bottom = 267.777
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Floor" type="ColorRect" parent="."]
+margin_top = -64.0
+margin_right = 196.0
+margin_bottom = 84.0
+color = Color( 0.192157, 0.196078, 0.2, 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( 2.66667, -61.3333 )
@@ -28,6 +47,57 @@ tile_set = ExtResource( 4 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( 0, 2, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 7, 0, 65536, 3, 0, 65547, 6, 0, 131072, 3, 0, 131083, 6, 0, 196608, 3, 0, 196619, 6, 0, 262144, 3, 0, 262155, 6, 0, 327680, 3, 0, 327691, 6, 0, 393216, 3, 0, 393227, 6, 0, 458752, 3, 0, 458763, 6, 0, 524288, 4, 0, 524289, 1, 0, 524290, 1, 0, 524291, 1, 0, 524292, 1, 0, 524293, 1, 0, 524294, 1, 0, 524295, 1, 0, 524296, 1, 0, 524297, 1, 0, 524298, 1, 0, 524299, 5, 0 )
+
+[node name="TileMap2" type="TileMap" parent="."]
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -524287, -1610612736, 0, -458751, -1610612735, 0, -393215, -1610612735, 0, -327679, -1610612735, 0, -327669, -2147483648, 0, -262143, -1610612735, 0, -262133, -1073741823, 0, -196607, -1610612733, 0, -196597, -1073741823, 0, -131071, -1610612735, 0, -131061, -1073741823, 0, -65535, -1610612735, 0, -65525, -1073741824, 0, 65532, 0, 0, 65533, 536870913, 0, 65534, 536870913, 0, 65535, 536870913, 0, 0, 536870913, 0, 1, 536870913, 0, 2, 536870915, 0, 3, 536870912, 0, 196615, 0, 0, 196616, 1, 0, 196617, 1, 0, 196618, 2, 0, 196619, 1, 0, 196620, 1, 0, 196621, 1, 0, 196622, 1, 0, 196623, 536870912, 0 )
+
+[node name="Details" type="Control" parent="."]
+self_modulate = Color( 0.439216, 0.345098, 0.345098, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Wires" parent="Details" instance=ExtResource( 11 )]
+self_modulate = Color( 0.996078, 0.262745, 0.262745, 1 )
+position = Vector2( 63.4063, -55.7295 )
+scale = Vector2( 1.23223, 1.23223 )
+
+[node name="Wires2" parent="Details" instance=ExtResource( 11 )]
+self_modulate = Color( 1, 0.682353, 0.0705882, 1 )
+position = Vector2( 189.032, 17.7596 )
+rotation = 1.5708
+scale = Vector2( 1.74601, 1.74601 )
+
+[node name="Skull" parent="Details" instance=ExtResource( 12 )]
+self_modulate = Color( 0.678431, 0.678431, 0.678431, 1 )
+position = Vector2( 134.237, 60.8533 )
+rotation = -0.646772
+scale = Vector2( 1.20271, 1.20271 )
+
+[node name="FloorScuff" parent="Details" instance=ExtResource( 13 )]
+self_modulate = Color( 0.47451, 0.47451, 0.47451, 1 )
+position = Vector2( 138.718, 5.52248 )
+rotation = -0.646772
+scale = Vector2( 1.0209, 1.0209 )
+
+[node name="FloorScuff2" parent="Details" instance=ExtResource( 13 )]
+self_modulate = Color( 0.537255, 0.537255, 0.537255, 1 )
+position = Vector2( 92.8356, 41.7827 )
+rotation = 0.785398
+scale = Vector2( 1.10554, 1.10554 )
+
+[node name="SpiderWeb" parent="Details" instance=ExtResource( 14 )]
+self_modulate = Color( 0.733333, 0.733333, 0.733333, 1 )
+position = Vector2( 8.55853, -38.9035 )
+scale = Vector2( 1.18729, 1.18729 )
+
+[node name="SpiderWeb2" parent="Details" instance=ExtResource( 14 )]
+self_modulate = Color( 0.690196, 0.690196, 0.690196, 1 )
+position = Vector2( 165.869, 54.1937 )
+scale = Vector2( 1.39775, 1.39775 )
 
 [node name="DoorExit" parent="." instance=ExtResource( 6 )]
 position = Vector2( 98.6667, -66.6667 )

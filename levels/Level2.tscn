@@ -15,7 +15,39 @@
 [node name="Level2" type="Node2D"]
 scale = Vector2( 2, 2 )
 script = ExtResource( 4 )
-time_limit = 120
+time_limit = 30
+
+[node name="Background" type="ColorRect" parent="."]
+margin_left = -304.0
+margin_top = -536.0
+margin_right = 616.0
+margin_bottom = 276.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Floor" type="Control" parent="."]
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Floor"]
+margin_top = -288.0
+margin_right = 240.0
+margin_bottom = 112.0
+color = Color( 0.192157, 0.196078, 0.2, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="Floor"]
+margin_left = 80.0
+margin_top = -384.0
+margin_right = 224.0
+margin_bottom = -284.0
+color = Color( 0.192157, 0.196078, 0.2, 1 )
 
 [node name="TileMap2" type="TileMap" parent="."]
 position = Vector2( -0.333333, -0.333333 )
@@ -141,4 +173,4 @@ message = "You'll need to be agile"
 position = Vector2( 72, -184 )
 message = "You are a quick one..."
 [connection signal="fronk_speaks" from="DialogueTrigger" to="." method="_on_DialogueTrigger_fronk_speaks"]
-[connection signal="fronk_speaks" from="DialogueTrigger2" to="." method="_on_DialogueTrigger2_fronk_speaks"]
+[connection signal="fronk_speaks" from="DialogueTrigger2" to="." method="_on_DialogueTrigger_fronk_speaks"]

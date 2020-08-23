@@ -37,10 +37,11 @@ func _physics_process(delta):
 		$AudioStreamPlayer.play()
 	
 func kill(reason):
-	alive = false
-	velocity = Vector2()
-	$AnimatedSprite.stop()
-	$AnimatedSprite.flip_v = true
-	$DeathSound.play()
-	emit_signal("died", reason)
+	if alive:
+		alive = false
+		velocity = Vector2()
+		$AnimatedSprite.stop()
+		$AnimatedSprite.flip_v = true
+		$DeathSound.play()
+		emit_signal("died", reason)
 	

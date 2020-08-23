@@ -10,22 +10,56 @@ extents = Vector2( 7.56907, 7.21001 )
 [node name="DoorExit" type="StaticBody2D"]
 script = ExtResource( 2 )
 
-[node name="DoorClosed" type="Sprite" parent="."]
-texture = ExtResource( 1 )
-centered = false
-region_enabled = true
-region_rect = Rect2( 208, 176, 16, 16 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 8.1078, 7.93529 )
+shape = SubResource( 1 )
 
-[node name="DoorOpen" type="Sprite" parent="."]
+[node name="OpenSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+bus = "SFX"
+
+[node name="Open" type="Control" parent="."]
 visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="Open"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 14.0
+margin_bottom = 15.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Open"]
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 192, 176, 16, 16 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 8.1078, 7.93529 )
-shape = SubResource( 1 )
+[node name="Closed" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 3 )
+[node name="Background" type="ColorRect" parent="Closed"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 14.0
+margin_bottom = 15.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Closed"]
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 208, 176, 16, 16 )

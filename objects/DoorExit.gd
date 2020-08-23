@@ -1,25 +1,31 @@
 extends StaticBody2D
 
-
-# Declare member variables here. Examples:
-# var a = 2
 export var opened = false
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	$DoorClosed.show()
+	if opened:
+		open()
+	else:
+		close()
+
+func close():
+	$Open.hide()
+	$Closed.show()
 	$CollisionShape2D.set_deferred("enabled", true)
 	opened = false
 
 func open():
-	$DoorClosed.hide()
+	$Closed.hide()
+	$Open.show()
 	$CollisionShape2D.set_deferred("disabled", true)
 	opened = true
-	$DoorOpen.show()
-	$AudioStreamPlayer.play()
+	$OpenSound.play()
 	
+func _process(delta):
+	var tick = float(OS.get_ticks_msec()) / 400.0
+	var r = .5 * (1 + sin(tick))
+	var g = .5 * (1 + cos(tick))
+	var b = .5 * (1 + sin(tick + PI/2))
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	$Open/Background.self_modulate = Color(r, g, b)
+	

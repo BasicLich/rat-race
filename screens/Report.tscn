@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/terminal-grotesque/terminal-grotesque.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/music/success.ogg" type="AudioStream" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://text-border.res" type="TileSet" id=6]
 [ext_resource path="res://assets/music/toilet.wav" type="AudioStream" id=7]
 [ext_resource path="res://assets/music/arrow.wav" type="AudioStream" id=8]
+[ext_resource path="res://assets/music/funeral.ogg" type="AudioStream" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -140,16 +141,21 @@ cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( 1, 0, 0, 6, 1, 0, 11, 0, 0, 20, 2, 0, 28, 1, 0, 30, 0, 0, 65544, 2, 0, 65560, 0, 0, 131075, 1, 0, 131101, 2, 0, 196627, 0, 0, 196631, 1, 0, 262153, 0, 0, 327683, 0, 0, 327686, 1, 0, 327711, 0, 0, 393216, 2, 0, 458778, 2, 0, 524317, 1, 0, 655362, 1, 0, 655365, 0, 0, 655386, 0, 0, 720927, 2, 0, 786437, 2, 0, 851968, 0, 0, 917529, 1, 0, 983068, 2, 0, 1048577, 1, 0, 1048584, 2, 0, 1114112, 2, 0, 1114122, 0, 0, 1114143, 0, 0, 1179651, 0, 0, 1179661, 1, 0, 1179668, 2, 0, 1179672, 0, 0, 1179677, 1, 0 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="SuccessMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
-autoplay = true
 bus = "Background"
 
 [node name="PressSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
+bus = "SFX"
 
 [node name="HoverSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
+bus = "SFX"
+
+[node name="FailMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+bus = "Background"
 [connection signal="mouse_entered" from="CanvasLayer/menu_button" to="." method="_on_menu_button_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/menu_button" to="." method="_on_menu_button_pressed"]
 [connection signal="finished" from="PressSound" to="." method="_on_PressSound_finished"]

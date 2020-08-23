@@ -368,12 +368,12 @@ position = Vector2( 272, -396 )
 navpoly = SubResource( 6 )
 
 [node name="Cat" parent="Navigation2D" instance=ExtResource( 9 )]
-position = Vector2( 116, -36 )
+position = Vector2( -92, 180 )
 rotation = -0.000478696
 smell_radius = 100.0
 
 [node name="Rat" parent="." instance=ExtResource( 3 )]
-position = Vector2( -68, 172 )
+position = Vector2( -32, 156 )
 
 [node name="Fish" parent="." instance=ExtResource( 12 )]
 position = Vector2( -84, -308 )
@@ -385,7 +385,7 @@ autoplay = true
 bus = "Background"
 
 [node name="DialogueTrigger" parent="." instance=ExtResource( 14 )]
-position = Vector2( -56, 76 )
+position = Vector2( -16, 64 )
 scale = Vector2( 4, 4 )
 message = "How did Twitterpated get in there?"
 
