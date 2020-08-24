@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/1bitpack_kenney_1.1/Tilesheet/monochrome_transparent_packed.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 5.9843, 7.67886 )
+extents = Vector2( 4.75169, 6.33867 )
 
 [node name="Cat" type="KinematicBody2D"]
 collision_layer = 4

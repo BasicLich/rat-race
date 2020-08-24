@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://levels/Exit.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/cheese.tscn" type="PackedScene" id=2]
@@ -14,6 +14,8 @@
 [ext_resource path="res://objects/Fish.tscn" type="PackedScene" id=12]
 [ext_resource path="res://assets/music/danger.ogg" type="AudioStream" id=13]
 [ext_resource path="res://objects/DialogueTrigger.tscn" type="PackedScene" id=14]
+[ext_resource path="res://decor/Skull.tscn" type="PackedScene" id=15]
+[ext_resource path="res://decor/Slime.tscn" type="PackedScene" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 54.0684, 22.7574 )
@@ -30,14 +32,65 @@ extents = Vector2( 14.3618, 10 )
 extents = Vector2( 13.648, 10 )
 
 [sub_resource type="NavigationPolygon" id=6]
-vertices = PoolVector2Array( 184, -36, 348, -40, 348, 36, 216, 56, 20, 16, 208, 148, 224, 180, 220, 216, -112, 224, -112, 68, -60, 68, 188, 140, -40, -144, 172, -148, 172, -116, 152, -76, 20, -32, 4, -48, -8, -56, -104, -56, -104, -192, -72, -320, -72, -340, 56, -340, 56, -304, -40, -280, -60, -276, 200, -296, 200, -416, 288, -416, 288, -404, 348, -404, 348, -380, 288, -380, 288, -280, 148, -280, 176, -296, 148, -392, 176, -416, 84, -416, 132, -392, 84, -364, 96, -348, 128, -280, 96, -304, 232, 168, 188, 96, -56, 52, -36, 52, 4, 52, 4, 28, 164, -52, -40, -172, 152, -192, 180, -164, 168, -256, 152, -220, -40, -252, -60, -216, 84, -296, 60, -296, -80, -288, -96, -304, -92, -316 )
-polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ), PoolIntArray( 5, 6, 7, 8, 9, 10, 11 ), PoolIntArray( 12, 13, 14, 15, 16, 17 ), PoolIntArray( 18, 19, 20, 12 ), PoolIntArray( 21, 22, 23, 24, 25, 26 ), PoolIntArray( 27, 28, 29, 30 ), PoolIntArray( 30, 31, 32, 33 ), PoolIntArray( 27, 30, 33 ), PoolIntArray( 27, 33, 34 ), PoolIntArray( 27, 34, 35, 36 ), PoolIntArray( 36, 35, 37, 38 ), PoolIntArray( 39, 38, 37, 40 ), PoolIntArray( 41, 39, 40, 42 ), PoolIntArray( 42, 40, 43, 44 ), PoolIntArray( 5, 45, 6 ), PoolIntArray( 46, 11, 10, 47, 48 ), PoolIntArray( 46, 48, 49 ), PoolIntArray( 46, 49, 50, 4, 3 ), PoolIntArray( 51, 0, 4, 16 ), PoolIntArray( 15, 51, 16 ), PoolIntArray( 12, 17, 18 ), PoolIntArray( 52, 12, 20 ), PoolIntArray( 52, 20, 53, 54 ), PoolIntArray( 55, 54, 53, 56 ), PoolIntArray( 57, 55, 56, 58 ), PoolIntArray( 57, 58, 26, 25 ), PoolIntArray( 59, 44, 43 ), PoolIntArray( 59, 43, 25, 60 ), PoolIntArray( 24, 60, 25 ), PoolIntArray( 21, 26, 61, 62, 63 ) ]
-outlines = [ PoolVector2Array( -112, 224, -112, 68, -60, 68, -56, 52, -36, 52, 4, 52, 4, 28, 20, 16, 20, -32, 4, -48, -8, -56, -104, -56, -104, -192, 152, -192, 152, -220, -60, -216, -60, -276, -80, -288, -96, -304, -92, -316, -72, -320, -72, -340, 56, -340, 56, -304, 60, -296, 84, -296, 96, -304, 96, -348, 84, -364, 84, -416, 176, -416, 176, -296, 200, -296, 200, -416, 288, -416, 288, -404, 348, -404, 348, -380, 288, -380, 288, -280, 148, -280, 148, -392, 132, -392, 128, -280, -40, -280, -40, -252, 168, -256, 180, -164, -40, -172, -40, -144, 172, -148, 172, -116, 152, -76, 164, -52, 184, -36, 348, -40, 348, 36, 216, 56, 188, 96, 188, 140, 208, 148, 232, 168, 224, 180, 220, 216 ) ]
+vertices = PoolVector2Array( 184, -36, 348, -40, 348, 36, 216, 56, 20, 16, 208, 148, 224, 180, 220, 216, -112, 224, -112, 68, -60, 68, 188, 140, -8, -56, -104, -56, -104, -192, -45.0028, -143.7, -72, -320, -72, -340, 56, -340, 56, -304, -40.3051, -281.195, 200, -296, 200, -416, 288, -416, 288, -404, 270.158, -366.458, 348, -404, 348, -380, 270.343, -342.969, 252.218, -329.282, 277.556, -324.288, 268.309, -315.226, 227.064, -308.013, 232, 168, 188, 96, -56, 52, -36, 52, 4, 52, 244.979, -277.269, 151.566, -278.383, 176, -296, 151.899, -392.647, 176, -416, 84, -416, 124.156, -392.277, 84, -364, 96, -348, 124.896, -279.271, 96, -304, 4, 28, 164, -52, 20, -32, 152, -76, 4, -48, 84, -296, 60, -296, 163.551, -137.375, 172, -116, -36.6799, -167.929, 156.079, -190.05, 172.503, -166.153, 168, -256, 150.863, -215.906, -44.337, -251.269, -60, -216, -60, -276, -80, -288, -96, -304, -92, -316 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ), PoolIntArray( 5, 6, 7, 8, 9, 10, 11 ), PoolIntArray( 12, 13, 14, 15 ), PoolIntArray( 16, 17, 18, 19, 20 ), PoolIntArray( 21, 22, 23, 24, 25 ), PoolIntArray( 24, 26, 27, 25 ), PoolIntArray( 21, 25, 28, 29 ), PoolIntArray( 30, 31, 29, 28 ), PoolIntArray( 21, 29, 32 ), PoolIntArray( 5, 33, 6 ), PoolIntArray( 34, 11, 10, 35, 36 ), PoolIntArray( 34, 36, 37 ), PoolIntArray( 21, 32, 38 ), PoolIntArray( 21, 38, 39, 40 ), PoolIntArray( 40, 39, 41, 42 ), PoolIntArray( 43, 42, 41, 44 ), PoolIntArray( 45, 43, 44, 46 ), PoolIntArray( 46, 44, 47, 48 ), PoolIntArray( 34, 37, 49, 4, 3 ), PoolIntArray( 50, 0, 4, 51 ), PoolIntArray( 15, 52, 50, 51, 53 ), PoolIntArray( 54, 48, 47 ), PoolIntArray( 54, 47, 20, 55 ), PoolIntArray( 19, 55, 20 ), PoolIntArray( 15, 56, 57, 52 ), PoolIntArray( 15, 53, 12 ), PoolIntArray( 58, 15, 14 ), PoolIntArray( 58, 14, 59, 60 ), PoolIntArray( 61, 60, 59, 62 ), PoolIntArray( 63, 61, 62, 64 ), PoolIntArray( 63, 64, 65, 20 ), PoolIntArray( 16, 20, 65, 66, 67, 68 ) ]
+outlines = [ PoolVector2Array( -112, 224, -112, 68, -60, 68, -56, 52, -36, 52, 4, 52, 4, 28, 20, 16, 20, -32, 4, -48, -8, -56, -104, -56, -104, -192, 156.079, -190.05, 150.863, -215.906, -60, -216, -60, -276, -80, -288, -96, -304, -92, -316, -72, -320, -72, -340, 56, -340, 56, -304, 60, -296, 84, -296, 96, -304, 96, -348, 84, -364, 84, -416, 176, -416, 176, -296, 200, -296, 200, -416, 288, -416, 288, -404, 348, -404, 348, -380, 270.158, -366.458, 270.343, -342.969, 277.556, -324.288, 268.309, -315.226, 252.218, -329.282, 227.064, -308.013, 244.979, -277.269, 151.566, -278.383, 151.899, -392.647, 124.156, -392.277, 124.896, -279.271, -40.3051, -281.195, -44.337, -251.269, 168, -256, 172.503, -166.153, -36.6799, -167.929, -45.0028, -143.7, 163.551, -137.375, 172, -116, 152, -76, 164, -52, 184, -36, 348, -40, 348, 36, 216, 56, 188, 96, 188, 140, 208, 148, 232, 168, 224, 180, 220, 216 ) ]
 
 [node name="Level4" type="Node2D"]
 scale = Vector2( 2, 2 )
 script = ExtResource( 7 )
 time_limit = 120
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_left = -925.0
+margin_top = -749.0
+margin_right = 1163.0
+margin_bottom = 502.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -128.0
+margin_top = -64.0
+margin_right = 367.0
+margin_bottom = 240.0
+color = Color( 0.192157, 0.196078, 0.2, 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="ColorRect"]
+margin_left = 1.62161
+margin_top = -289.686
+margin_right = 321.622
+margin_bottom = 14.3141
+color = Color( 0.192157, 0.196078, 0.2, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect3" type="ColorRect" parent="ColorRect/ColorRect2"]
+margin_left = 189.378
+margin_top = -81.3141
+margin_right = 432.378
+margin_bottom = 94.6859
+color = Color( 0.192157, 0.196078, 0.2, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect4" type="ColorRect" parent="ColorRect/ColorRect2/ColorRect3"]
+margin_left = 155.0
+margin_top = 17.5
+margin_right = 320.0
+margin_bottom = 68.5
+color = Color( 0.192157, 0.196078, 0.2, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="water" type="TileMap" parent="."]
 tile_set = ExtResource( 10 )
@@ -90,6 +143,65 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="water/StaticBody2D"]
+position = Vector2( -15.9426, 36.1682 )
+shape = SubResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="water5" type="TileMap" parent="."]
+position = Vector2( 263.154, -269.21 )
+rotation = 2.45306
+tile_set = ExtResource( 10 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -131077, 8, 0, -131076, -1610612734, 0, -131075, -1610612734, 0, -131074, -1610612734, 0, -131073, -1610612728, 0, -65542, 8, 0, -65541, 0, 0, -65540, 0, 0, -65539, 0, 0, -65538, 0, 0, -65537, 0, 0, -131072, -1610612728, 0, -7, 8, 0, -6, 0, 0, -5, 0, 0, -4, 0, 0, -3, 0, 0, -2, 0, 0, -1, 0, 0, -65536, 1610612738, 0, 65529, 1, 0, 65530, 0, 0, 65531, 0, 0, 65532, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 1610612744, 0, 131065, 1, 0, 131066, 0, 0, 131067, 0, 0, 131068, 0, 0, 131069, -536870910, 0, 131070, 0, 0, 131071, 1610612737, 0, 196601, 1, 0, 196602, 0, 0, 196603, 0, 0, 196604, 1610612744, 0, 196606, -1073741816, 0, 196607, 1610612744, 0, 262137, -1073741816, 0, 262138, -1073741823, 0, 262139, 1610612744, 0 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="water5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="water5/StaticBody2D"]
+position = Vector2( -40.1825, -7.63947 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="water5/StaticBody2D"]
+position = Vector2( -56.363, 8.54106 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="water5/StaticBody2D"]
+position = Vector2( -79.7128, 35.2164 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="water5/StaticBody2D"]
+position = Vector2( -30.9333, -36.1682 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="water5/StaticBody2D"]
+position = Vector2( -68.5293, -35.6923 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="water5/StaticBody2D"]
+position = Vector2( -79.7128, 52.3487 )
+shape = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="water5/StaticBody2D"]
 position = Vector2( -15.9426, 36.1682 )
 shape = SubResource( 5 )
 __meta__ = {
@@ -150,6 +262,66 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="water3/StaticBody2D"]
+position = Vector2( -15.9426, 36.1682 )
+shape = SubResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="water6" type="TileMap" parent="."]
+position = Vector2( 92.4892, -444.285 )
+rotation = -0.804195
+scale = Vector2( 0.5, 0.5 )
+tile_set = ExtResource( 10 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -131077, 8, 0, -131076, -1610612734, 0, -131075, -1610612734, 0, -131074, -1610612734, 0, -131073, -1610612728, 0, -65542, 8, 0, -65541, 0, 0, -65540, 0, 0, -65539, 0, 0, -65538, 0, 0, -65537, 0, 0, -131072, -1610612728, 0, -7, 8, 0, -6, 0, 0, -5, 0, 0, -4, 0, 0, -3, 0, 0, -2, 0, 0, -1, 0, 0, -65536, 1610612738, 0, 65529, 1, 0, 65530, 0, 0, 65531, 0, 0, 65532, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 1610612744, 0, 131065, 1, 0, 131066, 0, 0, 131067, 0, 0, 131068, 0, 0, 131069, -536870910, 0, 131070, 0, 0, 131071, 1610612737, 0, 196601, -1073741816, 0, 196602, 0, 0, 196603, 0, 0, 196604, 1610612744, 0, 196606, -1073741816, 0, 196607, 1610612744, 0, 262138, -1073741816, 0, 262139, 1610612744, 0 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="water6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="water6/StaticBody2D"]
+position = Vector2( -40.1825, -7.63947 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="water6/StaticBody2D"]
+position = Vector2( -56.363, 8.54106 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="water6/StaticBody2D"]
+position = Vector2( -79.7128, 35.2164 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="water6/StaticBody2D"]
+position = Vector2( -30.9333, -36.1682 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="water6/StaticBody2D"]
+position = Vector2( -68.5293, -35.6923 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="water6/StaticBody2D"]
+position = Vector2( -79.7128, 52.3487 )
+shape = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="water6/StaticBody2D"]
 position = Vector2( -15.9426, 36.1682 )
 shape = SubResource( 5 )
 __meta__ = {
@@ -280,7 +452,7 @@ __meta__ = {
 tile_set = ExtResource( 4 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( -1769468, 3, 0, -1769467, 1, 0, -1769466, 1, 0, -1769465, 1, 0, -1769464, 1, 0, -1769463, 1, 0, -1769462, 1, 0, -1769461, 8, 0, -1769460, 1, 0, -1769459, 1, 0, -1769458, 1, 0, -1769457, 1, 0, -1769456, 1, 0, -1769455, 1, 0, -1769454, 8, 0, -1703932, 4, 0, -1703925, 7, 0, -1703917, 1, 0, -1703916, 1, 0, -1703915, 1, 0, -1703914, 1, 0, -1638396, 4, 0, -1638389, 7, 0, -1572860, 4, 0, -1572856, 7, 0, -1572853, 7, 0, -1572845, 2, 0, -1572844, 2, 0, -1572843, 2, 0, -1572842, 2, 0, -1507324, 4, 0, -1507320, 7, 0, -1507317, 7, 0, -1507310, 7, 0, -1376264, 3, 0, -1376263, 1, 0, -1376262, 1, 0, -1376261, 1, 0, -1376260, 1, 0, -1376259, 1, 0, -1376258, 1, 0, -1376257, 1, 0, -1441792, 1, 0, -1441791, 1, 0, -1441790, 1, 0, -1441789, 1, 0, -1441788, 8, 0, -1441784, 7, 0, -1441781, 7, 0, -1441774, 7, 0, -1310728, 4, 0, -1376252, 7, 0, -1376248, 7, 0, -1376245, 7, 0, -1376238, 7, 0, -1245192, 4, 0, -1310716, 7, 0, -1310712, 7, 0, -1310709, 7, 0, -1310702, 7, 0, -1179656, 4, 0, -1245176, 7, 0, -1245166, 7, 0, -1114120, 4, 0, -1179640, 7, 0, -1179630, 7, 0, -1048584, 4, 0, -1048578, 536870913, 0, -1048577, 536870913, 0, -1114112, 536870913, 0, -1114111, 536870913, 0, -1114110, 536870913, 0, -1114109, 536870913, 0, -1114108, 536870913, 0, -1114107, 536870913, 0, -1114106, 536870913, 0, -1114105, 536870913, 0, -1114104, 536870913, 0, -1114103, 536870913, 0, -1114102, 536870913, 0, -1114101, 536870915, 0, -1114100, 1, 0, -1114099, 1, 0, -1114098, 1, 0, -1114097, 1, 0, -1114096, 1, 0, -1114095, 1, 0, -1114094, 1, 0, -983048, 4, 0, -1048565, 536870916, 0, -917512, 4, 0, -983029, 536870916, 0, -851976, 4, 0, -917493, 536870916, 0, -786440, 536870920, 0, -786439, 536870913, 0, -786438, 536870913, 0, -786437, 536870913, 0, -786436, 536870913, 0, -786435, 536870913, 0, -786434, 536870913, 0, -786433, 536870913, 0, -851968, 536870913, 0, -851967, 536870913, 0, -851966, 536870913, 0, -851965, 536870913, 0, -851964, 536870913, 0, -851963, 536870913, 0, -851962, 536870913, 0, -851961, 536870913, 0, -851960, 536870913, 0, -851957, 536870916, 0, -720904, 4, 0, -786421, 536870916, 0, -655368, 4, 0, -720885, 536870916, 0, -589832, 4, 0, -589826, 536870913, 0, -589825, 536870913, 0, -655360, 536870913, 0, -655359, 536870913, 0, -655358, 536870913, 0, -655357, 536870913, 0, -655356, 536870913, 0, -655355, 536870913, 0, -655354, 536870913, 0, -655353, 536870913, 0, -655352, 536870913, 0, -655351, 536870913, 0, -655350, 536870913, 0, -655349, 8, 0, -524296, 4, 0, -589813, 1073741831, 0, -458760, 4, 0, -524277, 1073741831, 0, -393224, 4, 0, -458741, 1073741831, 0, -327688, 4, 0, -393205, 1073741831, 0, -262152, 4, 0, -327669, 1073741831, 0, -196616, 4, 0, -262132, 536870913, 0, -262131, 536870913, 0, -262130, 536870913, 0, -262129, 536870913, 0, -262128, 536870913, 0, -262127, 536870913, 0, -262126, 536870913, 0, -262125, 536870913, 0, -262124, 536870913, 0, -262123, 536870913, 0, -262122, 536870915, 0, -131080, 4, 0, -196586, 7, 0, -65544, 4, 0, -131050, 7, 0, -8, 4, 0, -65514, 7, 0, 65528, 4, 0, 22, 7, 0, 131064, 4, 0, 65558, 7, 0, 196600, 4, 0, 131094, 7, 0, 262136, 4, 0, 196630, 7, 0, 327672, 4, 0, 262166, 7, 0, 393208, 4, 0, 327702, 7, 0, 458744, 4, 0, 393238, 7, 0, 524280, 4, 0, 458774, 7, 0, 589816, 4, 0, 524310, 7, 0, 655352, 4, 0, 589846, 7, 0, 720888, 4, 0, 655382, 7, 0, 786424, 4, 0, 720918, 7, 0, 851960, 4, 0, 786454, 7, 0, 917496, 4, 0, 851990, 7, 0, 983032, 5, 0, 983033, 2, 0, 983034, 2, 0, 983035, 2, 0, 983036, 2, 0, 983037, 2, 0, 983038, 2, 0, 983039, 2, 0, 917504, 2, 0, 917505, 2, 0, 917506, 2, 0, 917507, 2, 0, 917508, 2, 0, 917509, 2, 0, 917510, 2, 0, 917511, 2, 0, 917512, 2, 0, 917513, 2, 0, 917514, 2, 0, 917515, 2, 0, 917516, 2, 0, 917517, 2, 0, 917518, 2, 0, 917519, 2, 0, 917520, 2, 0, 917521, 2, 0, 917522, 2, 0, 917523, 2, 0, 917524, 2, 0, 917525, 2, 0, 917526, 6, 0 )
+tile_data = PoolIntArray( -1769468, 3, 0, -1769467, 1, 0, -1769466, 1, 0, -1769465, 1, 0, -1769464, 1, 0, -1769463, 1, 0, -1769462, 1, 0, -1769461, 8, 0, -1769460, 1, 0, -1769459, 1, 0, -1769458, 1, 0, -1769457, 1, 0, -1769456, 1, 0, -1769455, 1, 0, -1769454, 8, 0, -1703932, 4, 0, -1703925, 7, 0, -1703917, 1, 0, -1703916, 1, 0, -1703915, 1, 0, -1703914, 1, 0, -1703913, 8, 0, -1638396, 4, 0, -1638389, 7, 0, -1572860, 4, 0, -1572856, 7, 0, -1572853, 7, 0, -1572845, 2, 0, -1572844, 2, 0, -1572843, 2, 0, -1572842, 2, 0, -1572841, 6, 0, -1507324, 4, 0, -1507320, 7, 0, -1507317, 7, 0, -1507310, 7, 0, -1376264, 3, 0, -1376263, 1, 0, -1376262, 1, 0, -1376261, 1, 0, -1376260, 1, 0, -1376259, 1, 0, -1376258, 1, 0, -1376257, 1, 0, -1441792, 1, 0, -1441791, 1, 0, -1441790, 1, 0, -1441789, 1, 0, -1441788, 8, 0, -1441784, 7, 0, -1441781, 7, 0, -1441774, 7, 0, -1310728, 4, 0, -1376252, 7, 0, -1376248, 7, 0, -1376245, 7, 0, -1376238, 7, 0, -1245192, 4, 0, -1310716, 7, 0, -1310712, 7, 0, -1310709, 7, 0, -1310702, 7, 0, -1179656, 4, 0, -1245176, 7, 0, -1245166, 7, 0, -1114120, 4, 0, -1179640, 7, 0, -1179630, 7, 0, -1048584, 4, 0, -1048578, 536870913, 0, -1048577, 536870913, 0, -1114112, 536870913, 0, -1114111, 536870913, 0, -1114110, 536870913, 0, -1114109, 536870913, 0, -1114108, 536870913, 0, -1114107, 536870913, 0, -1114106, 536870913, 0, -1114105, 536870913, 0, -1114104, 536870913, 0, -1114103, 536870913, 0, -1114102, 536870913, 0, -1114101, 536870915, 0, -1114100, 1, 0, -1114099, 1, 0, -1114098, 1, 0, -1114097, 1, 0, -1114096, 1, 0, -1114095, 1, 0, -1114094, 1, 0, -983048, 4, 0, -1048565, 536870916, 0, -917512, 4, 0, -983029, 536870916, 0, -851976, 4, 0, -917493, 536870916, 0, -786440, 536870920, 0, -786439, 536870913, 0, -786438, 536870913, 0, -786437, 536870913, 0, -786436, 536870913, 0, -786435, 536870913, 0, -786434, 536870913, 0, -786433, 536870913, 0, -851968, 536870913, 0, -851967, 536870913, 0, -851966, 536870913, 0, -851965, 536870913, 0, -851964, 536870913, 0, -851963, 536870913, 0, -851962, 536870913, 0, -851961, 536870913, 0, -851960, 536870913, 0, -851957, 536870916, 0, -720904, 4, 0, -786421, 536870916, 0, -655368, 4, 0, -720885, 536870916, 0, -589832, 4, 0, -589826, 536870913, 0, -589825, 536870913, 0, -655360, 536870913, 0, -655359, 536870913, 0, -655358, 536870913, 0, -655357, 536870913, 0, -655356, 536870913, 0, -655355, 536870913, 0, -655354, 536870913, 0, -655353, 536870913, 0, -655352, 536870913, 0, -655351, 536870913, 0, -655350, 536870913, 0, -655349, 8, 0, -524296, 4, 0, -589813, 1073741831, 0, -458760, 4, 0, -524277, 1073741831, 0, -393224, 4, 0, -458741, 1073741831, 0, -327688, 4, 0, -393205, 1073741831, 0, -262152, 4, 0, -327669, 1073741831, 0, -196616, 4, 0, -262132, 536870913, 0, -262131, 536870913, 0, -262130, 536870913, 0, -262129, 536870913, 0, -262128, 536870913, 0, -262127, 536870913, 0, -262126, 536870913, 0, -262125, 536870913, 0, -262124, 536870913, 0, -262123, 536870913, 0, -262122, 536870915, 0, -131080, 4, 0, -196586, 7, 0, -65544, 4, 0, -131050, 7, 0, -8, 4, 0, -65514, 7, 0, 65528, 4, 0, 22, 7, 0, 131064, 4, 0, 65558, 7, 0, 196600, 4, 0, 131094, 7, 0, 262136, 4, 0, 196630, 7, 0, 327672, 4, 0, 262166, 7, 0, 393208, 4, 0, 327702, 7, 0, 458744, 4, 0, 393238, 7, 0, 524280, 4, 0, 458774, 7, 0, 589816, 4, 0, 524310, 7, 0, 655352, 4, 0, 589846, 7, 0, 720888, 4, 0, 655382, 7, 0, 786424, 4, 0, 720918, 7, 0, 851960, 4, 0, 786454, 7, 0, 917496, 4, 0, 851990, 7, 0, 983032, 5, 0, 983033, 2, 0, 983034, 2, 0, 983035, 2, 0, 983036, 2, 0, 983037, 2, 0, 983038, 2, 0, 983039, 2, 0, 917504, 2, 0, 917505, 2, 0, 917506, 2, 0, 917507, 2, 0, 917508, 2, 0, 917509, 2, 0, 917510, 2, 0, 917511, 2, 0, 917512, 2, 0, 917513, 2, 0, 917514, 2, 0, 917515, 2, 0, 917516, 2, 0, 917517, 2, 0, 917518, 2, 0, 917519, 2, 0, 917520, 2, 0, 917521, 2, 0, 917522, 2, 0, 917523, 2, 0, 917524, 2, 0, 917525, 2, 0, 917526, 6, 0 )
 
 [node name="pipes" type="TileMap" parent="."]
 tile_set = ExtResource( 5 )
@@ -309,6 +481,27 @@ frequency = 4.8
 position = Vector2( 44.0851, -252.01 )
 rotation = 4.69736
 scale = Vector2( 0.7, 0.7 )
+
+[node name="ArrowShooter8" parent="." instance=ExtResource( 8 )]
+position = Vector2( -19.6911, -331.965 )
+rotation = 4.69736
+scale = Vector2( 0.7, 0.7 )
+
+[node name="ArrowShooter9" parent="." instance=ExtResource( 8 )]
+position = Vector2( -19.6911, -331.965 )
+rotation = 4.69736
+scale = Vector2( 0.7, 0.7 )
+
+[node name="ArrowShooter10" parent="." instance=ExtResource( 8 )]
+position = Vector2( 25.7963, -332.434 )
+rotation = 4.69736
+scale = Vector2( 0.7, 0.7 )
+frequency = 2.0
+
+[node name="ArrowShooter11" parent="." instance=ExtResource( 8 )]
+position = Vector2( 125.64, -333.922 )
+scale = Vector2( 0.7, 0.7 )
+frequency = 3.0
 
 [node name="ArrowShooter2" parent="." instance=ExtResource( 8 )]
 position = Vector2( 348.966, 46.0432 )
@@ -342,6 +535,11 @@ position = Vector2( 76.2592, -371.748 )
 rotation = 0.247908
 scale = Vector2( 0.8, 0.8 )
 
+[node name="MouseTrap6" parent="." instance=ExtResource( 11 )]
+position = Vector2( -73.3335, -310.785 )
+rotation = 0.247908
+scale = Vector2( 0.8, 0.8 )
+
 [node name="MouseTrap4" parent="." instance=ExtResource( 11 )]
 position = Vector2( -57.3423, -192.446 )
 rotation = -0.215668
@@ -353,30 +551,37 @@ rotation = 0.329545
 scale = Vector2( 0.8, 0.8 )
 
 [node name="DoorExit" parent="." instance=ExtResource( 6 )]
-position = Vector2( 380, -400 )
+position = Vector2( 391.097, -400.555 )
 rotation = 1.57079
 
 [node name="Exit" parent="." instance=ExtResource( 1 )]
-position = Vector2( 372, -400 )
-
-[node name="Cheese" parent="." instance=ExtResource( 2 )]
-position = Vector2( 272, -396 )
+position = Vector2( 375.329, -400.555 )
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
 navpoly = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Cat" parent="Navigation2D" instance=ExtResource( 9 )]
 position = Vector2( -92, 204 )
 rotation = -0.000478696
+speed = 170
 smell_radius = 100.0
+
+[node name="Cheese" parent="." instance=ExtResource( 2 )]
+position = Vector2( 321.013, -397.85 )
 
 [node name="Rat" parent="." instance=ExtResource( 3 )]
 position = Vector2( -32, 156 )
 
 [node name="Fish" parent="." instance=ExtResource( 12 )]
-position = Vector2( -84, -308 )
+position = Vector2( 96.7737, -411.817 )
 rotation = -0.000478696
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -392,5 +597,29 @@ message = "How did Twitterpated get in there?"
 [node name="DialogueTrigger2" parent="." instance=ExtResource( 14 )]
 position = Vector2( -84, -144 )
 message = "Better find her something to eat..."
+
+[node name="Skull" parent="." instance=ExtResource( 15 )]
+modulate = Color( 0.811765, 0.776471, 0.721569, 1 )
+position = Vector2( 116.151, -97.3115 )
+
+[node name="Skull3" parent="." instance=ExtResource( 15 )]
+modulate = Color( 0.811765, 0.776471, 0.721569, 1 )
+position = Vector2( 61.7558, -259.315 )
+
+[node name="Skull2" parent="." instance=ExtResource( 15 )]
+modulate = Color( 0.811765, 0.776471, 0.721569, 1 )
+position = Vector2( 287.412, -419.736 )
+
+[node name="Slime2" parent="." instance=ExtResource( 16 )]
+position = Vector2( -78.1047, -343.165 )
+
+[node name="Slime" parent="." instance=ExtResource( 16 )]
+position = Vector2( 194.892, -424.217 )
+
+[node name="Slime3" parent="." instance=ExtResource( 16 )]
+position = Vector2( 82.5616, -151.42 )
+
+[node name="Slime" parent="Slime3" instance=ExtResource( 16 )]
+position = Vector2( 174.222, 94.8513 )
 [connection signal="fronk_speaks" from="DialogueTrigger" to="." method="_on_DialogueTrigger_fronk_speaks"]
 [connection signal="fronk_speaks" from="DialogueTrigger2" to="." method="_on_DialogueTrigger2_fronk_speaks"]

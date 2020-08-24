@@ -57,7 +57,6 @@ func _physics_process(delta):
 			var paths = nav.get_simple_path(position, target.position)
 			assert(paths.size() > 1)
 			var normalized = (paths[1] - position).normalized()
-			print((paths[1] - position).length_squared())
 			if (paths[1] - position).length_squared() > (speed): 
 				move_and_slide(normalized * speed)
 

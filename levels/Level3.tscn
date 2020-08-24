@@ -22,12 +22,52 @@ scale = Vector2( 2, 2 )
 script = ExtResource( 5 )
 time_limit = 45
 
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -654.658
+margin_top = -728.018
+margin_right = 1435.34
+margin_bottom = 558.982
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+margin_left = 15.0
+margin_top = -161.0
+margin_right = 273.0
+margin_bottom = 163.0
+color = Color( 0.192157, 0.196078, 0.2, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+margin_left = 735.0
+margin_top = -457.0
+margin_right = 945.0
+margin_bottom = -262.0
+color = Color( 0.192157, 0.196078, 0.2, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_left = 268.0
+margin_top = -65.0
+margin_right = 625.0
+margin_bottom = 18.0
+color = Color( 0.192157, 0.196078, 0.2, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="MouseTrap2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 39.8958, 36.7542 )
+position = Vector2( 36.1328, 36.9894 )
 scale = Vector2( 0.8, 0.8 )
 
 [node name="MouseTrap6" parent="." instance=ExtResource( 4 )]
-position = Vector2( 92.2079, 57.4175 )
+position = Vector2( 92.2079, 58.1231 )
 scale = Vector2( 0.8, 0.8 )
 
 [node name="MouseTrap17" parent="." instance=ExtResource( 4 )]
@@ -39,43 +79,39 @@ position = Vector2( 94.7452, 20.4396 )
 scale = Vector2( 0.8, 0.8 )
 
 [node name="MouseTrap19" parent="." instance=ExtResource( 4 )]
-position = Vector2( 114.652, 17.5446 )
+position = Vector2( 114.652, 16.1335 )
 scale = Vector2( 0.8, 0.8 )
 
 [node name="MouseTrap7" parent="." instance=ExtResource( 4 )]
-position = Vector2( 112.419, 64.9203 )
+position = Vector2( 113.36, 64.9203 )
 scale = Vector2( 0.8, 0.8 )
 
 [node name="MouseTrap8" parent="." instance=ExtResource( 4 )]
-position = Vector2( 132.109, 59.71 )
+position = Vector2( 134.696, 59.71 )
 scale = Vector2( 0.8, 0.8 )
 
 [node name="MouseTrap9" parent="." instance=ExtResource( 4 )]
-position = Vector2( 150.326, 42.9609 )
+position = Vector2( 151.267, 42.0201 )
 scale = Vector2( 0.8, 0.8 )
 
 [node name="MouseTrap10" parent="." instance=ExtResource( 4 )]
-position = Vector2( 154.037, 24.1234 )
+position = Vector2( 154.743, 22.9475 )
 scale = Vector2( 0.8, 0.8 )
 
 [node name="MouseTrap11" parent="." instance=ExtResource( 4 )]
-position = Vector2( 152.469, 4.03219 )
+position = Vector2( 153.88, 3.56182 )
 scale = Vector2( 0.8, 0.8 )
 
 [node name="MouseTrap12" parent="." instance=ExtResource( 4 )]
-position = Vector2( 133.56, -12.313 )
+position = Vector2( 134.03, -13.2537 )
 scale = Vector2( 0.8, 0.8 )
 
 [node name="MouseTrap20" parent="." instance=ExtResource( 4 )]
 position = Vector2( 273.276, -53.1563 )
 scale = Vector2( 0.8, 0.8 )
 
-[node name="MouseTrap21" parent="." instance=ExtResource( 4 )]
-position = Vector2( 295.507, -45.2691 )
-scale = Vector2( 0.8, 0.8 )
-
 [node name="MouseTrap36" parent="." instance=ExtResource( 4 )]
-position = Vector2( 316.986, -53.0746 )
+position = Vector2( 302.126, -53.554 )
 scale = Vector2( 0.8, 0.8 )
 
 [node name="MouseTrap22" parent="." instance=ExtResource( 4 )]
@@ -107,23 +143,23 @@ position = Vector2( 37.2539, -39.6041 )
 scale = Vector2( 0.8, 0.8 )
 
 [node name="MouseTrap13" parent="." instance=ExtResource( 4 )]
-position = Vector2( 112.941, -19.6296 )
+position = Vector2( 113.411, -21.2759 )
 scale = Vector2( 0.8, 0.8 )
 
 [node name="MouseTrap14" parent="." instance=ExtResource( 4 )]
-position = Vector2( 92.6822, -19.5425 )
+position = Vector2( 91.2711, -19.5425 )
 scale = Vector2( 0.8, 0.8 )
 
 [node name="MouseTrap15" parent="." instance=ExtResource( 4 )]
-position = Vector2( 72.6642, -11.0808 )
+position = Vector2( 69.6068, -11.7864 )
 scale = Vector2( 0.8, 0.8 )
 
 [node name="MouseTrap16" parent="." instance=ExtResource( 4 )]
-position = Vector2( 39.981, 17.9644 )
+position = Vector2( 36.218, 18.1996 )
 scale = Vector2( 0.8, 0.8 )
 
 [node name="MouseTrap3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 44.6211, 55.5748 )
+position = Vector2( 40.8581, 55.81 )
 scale = Vector2( 0.8, 0.8 )
 
 [node name="MouseTrap5" parent="." instance=ExtResource( 4 )]
@@ -131,46 +167,38 @@ position = Vector2( 393.342, -54.7178 )
 scale = Vector2( 0.8, 0.8 )
 
 [node name="MouseTrap29" parent="." instance=ExtResource( 4 )]
-position = Vector2( 414.92, -46.7912 )
+position = Vector2( 414.92, -48.2068 )
 scale = Vector2( 0.8, 0.8 )
 
 [node name="MouseTrap30" parent="." instance=ExtResource( 4 )]
-position = Vector2( 436.498, -47.0113 )
+position = Vector2( 436.498, -47.5775 )
 scale = Vector2( 0.8, 0.8 )
 
 [node name="MouseTrap32" parent="." instance=ExtResource( 4 )]
 position = Vector2( 456.755, -54.4976 )
 scale = Vector2( 0.8, 0.8 )
 
-[node name="MouseTrap33" parent="." instance=ExtResource( 4 )]
-position = Vector2( 477.012, -22.1305 )
-scale = Vector2( 0.8, 0.8 )
-
-[node name="MouseTrap34" parent="." instance=ExtResource( 4 )]
-position = Vector2( 499.251, -22.7911 )
-scale = Vector2( 0.8, 0.8 )
-
 [node name="MouseTrap35" parent="." instance=ExtResource( 4 )]
-position = Vector2( 520.829, -11.5617 )
+position = Vector2( 514.336, -11.4189 )
 scale = Vector2( 0.8, 0.8 )
 
 [node name="MouseTrap31" parent="." instance=ExtResource( 4 )]
-position = Vector2( 456.095, -11.7818 )
+position = Vector2( 464.09, -11.7818 )
 scale = Vector2( 0.8, 0.8 )
 
 [node name="MouseTrap4" parent="." instance=ExtResource( 4 )]
-position = Vector2( 52.696, 0.42555 )
+position = Vector2( 48.933, 0.660734 )
 scale = Vector2( 0.8, 0.8 )
 
 [node name="MouseTrap" parent="." instance=ExtResource( 4 )]
-position = Vector2( 53.3568, 73.1925 )
+position = Vector2( 49.3586, 73.4277 )
 scale = Vector2( 0.8, 0.8 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( -655359, 3, 0, -655358, 1, 0, -655357, 1, 0, -655356, 1, 0, -655355, 1, 0, -655354, 1, 0, -655353, 1, 0, -655352, 1, 0, -655351, 1, 0, -655350, 1, 0, -655349, 1, 0, -655348, 1, 0, -655347, 1, 0, -655346, 1, 0, -655345, 1, 0, -655344, 8, 0, -589823, 4, 0, -589808, 7, 0, -524287, 4, 0, -524272, 7, 0, -458751, 4, 0, -458736, 7, 0, -393215, 4, 0, -393200, 7, 0, -327679, 4, 0, -327664, 7, 0, -262143, 4, 0, -262128, 7, 0, -262127, 1, 0, -262126, 1, 0, -262125, 1, 0, -262124, 1, 0, -262123, 1, 0, -262122, 1, 0, -262121, 1, 0, -262120, 1, 0, -262119, 1, 0, -262118, 1, 0, -262117, 1, 0, -262116, 1, 0, -262115, 1, 0, -262114, 1, 0, -262113, 1, 0, -262112, 1, 0, -262111, 1, 0, -262110, 1, 0, -262109, 1, 0, -262108, 1, 0, -262107, 1, 0, -262106, 8, 0, -196607, 4, 0, -196592, 7, 0, -196570, 7, 0, -131071, 4, 0, -131034, 7, 0, -65535, 4, 0, -65520, 7, 0, -65498, 7, 0, 1, 4, 0, 16, 7, 0, 17, 2, 0, 18, 2, 0, 19, 2, 0, 20, 2, 0, 21, 2, 0, 22, 2, 0, 23, 2, 0, 24, 2, 0, 25, 2, 0, 26, 2, 0, 27, 2, 0, 28, 2, 0, 29, 2, 0, 30, 2, 0, 31, 2, 0, 32, 2, 0, 33, 2, 0, 34, 2, 0, 35, 2, 0, 36, 2, 0, 37, 2, 0, 38, 6, 0, 65537, 4, 0, 65552, 7, 0, 131073, 4, 0, 131088, 7, 0, 196609, 4, 0, 196624, 7, 0, 262145, 4, 0, 262160, 7, 0, 327681, 4, 0, 327696, 7, 0, 393217, 4, 0, 393232, 7, 0, 458753, 4, 0, 458768, 7, 0, 524289, 4, 0, 524304, 7, 0, 589825, 5, 0, 589826, 2, 0, 589827, 2, 0, 589828, 2, 0, 589829, 2, 0, 589830, 2, 0, 589831, 2, 0, 589832, 2, 0, 589833, 2, 0, 589834, 2, 0, 589835, 2, 0, 589836, 2, 0, 589837, 2, 0, 589838, 2, 0, 589839, 2, 0, 589840, 6, 0 )
+tile_data = PoolIntArray( -655359, 3, 0, -655358, 1, 0, -655357, 1, 0, -655356, 1, 0, -655355, 1, 0, -655354, 1, 0, -655353, 1, 0, -655352, 1, 0, -655351, 1, 0, -655350, 1, 0, -655349, 1, 0, -655348, 1, 0, -655347, 1, 0, -655346, 1, 0, -655345, 1, 0, -655344, 8, 0, -589823, 4, 0, -589808, 7, 0, -524287, 4, 0, -524272, 7, 0, -458751, 4, 0, -458736, 7, 0, -393215, 4, 0, -393200, 7, 0, -327679, 4, 0, -327664, 7, 0, -262143, 4, 0, -262128, 7, 0, -262127, 1, 0, -262126, 1, 0, -262125, 1, 0, -262124, 1, 0, -262123, 1, 0, -262122, 1, 0, -262121, 1, 0, -262120, 1, 0, -262119, 1, 0, -262118, 1, 0, -262117, 1, 0, -262116, 1, 0, -262115, 1, 0, -262114, 1, 0, -262113, 1, 0, -262112, 1, 0, -262111, 1, 0, -262110, 1, 0, -262109, 1, 0, -262108, 1, 0, -262107, 1, 0, -262106, 8, 0, -196607, 4, 0, -196592, 7, 0, -196570, 7, 0, -131071, 4, 0, -131034, 7, 0, -65535, 4, 0, -65498, 7, 0, 1, 4, 0, 16, 7, 0, 17, 2, 0, 18, 2, 0, 19, 2, 0, 20, 2, 0, 21, 2, 0, 22, 2, 0, 23, 2, 0, 24, 2, 0, 25, 2, 0, 26, 2, 0, 27, 2, 0, 28, 2, 0, 29, 2, 0, 30, 2, 0, 31, 2, 0, 32, 2, 0, 33, 2, 0, 34, 2, 0, 35, 2, 0, 36, 2, 0, 37, 2, 0, 38, 6, 0, 65537, 4, 0, 65552, 7, 0, 131073, 4, 0, 131088, 7, 0, 196609, 4, 0, 196624, 7, 0, 262145, 4, 0, 262160, 7, 0, 327681, 4, 0, 327696, 7, 0, 393217, 4, 0, 393232, 7, 0, 458753, 4, 0, 458768, 7, 0, 524289, 4, 0, 524304, 7, 0, 589825, 5, 0, 589826, 2, 0, 589827, 2, 0, 589828, 2, 0, 589829, 2, 0, 589830, 2, 0, 589831, 2, 0, 589832, 2, 0, 589833, 2, 0, 589834, 2, 0, 589835, 2, 0, 589836, 2, 0, 589837, 2, 0, 589838, 2, 0, 589839, 2, 0, 589840, 6, 0 )
 
 [node name="ArrowShooter" parent="." instance=ExtResource( 3 )]
 position = Vector2( 253.447, 82.6256 )
@@ -190,7 +218,7 @@ scale = Vector2( 0.7, 0.7 )
 frequency = 2.5
 
 [node name="ArrowShooter7" parent="." instance=ExtResource( 3 )]
-position = Vector2( 199.058, -139.234 )
+position = Vector2( 198.775, -139.234 )
 rotation = 4.71239
 scale = Vector2( 0.7, 0.7 )
 frequency = 4.0
@@ -199,7 +227,7 @@ frequency = 4.0
 position = Vector2( 222.677, -139.234 )
 rotation = 4.71239
 scale = Vector2( 0.7, 0.7 )
-frequency = 3.0
+frequency = 5.0
 
 [node name="ArrowShooter9" parent="." instance=ExtResource( 3 )]
 position = Vector2( 244.418, -139.628 )
@@ -208,13 +236,13 @@ scale = Vector2( 0.7, 0.7 )
 frequency = 7.0
 
 [node name="ArrowShooter3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 339.399, -44.4546 )
+position = Vector2( 328.374, -44.4546 )
 rotation = 4.71239
 scale = Vector2( 0.7, 0.7 )
 frequency = 3.0
 
 [node name="ArrowShooter4" parent="." instance=ExtResource( 3 )]
-position = Vector2( 364.752, -44.6748 )
+position = Vector2( 361.876, -44.6748 )
 rotation = 4.71239
 scale = Vector2( 0.7, 0.7 )
 
@@ -268,13 +296,7 @@ tile_data = PoolIntArray( -458748, 3, 0, -458747, 1, 0, -458746, 1, 0, -458745, 
 [node name="ArrowShooter14" parent="." instance=ExtResource( 3 )]
 position = Vector2( 924, -329.002 )
 scale = Vector2( 0.7, 0.7 )
-frequency = 2.0
-
-[node name="ArrowShooter15" parent="." instance=ExtResource( 3 )]
-position = Vector2( 931.698, -286.406 )
-rotation = 1.09714
-scale = Vector2( 0.7, 0.7 )
-frequency = 3.0
+frequency = 4.0
 
 [node name="ArrowShooter16" parent="." instance=ExtResource( 3 )]
 position = Vector2( 753.408, -432.872 )
@@ -289,7 +311,7 @@ scale = Vector2( 0.7, 0.7 )
 frequency = 2.5
 
 [node name="ArrowShooter18" parent="." instance=ExtResource( 3 )]
-position = Vector2( 869.973, -436.582 )
+position = Vector2( 870.213, -436.582 )
 rotation = -1.5708
 scale = Vector2( 0.7, 0.7 )
 frequency = 2.8
@@ -304,7 +326,7 @@ frequency = 3.0
 position = Vector2( 915.695, -436.976 )
 rotation = -1.5708
 scale = Vector2( 0.7, 0.7 )
-frequency = 5.0
+frequency = 8.0
 
 [node name="DoorExit" parent="." instance=ExtResource( 13 )]
 position = Vector2( 948.6, -376.195 )

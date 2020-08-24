@@ -121,6 +121,8 @@ __meta__ = {
 }
 
 [node name="menu_button" type="Button" parent="CanvasLayer"]
+anchor_left = -0.000798166
+anchor_right = -0.000798166
 margin_left = 439.182
 margin_top = 524.209
 margin_right = 592.182
