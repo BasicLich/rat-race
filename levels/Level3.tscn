@@ -22,6 +22,49 @@ scale = Vector2( 2, 2 )
 script = ExtResource( 5 )
 time_limit = 45
 
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -204.0
+margin_top = -616.0
+margin_right = 1220.0
+margin_bottom = 280.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Floor" type="Control" parent="."]
+modulate = Color( 0.192157, 0.196078, 0.2, 1 )
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Floor"]
+margin_left = 16.0
+margin_top = -160.0
+margin_right = 272.0
+margin_bottom = 160.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="Floor"]
+margin_left = 268.0
+margin_top = -64.0
+margin_right = 624.0
+margin_bottom = 16.0
+
+[node name="ColorRect3" type="ColorRect" parent="Floor"]
+margin_left = 736.0
+margin_top = -456.0
+margin_right = 944.0
+margin_bottom = -264.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="MouseTrap2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 39.8958, 36.7542 )
 scale = Vector2( 0.8, 0.8 )

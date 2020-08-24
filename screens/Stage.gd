@@ -19,7 +19,7 @@ var levels = [
 	]
 
 var rat_id: int
-var score: int
+var score: int = 0
 
 func _ready():	
 	$UI/Control.hide()
@@ -54,14 +54,18 @@ func _on_intro_done(scene):
 	# TODO: find better way
 	get_parent().get_node("AudioStreamPlayer").stop()
 	
-func _on_level_complete(successful, reason):
+func _on_level_complete(successful, reason, level_score):
 	$UI/Control/ViewportContainer/Viewport.call_deferred("remove_child", levels[index])
+	
+	score += (level_score * 100) 
 	
 	var report_instance = report.instance()
 	report_instance.rat_id = str(rat_id)
 	report_instance.success = successful
 	report_instance.reason = reason
 	report_instance.score = score
+	
+
 	
 	index += 1
 	
