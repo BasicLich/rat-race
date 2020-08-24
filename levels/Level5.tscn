@@ -94,6 +94,9 @@ position = Vector2( 226.314, 4.01819 )
 scale = Vector2( 0.5, 0.5 )
 sequence_size = 4
 
+[node name="Rat" parent="." instance=ExtResource( 1 )]
+position = Vector2( 256.617, 148.569 )
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 autoplay = true
@@ -134,6 +137,3 @@ position = Vector2( 252, -544 )
 
 [node name="Cheese" parent="." instance=ExtResource( 9 )]
 position = Vector2( 238.57, -515.542 )
-
-[node name="Rat" parent="." instance=ExtResource( 1 )]
-position = Vector2( 256.617, 148.569 )

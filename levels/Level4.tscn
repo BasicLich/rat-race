@@ -554,9 +554,6 @@ scale = Vector2( 0.8, 0.8 )
 position = Vector2( 391.097, -400.555 )
 rotation = 1.57079
 
-[node name="Exit" parent="." instance=ExtResource( 1 )]
-position = Vector2( 375.329, -400.555 )
-
 [node name="Navigation2D" type="Navigation2D" parent="."]
 __meta__ = {
 "_edit_lock_": true
@@ -621,5 +618,9 @@ position = Vector2( 82.5616, -151.42 )
 
 [node name="Slime" parent="Slime3" instance=ExtResource( 16 )]
 position = Vector2( 174.222, 94.8513 )
+
+[node name="Exit" parent="." instance=ExtResource( 1 )]
+position = Vector2( 380, -400 )
+scale = Vector2( 1.30491, 1.051 )
 [connection signal="fronk_speaks" from="DialogueTrigger" to="." method="_on_DialogueTrigger_fronk_speaks"]
 [connection signal="fronk_speaks" from="DialogueTrigger2" to="." method="_on_DialogueTrigger2_fronk_speaks"]

@@ -8,6 +8,9 @@ func _ready():
 func _on_level_complete():
 	emit_signal("level_complete", true, "is satisfactory", time_left)
 
+func _on_Cheese_body_entered(body):
+	$DoorExit.open()
+	$Cheese.queue_free()
 
 func _on_DialogueTrigger_fronk_speaks(message):
 	emit_signal("fronk_speaks", message)
