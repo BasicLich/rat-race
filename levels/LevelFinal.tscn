@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://tileset.res" type="TileSet" id=1]
 [ext_resource path="res://characters/Rat.tscn" type="PackedScene" id=2]
@@ -8,7 +8,11 @@
 [ext_resource path="res://decor/Slime.tscn" type="PackedScene" id=6]
 [ext_resource path="res://characters/Cat.tscn" type="PackedScene" id=7]
 [ext_resource path="res://levels/LevelFinal.gd" type="Script" id=8]
+[ext_resource path="res://levels/Exit.tscn" type="PackedScene" id=9]
 [ext_resource path="res://pipes.res" type="TileSet" id=10]
+[ext_resource path="res://assets/terminal-grotesque/terminal-grotesque.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://assets/music/success.ogg" type="AudioStream" id=12]
+[ext_resource path="res://objects/DialogueTrigger.tscn" type="PackedScene" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4.46792, 7.1089 )
@@ -24,15 +28,19 @@ vertices = PoolVector2Array( 165.569, 11.4796, 304.459, 11.7294, 304.958, 101.90
 polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 outlines = [ PoolVector2Array( 165.569, 11.4796, 304.459, 11.7294, 304.958, 101.908, 165.319, 101.658 ) ]
 
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 11 )
+
 [node name="Node2D" type="Node2D"]
 scale = Vector2( 2, 2 )
 script = ExtResource( 8 )
+time_limit = 10000
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -316.0
-margin_top = -200.0
-margin_right = 605.0
-margin_bottom = 338.0
+margin_left = -300.0
+margin_top = -208.0
+margin_right = 621.0
+margin_bottom = 330.0
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -397,3 +405,39 @@ tile_data = PoolIntArray( 393223, 0, 0, 393224, 1, 0, 393225, 1, 0, 393226, 5368
 [node name="SpiderWeb2" parent="." instance=ExtResource( 5 )]
 self_modulate = Color( 0.713726, 0.705882, 0.705882, 1 )
 position = Vector2( 221.198, 87.4274 )
+
+[node name="Exit" parent="." instance=ExtResource( 9 )]
+position = Vector2( 208, -52 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 8.0
+margin_top = -36.0
+margin_right = 139.0
+margin_bottom = -20.0
+custom_fonts/font = SubResource( 5 )
+text = "Thanks For Playing!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = -140.0
+margin_top = 24.0
+margin_right = -9.0
+margin_bottom = 59.0
+custom_fonts/font = SubResource( 5 )
+text = "By Julianne Waber & Henry Webster"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+autoplay = true
+
+[node name="DialogueTrigger" parent="." instance=ExtResource( 13 )]
+position = Vector2( 76, 16 )
+scale = Vector2( 2, 2 )
+message = "Congratulations,  you are now my companion for life."
+[connection signal="fronk_speaks" from="DialogueTrigger" to="." method="_on_DialogueTrigger_fronk_speaks"]

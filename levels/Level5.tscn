@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://characters/Rat.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tileset.res" type="TileSet" id=2]
@@ -10,10 +10,12 @@
 [ext_resource path="res://objects/MouseTrap.tscn" type="PackedScene" id=8]
 [ext_resource path="res://objects/cheese.tscn" type="PackedScene" id=9]
 [ext_resource path="res://objects/DoorExit.tscn" type="PackedScene" id=10]
+[ext_resource path="res://levels/Exit.tscn" type="PackedScene" id=11]
 
 [node name="Level5" type="Node2D"]
 scale = Vector2( 2, 2 )
 script = ExtResource( 5 )
+time_limit = 45
 
 [node name="Background" type="ColorRect" parent="."]
 margin_left = -993.787
@@ -130,5 +132,8 @@ frequency = 5.0
 [node name="DoorExit" parent="." instance=ExtResource( 10 )]
 position = Vector2( 253.019, -541.082 )
 
-[node name="Cheese" parent="DoorExit" instance=ExtResource( 9 )]
-position = Vector2( -14.4493, 25.54 )
+[node name="Exit" parent="." instance=ExtResource( 11 )]
+position = Vector2( 252, -544 )
+
+[node name="Cheese" parent="." instance=ExtResource( 9 )]
+position = Vector2( 238.57, -515.542 )

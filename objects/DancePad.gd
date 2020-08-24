@@ -33,6 +33,7 @@ func begin():
 	play_sequence()
 
 func play_sequence():
+	$AudioStreamPlayer2D.play()
 	# TODO: leaking timers?
 	var clear_timer = Timer.new()
 	clear_timer.wait_time = .5
@@ -78,6 +79,7 @@ func display(sequence, timer, clear_timer):
 	check.append(direction)
 
 func failed():
+	$AudioStreamPlayer2D.stop()
 	state = State.COMPLETE
 	$Go.hide()
 	$display_error.show()
@@ -86,6 +88,7 @@ func failed():
 	emit_signal("completed", false)
 	
 func succeed():
+	$AudioStreamPlayer2D.stop()
 	$Go.hide()
 	state = State.COMPLETE
 	$display_success.show()

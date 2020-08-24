@@ -6,16 +6,20 @@ var level_1 = preload("res://levels/Level1.tscn")
 var level_2 = preload("res://levels/Level2.tscn")
 var level_3 = preload("res://levels/Level3.tscn")
 var level_4 = preload("res://levels/Level4.tscn")
+var level_5 = preload("res://levels/Level5.tscn")
+var level_final = preload("res://levels/LevelFinal.tscn")
 #var level_1 = preload("res://level01.tscn")
 var report = preload("res://screens/Report.tscn")
 var intro = preload("res://screens/Intro.tscn")
 
 var index = 0
 var levels = [
-	level_1.instance(), 
-	level_2.instance(),
-	level_3.instance(),
-	level_4.instance()
+#	level_1.instance(),
+#	level_5.instance(), 
+#	level_2.instance(),
+#	level_3.instance(),
+	level_4.instance(),
+	level_final.instance()
 	]
 
 var rat_id: int

@@ -1,4 +1,4 @@
-extends Node2D
+extends "Level.gd"
 
-#func _ready():
-#	$Navigation2D/Cat.state = $Navigation2D/Cat.State.FULL
+func _on_DialogueTrigger_fronk_speaks(message):
+	emit_signal("fronk_speaks", message)
