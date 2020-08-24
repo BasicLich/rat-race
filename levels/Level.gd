@@ -1,6 +1,6 @@
 extends Node
 
-signal level_complete(successful, reason)
+signal level_complete(successful, reason, score)
 signal tick(time_left)
 signal fronk_speaks(message)
 
@@ -42,7 +42,7 @@ func _on_Rat_death(reason):
 
 func _on_carry_complete(reason):
 	print("hello")
-	emit_signal("level_complete", false, reason)
+	emit_signal("level_complete", false, reason, time_limit - time_left)
 
 func _on_tick():
 	time_left -= 1

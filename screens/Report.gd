@@ -10,7 +10,7 @@ var score: int
 
 func _ready():
 	$CanvasLayer/reason.text = "Rat #" + rat_id + " " + reason
-	$CanvasLayer/score.text = "Score: " + str(score * 100)
+	$CanvasLayer/score.text = "Score: " + str(score)
 	if success:
 		$CanvasLayer/result.text = "SUCCESS"
 		$CanvasLayer/result.add_color_override("font_color", Color(0.266667, 0.788235, 0.262745))

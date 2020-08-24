@@ -573,6 +573,7 @@ position = Vector2( -92, 204 )
 rotation = -0.000478696
 speed = 170
 smell_radius = 100.0
+state = 2
 
 [node name="Cheese" parent="." instance=ExtResource( 2 )]
 position = Vector2( 321.013, -397.85 )
