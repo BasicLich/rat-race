@@ -7,9 +7,12 @@ export var smell_radius: float
 
 var target
 var nav: Navigation2D
-var state = State.IDLE
+export var state = State.IDLE
 
 func _ready():
+	if state == State.FULL:
+		_begin_full_state()
+	
 	nav = get_parent()
 	var circle = CircleShape2D.new()
 	circle.radius = smell_radius
@@ -21,11 +24,8 @@ func _ready():
 	area.connect("body_entered", self, "_on_Smell_body_entered")
 
 func _process(delta):
-	var tick = float(OS.get_ticks_msec()) / 300.0
-	var r = .5 * (1 + sin(tick))
-
-	#$Status.modulate = Color(1.0, r, r)
-	$Status.modulate.a = r
+	var tick = float(OS.get_ticks_msec()) / 200.0
+	$Status.modulate.a = .5 * (1 + sin(tick))
 
 func _physics_process(delta):
 	if target and state == State.IDLE:
@@ -43,21 +43,44 @@ func _physics_process(delta):
 		for i in get_slide_count():
 			var collider = get_slide_collision(i).get_collider()
 			if collider.is_in_group("player"):
-				state = State.FULL
+				_begin_full_state()
 				collider.kill("feline fatality")
 			elif collider.is_in_group("fish"):
-				state = State.FULL
-				$Status/Chasing.hide()
 				$Status/Full.show()
-				update()
+				_begin_full_state()
+	elif state == State.FULL:
+		assert(target)
+		var space_state = get_world_2d().direct_space_state
+		var result = space_state.intersect_ray(position, target.position,
+					[self, target], collision_mask)
+		if !result:
+			var paths = nav.get_simple_path(position, target.position)
+			assert(paths.size() > 1)
+			var normalized = (paths[1] - position).normalized()
+			print((paths[1] - position).length_squared())
+			if (paths[1] - position).length_squared() > (speed): 
+				move_and_slide(normalized * speed)
+
+func _begin_full_state():
+	state = State.FULL
+	$Status/Full.show()
+	target = Node2D.new()
+	$Timer.start()
+	
 
 func _on_Smell_body_entered(body):
 	if state == State.IDLE:
 		if body.is_in_group("player"):
 			target = body
-			$Status/Chasing.show()
+			#$Status/Chasing.show()
 			
 	if state == State.CHASING:
 		if body.is_in_group("fish"):
 			target = body
-			$Status/Chasing.show()
+			#$Status/Chasing.show()
+
+
+func _on_Timer_timeout():
+	#print(Vector2((randi() % 100) - 50, (randi() % 100) - 50))
+	target.position = nav.get_closest_point(position + Vector2((randi() % 100) - 50, (randi() % 100) - 50))
+	

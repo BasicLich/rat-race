@@ -19,6 +19,7 @@ var levels = [
 	]
 
 var rat_id: int
+var score: int
 
 func _ready():	
 	$UI/Control.hide()
@@ -60,6 +61,7 @@ func _on_level_complete(successful, reason):
 	report_instance.rat_id = str(rat_id)
 	report_instance.success = successful
 	report_instance.reason = reason
+	report_instance.score = score
 	
 	index += 1
 	
