@@ -1,0 +1,399 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://tileset.res" type="TileSet" id=1]
+[ext_resource path="res://characters/Rat.tscn" type="PackedScene" id=2]
+[ext_resource path="res://house.res" type="TileSet" id=3]
+[ext_resource path="res://assets/1bitpack_kenney_1.1/Tilesheet/monochrome_transparent_packed.png" type="Texture" id=4]
+[ext_resource path="res://decor/SpiderWeb.tscn" type="PackedScene" id=5]
+[ext_resource path="res://decor/Slime.tscn" type="PackedScene" id=6]
+[ext_resource path="res://characters/Cat.tscn" type="PackedScene" id=7]
+[ext_resource path="res://levels/LevelFinal.gd" type="Script" id=8]
+[ext_resource path="res://pipes.res" type="TileSet" id=10]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 4.46792, 7.1089 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 6.86192, 7.02274 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 2.9903, 7.17123 )
+
+[sub_resource type="NavigationPolygon" id=4]
+vertices = PoolVector2Array( 165.569, 11.4796, 304.459, 11.7294, 304.958, 101.908, 165.319, 101.658 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( 165.569, 11.4796, 304.459, 11.7294, 304.958, 101.908, 165.319, 101.658 ) ]
+
+[node name="Node2D" type="Node2D"]
+scale = Vector2( 2, 2 )
+script = ExtResource( 8 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -316.0
+margin_top = -200.0
+margin_right = 605.0
+margin_bottom = 338.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_right = 316.0
+margin_bottom = 114.0
+color = Color( 0.192157, 0.196078, 0.2, 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Room" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 0, 3, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 8, 0, 65536, 4, 0, 65545, 7, 0, 131072, 4, 0, 131081, 7, 0, 196608, 4, 0, 196617, 7, 0, 262144, 4, 0, 262153, 7, 0, 327680, 4, 0, 327689, 7, 0, 393216, 5, 0, 393217, 2, 0, 393218, 2, 0, 393219, 2, 0, 393220, 2, 0, 393221, 2, 0, 393222, 2, 0, 393223, 2, 0, 393224, 2, 0, 393225, 6, 0 )
+
+[node name="Garden" type="TileMap" parent="."]
+visible = false
+position = Vector2( 1.36714, 48.7647 )
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 262151, 14, 0, 262153, 14, 0, 262154, 14, 0, 262155, 14, 0, 262156, 14, 0, 327687, 14, 0, 327688, 19, 0, 327689, 19, 0, 327690, 19, 0, 327691, 19, 0, 327692, 14, 0, 393223, 14, 0, 393224, 19, 0, 393225, 19, 0, 393226, 19, 0, 393227, 19, 0, 393228, 14, 0, 458759, 14, 0, 458760, 14, 0, 458761, 14, 0, 458762, 14, 0, 458763, 14, 0, 458764, 14, 0 )
+
+[node name="rug" type="Sprite" parent="."]
+modulate = Color( 0.478431, 0.686275, 0.733333, 1 )
+position = Vector2( 65.6083, 42.9025 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 64, 0, 16, 16 )
+
+[node name="bed" type="Sprite" parent="."]
+position = Vector2( 9.62447, 76.8839 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 4 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 80, 128, 16, 16 )
+
+[node name="toilet" type="Sprite" parent="."]
+position = Vector2( 135.821, 9.91399 )
+texture = ExtResource( 4 )
+centered = false
+flip_h = true
+region_enabled = true
+region_rect = Rect2( 192, 160, 16, 16 )
+
+[node name="tub" type="Sprite" parent="."]
+position = Vector2( 133.735, 23.86 )
+texture = ExtResource( 4 )
+centered = false
+flip_h = true
+region_enabled = true
+region_rect = Rect2( 208, 160, 16, 16 )
+
+[node name="fridge" type="Sprite" parent="."]
+position = Vector2( 6.06004, 5.55089 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 4 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 192, 112, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="fridge"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fridge/StaticBody2D"]
+position = Vector2( 7.80983, 8.09909 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="counter" type="Sprite" parent="."]
+position = Vector2( 25.9075, 13.0688 )
+texture = ExtResource( 4 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 112, 112, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="counter"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="counter/StaticBody2D"]
+position = Vector2( 7.94209, 8.09909 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="stove" type="Sprite" parent="."]
+position = Vector2( 41.196, 12.9766 )
+texture = ExtResource( 4 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 176, 128, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="stove"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="stove/StaticBody2D"]
+position = Vector2( 7.94209, 8.09909 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="bookshelf" type="Sprite" parent="."]
+position = Vector2( 119.576, 64.1516 )
+texture = ExtResource( 4 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 64, 112, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="bookshelf"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bookshelf/StaticBody2D"]
+position = Vector2( 7.94209, 8.09909 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="torch2" type="Sprite" parent="."]
+modulate = Color( 0.894118, 0.768627, 0.196078, 1 )
+position = Vector2( 115.837, 58.361 )
+texture = ExtResource( 4 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 64, 240, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="torch2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="torch2/StaticBody2D"]
+position = Vector2( 7.94209, 8.09909 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="torch2/StaticBody2D"]
+position = Vector2( 7.94209, 8.09909 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="torch3" type="Sprite" parent="."]
+modulate = Color( 0.894118, 0.768627, 0.196078, 1 )
+position = Vector2( 26.04, 3.93718 )
+texture = ExtResource( 4 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 64, 240, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="torch3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="torch3/StaticBody2D"]
+position = Vector2( 7.94209, 8.09909 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="torch3/StaticBody2D"]
+position = Vector2( 7.94209, 8.09909 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Rat" parent="." instance=ExtResource( 2 )]
+position = Vector2( 66.3282, 75.8772 )
+
+[node name="Slime" parent="." instance=ExtResource( 6 )]
+position = Vector2( 47.6291, 8.19241 )
+
+[node name="Room2" type="TileMap" parent="."]
+position = Vector2( 155.413, 0 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 0, 3, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 8, 0, 65536, 4, 0, 65545, 7, 0, 131072, 4, 0, 131081, 7, 0, 196608, 4, 0, 196617, 7, 0, 262144, 4, 0, 262153, 7, 0, 327680, 4, 0, 327689, 7, 0, 393216, 5, 0, 393217, 2, 0, 393218, 2, 0, 393219, 2, 0, 393220, 2, 0, 393221, 2, 0, 393222, 2, 0, 393223, 2, 0, 393224, 2, 0, 393225, 6, 0 )
+
+[node name="Garden2" type="TileMap" parent="."]
+visible = false
+position = Vector2( 1.36714, 48.7647 )
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 262151, 14, 0, 262153, 14, 0, 262154, 14, 0, 262155, 14, 0, 262156, 14, 0, 327687, 14, 0, 327688, 19, 0, 327689, 19, 0, 327690, 19, 0, 327691, 19, 0, 327692, 14, 0, 393223, 14, 0, 393224, 19, 0, 393225, 19, 0, 393226, 19, 0, 393227, 19, 0, 393228, 14, 0, 458759, 14, 0, 458760, 14, 0, 458761, 14, 0, 458762, 14, 0, 458763, 14, 0, 458764, 14, 0 )
+
+[node name="rug2" type="Sprite" parent="."]
+modulate = Color( 0.733333, 0.478431, 0.721569, 1 )
+position = Vector2( 221.207, 42.9025 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 64, 0, 16, 16 )
+
+[node name="bed2" type="Sprite" parent="."]
+position = Vector2( 281.031, 77.4964 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 4 )
+centered = false
+flip_h = true
+region_enabled = true
+region_rect = Rect2( 80, 128, 16, 16 )
+
+[node name="toilet2" type="Sprite" parent="."]
+position = Vector2( 291.234, 9.91399 )
+texture = ExtResource( 4 )
+centered = false
+flip_h = true
+region_enabled = true
+region_rect = Rect2( 192, 160, 16, 16 )
+
+[node name="tub2" type="Sprite" parent="."]
+position = Vector2( 289.147, 23.86 )
+texture = ExtResource( 4 )
+centered = false
+flip_h = true
+region_enabled = true
+region_rect = Rect2( 208, 160, 16, 16 )
+
+[node name="fridge2" type="Sprite" parent="."]
+position = Vector2( 161.473, 5.55089 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 4 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 192, 112, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="fridge2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fridge2/StaticBody2D"]
+position = Vector2( 7.80983, 8.09909 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="counter2" type="Sprite" parent="."]
+position = Vector2( 181.32, 13.0688 )
+texture = ExtResource( 4 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 112, 112, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="counter2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="counter2/StaticBody2D"]
+position = Vector2( 7.94209, 8.09909 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="stove2" type="Sprite" parent="."]
+position = Vector2( 196.609, 12.9766 )
+texture = ExtResource( 4 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 176, 128, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="stove2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="stove2/StaticBody2D"]
+position = Vector2( 7.94209, 8.09909 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="cauldron " type="Sprite" parent="."]
+position = Vector2( 189.449, 55.5441 )
+texture = ExtResource( 4 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 80, 224, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cauldron "]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cauldron /StaticBody2D"]
+position = Vector2( 7.94209, 8.09909 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="torch4" type="Sprite" parent="."]
+modulate = Color( 0.894118, 0.768627, 0.196078, 1 )
+position = Vector2( 189.369, 47.7045 )
+texture = ExtResource( 4 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 64, 240, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="torch4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="torch4/StaticBody2D"]
+position = Vector2( 7.94209, 8.09909 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="torch4/StaticBody2D"]
+position = Vector2( 7.94209, 8.09909 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="torch5" type="Sprite" parent="."]
+modulate = Color( 0.894118, 0.768627, 0.196078, 1 )
+position = Vector2( 181.453, 3.93718 )
+texture = ExtResource( 4 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 64, 240, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="torch5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="torch5/StaticBody2D"]
+position = Vector2( 7.94209, 8.09909 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="torch5/StaticBody2D"]
+position = Vector2( 7.94209, 8.09909 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Slime2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 250.238, 8.19241 )
+
+[node name="Navigation2D" type="Navigation2D" parent="."]
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
+navpoly = SubResource( 4 )
+
+[node name="Cat" parent="Navigation2D" instance=ExtResource( 7 )]
+position = Vector2( 275.824, 74.0227 )
+state = 2
+
+[node name="Pipes" type="TileMap" parent="."]
+position = Vector2( -22.532, -16.0592 )
+tile_set = ExtResource( 10 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 393223, 0, 0, 393224, 1, 0, 393225, 1, 0, 393226, 536870915, 0, 393227, 1, 0, 393228, 1, 0, 393229, 536870915, 0, 393230, 1, 0, 393231, 1, 0, 393232, 536870912, 0 )
+
+[node name="SpiderWeb2" parent="." instance=ExtResource( 5 )]
+self_modulate = Color( 0.713726, 0.705882, 0.705882, 1 )
+position = Vector2( 221.198, 87.4274 )

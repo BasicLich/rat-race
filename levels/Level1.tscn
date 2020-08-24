@@ -67,7 +67,7 @@ scale = Vector2( 1.23223, 1.23223 )
 
 [node name="Wires2" parent="Details" instance=ExtResource( 11 )]
 self_modulate = Color( 1, 0.682353, 0.0705882, 1 )
-position = Vector2( 189.032, 17.7596 )
+position = Vector2( 189.032, 17.9191 )
 rotation = 1.5708
 scale = Vector2( 1.74601, 1.74601 )
 
@@ -90,13 +90,13 @@ rotation = 0.785398
 scale = Vector2( 1.10554, 1.10554 )
 
 [node name="SpiderWeb" parent="Details" instance=ExtResource( 14 )]
-self_modulate = Color( 0.733333, 0.733333, 0.733333, 1 )
-position = Vector2( 8.55853, -38.9035 )
+self_modulate = Color( 0.705882, 0.705882, 0.705882, 1 )
+position = Vector2( 8.23958, -39.063 )
 scale = Vector2( 1.18729, 1.18729 )
 
 [node name="SpiderWeb2" parent="Details" instance=ExtResource( 14 )]
 self_modulate = Color( 0.690196, 0.690196, 0.690196, 1 )
-position = Vector2( 165.869, 54.1937 )
+position = Vector2( 165.869, 53.2368 )
 scale = Vector2( 1.39775, 1.39775 )
 
 [node name="DoorExit" parent="." instance=ExtResource( 6 )]
@@ -119,7 +119,6 @@ rotation = -0.817451
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
 autoplay = true
-bus = "Background"
 
 [node name="DialogueTrigger" parent="." instance=ExtResource( 10 )]
 position = Vector2( 60, 28 )
