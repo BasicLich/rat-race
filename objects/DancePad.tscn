@@ -8,10 +8,10 @@
 extents = Vector2( 7.17699, 7.15709 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 5.11371, 6.36845 )
+extents = Vector2( 5.11371, 5.6104 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 6.07709, 5.69159 )
+extents = Vector2( 5.29786, 5.69159 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 32

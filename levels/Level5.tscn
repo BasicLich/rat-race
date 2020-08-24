@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://characters/Rat.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tileset.res" type="TileSet" id=2]
@@ -6,20 +6,86 @@
 [ext_resource path="res://Door1.tscn" type="PackedScene" id=4]
 [ext_resource path="res://levels/Level5.gd" type="Script" id=5]
 [ext_resource path="res://assets/music/danger.ogg" type="AudioStream" id=6]
+[ext_resource path="res://objects/Shooter.tscn" type="PackedScene" id=7]
+[ext_resource path="res://objects/MouseTrap.tscn" type="PackedScene" id=8]
+[ext_resource path="res://objects/cheese.tscn" type="PackedScene" id=9]
+[ext_resource path="res://objects/DoorExit.tscn" type="PackedScene" id=10]
 
 [node name="Level5" type="Node2D"]
 scale = Vector2( 2, 2 )
 script = ExtResource( 5 )
+
+[node name="Background" type="ColorRect" parent="."]
+margin_left = -993.787
+margin_top = -949.018
+margin_right = 1633.21
+margin_bottom = 757.982
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 142.0
+margin_top = -246.0
+margin_right = 382.0
+margin_bottom = 187.0
+color = Color( 0.192157, 0.196078, 0.2, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_left = 205.0
+margin_top = -471.0
+margin_right = 318.0
+margin_bottom = -133.0
+color = Color( 0.192157, 0.196078, 0.2, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+margin_left = 221.0
+margin_top = -534.0
+margin_right = 302.0
+margin_bottom = -200.0
+color = Color( 0.192157, 0.196078, 0.2, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( -2.67322, -6.14842 )
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( -131063, 3, 0, -131062, 1, 0, -131061, 1, 0, -131060, 1, 0, -131059, 1, 0, -131058, 1, 0, -131057, 1, 0, -131055, 1, 0, -131054, 1, 0, -131053, 1, 0, -131052, 1, 0, -131051, 1, 0, -131050, 1, 0, -131049, 8, 0, -65527, 4, 0, -65513, 7, 0, 9, 4, 0, 23, 7, 0, 65545, 4, 0, 65559, 7, 0, 131081, 4, 0, 131095, 7, 0, 196617, 4, 0, 196631, 7, 0, 262153, 4, 0, 262167, 7, 0, 327689, 4, 0, 327703, 7, 0, 393225, 4, 0, 393239, 7, 0, 458761, 4, 0, 458775, 7, 0, 524297, 4, 0, 524311, 7, 0, 589833, 4, 0, 589847, 7, 0, 655369, 4, 0, 655383, 7, 0, 720905, 5, 0, 720906, 2, 0, 720907, 2, 0, 720908, 2, 0, 720909, 2, 0, 720910, 2, 0, 720911, 2, 0, 720912, 2, 0, 720913, 2, 0, 720914, 2, 0, 720915, 2, 0, 720916, 2, 0, 720917, 2, 0, 720918, 2, 0, 720919, 6, 0 )
+tile_data = PoolIntArray( -2162674, 3, 0, -2162673, 1, 0, -2162671, 1, 0, -2162670, 8, 0, -2097138, 4, 0, -2097134, 7, 0, -2031602, 4, 0, -2031598, 7, 0, -1966066, 4, 0, -1966062, 7, 0, -1900531, 3, 0, -1900525, 8, 0, -1834995, 4, 0, -1834989, 7, 0, -1769459, 4, 0, -1769453, 7, 0, -1703923, 4, 0, -1703917, 7, 0, -1638387, 4, 0, -1638381, 7, 0, -1572851, 4, 0, -1572845, 7, 0, -1507315, 4, 0, -1507309, 7, 0, -1441779, 4, 0, -1441773, 7, 0, -1376243, 4, 0, -1376237, 7, 0, -1310707, 4, 0, -1310701, 7, 0, -1245171, 4, 0, -1245165, 7, 0, -1179635, 4, 0, -1179629, 7, 0, -1114099, 4, 0, -1114093, 7, 0, -1048563, 4, 0, -1048557, 7, 0, -983031, 3, 0, -983030, 1, 0, -983029, 1, 0, -983028, 1, 0, -983027, 1, 0, -983026, 1, 0, -983025, 1, 0, -983023, 1, 0, -983022, 1, 0, -983021, 1, 0, -983020, 1, 0, -983019, 1, 0, -983018, 1, 0, -983017, 8, 0, -917495, 4, 0, -917481, 7, 0, -851959, 4, 0, -851945, 7, 0, -786423, 4, 0, -786409, 7, 0, -720887, 4, 0, -720873, 7, 0, -655351, 4, 0, -655337, 7, 0, -589815, 4, 0, -589801, 7, 0, -524279, 4, 0, -524265, 7, 0, -458743, 4, 0, -458729, 7, 0, -393207, 4, 0, -393193, 7, 0, -327671, 4, 0, -327657, 7, 0, -262135, 4, 0, -262121, 7, 0, -196599, 4, 0, -196585, 7, 0, -131063, 3, 0, -131062, 1, 0, -131061, 1, 0, -131060, 1, 0, -131059, 1, 0, -131058, 1, 0, -131057, 1, 0, -131055, 1, 0, -131054, 1, 0, -131053, 1, 0, -131052, 1, 0, -131051, 1, 0, -131050, 1, 0, -131049, 8, 0, -65527, 4, 0, -65513, 7, 0, 9, 4, 0, 23, 7, 0, 65545, 4, 0, 65559, 7, 0, 131081, 4, 0, 131095, 7, 0, 196617, 4, 0, 196631, 7, 0, 262153, 4, 0, 262167, 7, 0, 327689, 4, 0, 327703, 7, 0, 393225, 4, 0, 393239, 7, 0, 458761, 4, 0, 458775, 7, 0, 524297, 4, 0, 524311, 7, 0, 589833, 4, 0, 589847, 7, 0, 655369, 4, 0, 655383, 7, 0, 720905, 5, 0, 720906, 2, 0, 720907, 2, 0, 720908, 2, 0, 720909, 2, 0, 720910, 2, 0, 720911, 2, 0, 720912, 2, 0, 720913, 2, 0, 720914, 2, 0, 720915, 2, 0, 720916, 2, 0, 720917, 2, 0, 720918, 2, 0, 720919, 6, 0 )
+
+[node name="Door2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 253.346, -252.069 )
 
 [node name="Door1" parent="." instance=ExtResource( 4 )]
 position = Vector2( 253.116, -44.8188 )
+
+[node name="MouseTrap" parent="." instance=ExtResource( 8 )]
+position = Vector2( 224.818, -375.691 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="MouseTrap2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 224.64, -413.896 )
+rotation = 0.777439
+scale = Vector2( 0.8, 0.8 )
+
+[node name="MouseTrap3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 293.981, -373.443 )
+rotation = 0.349106
+scale = Vector2( 0.8, 0.8 )
+
+[node name="MouseTrap4" parent="." instance=ExtResource( 8 )]
+position = Vector2( 286.407, -434.075 )
+rotation = -0.144632
+scale = Vector2( 0.8, 0.8 )
 
 [node name="DancePad" parent="." instance=ExtResource( 3 )]
 position = Vector2( 226.314, 4.01819 )
@@ -33,3 +99,36 @@ position = Vector2( 256.617, 148.569 )
 stream = ExtResource( 6 )
 autoplay = true
 bus = "Background"
+
+[node name="DancePad2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 226.776, -206.687 )
+scale = Vector2( 0.5, 0.5 )
+sequence_size = 5
+
+[node name="ArrowShooter5" parent="." instance=ExtResource( 7 )]
+position = Vector2( 281.665, -493.699 )
+scale = Vector2( 0.7, 0.7 )
+
+[node name="ArrowShooter2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 224.216, -311.491 )
+rotation = 3.14159
+scale = Vector2( 0.7, 0.7 )
+frequency = 3.0
+
+[node name="ArrowShooter3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 225.124, -337.37 )
+rotation = 3.14159
+scale = Vector2( 0.7, 0.7 )
+frequency = 5.0
+
+[node name="ArrowShooter4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 224.343, -440.858 )
+rotation = 3.14159
+scale = Vector2( 0.7, 0.7 )
+frequency = 5.0
+
+[node name="DoorExit" parent="." instance=ExtResource( 10 )]
+position = Vector2( 253.019, -541.082 )
+
+[node name="Cheese" parent="DoorExit" instance=ExtResource( 9 )]
+position = Vector2( -14.4493, 25.54 )

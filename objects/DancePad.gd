@@ -11,13 +11,12 @@ var sequence = []
 	
 var check = []
 
-var rng = RandomNumberGenerator.new()
-
 var state = State.IDLE
 
 func _ready():
+	randomize()
 	for i in range(sequence_size):
-		sequence.append(rng.randi_range(0, 3))
+		sequence.append(randi() % 4)
 	print(sequence)
 
 func begin():
