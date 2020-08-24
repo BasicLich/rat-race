@@ -14,10 +14,10 @@ var intro = preload("res://screens/Intro.tscn")
 
 var index = 0
 var levels = [
-#	level_1.instance(),
-#	level_5.instance(), 
-#	level_2.instance(),
-#	level_3.instance(),
+	level_1.instance(),
+	level_5.instance(), 
+	level_2.instance(),
+	level_3.instance(),
 	level_4.instance(),
 	level_final.instance()
 	]
